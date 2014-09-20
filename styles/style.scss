@@ -60,7 +60,7 @@ h1	{
 	font-size: 1.75rem;
 	line-height: 1em;
 	font-weight: 500;
-	margin-top: 3rem;
+	margin-top: 4rem;
 	margin-bottom: 1rem;
 }
 
@@ -72,7 +72,7 @@ h2	{
 	font-size: 1.2rem;
 	line-height: 1em;
 	font-weight: 500;
-	margin-top: 1rem;
+	margin-top: 2rem;
 	padding-top: 1rem;
 	margin-bottom: 1rem;
 }
@@ -85,7 +85,7 @@ h2:first-child	{
 h3	{
 	line-height: 1em;
 	font-weight: 500;
-	margin-top: .6rem;
+	margin-top: 1.6rem;
 	padding-top: 1rem;
 	margin-bottom: 0.6rem;
 }
@@ -95,7 +95,11 @@ h3:first-child	{
     margin-top: 0;
 }
 
-li:before	{
+ul, ol 	{
+	margin-bottom: 0.7rem;
+}
+
+ul li:before	{
 	content: "_";	
 	padding-right: .2rem;
 	margin-left: -.7rem;
@@ -105,7 +109,6 @@ li:before	{
     color: $white; 
     background: $black;
 }
-
 .source	{
 	font-size: 13px;
     color: $lightgrey;
