@@ -19,7 +19,8 @@
 		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
 
 		<!-------------------------<!--! SCRIPTS ------------------------------>
-
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+		
 	</head>
 
 	<body>
@@ -193,15 +194,5 @@
 		</section>
 
 	</body>
-
-	<script>
-		$("code pre").each(function(){
-		     var lines = $(this).html().split(/\n/).length;
-		
-		     for (i = 0; i < lines; i++)	{
-		    	 $(this).parent().parent().find(".lines").append(i+1 + "<br>");
-		     }
-		});
-	</script>
-
+	
 </html>
