@@ -1,4 +1,6 @@
-# Tutorium – Interaktive Prototypen mit HTML, CSS &amp; JS
+# Interaktive Prototypen mit HTML, CSS &amp; JS
+
+Im Tutorium lernen die Teilnehmer das programmatische Erstellen von Web-Frontends durch HTML, CSS und Javascript. Der Fokus liegt dabei auf der Anwendung der Inhalte nicht nur zur Erstellung normaler Websites, sondern im Besondern zur Entwicklung von Klickprototypen von Interfaces.
 
 ## Einheit 1
 - Einführung
