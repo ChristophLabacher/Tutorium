@@ -1,8 +1,6 @@
 # Tutorium – Interaktive Prototypen mit HTML, CSS &amp; JS
 
-## Übersicht
-
-### Einheit 1
+## Einheit 1
 - Einführung
 - Ziele
 - Tools
