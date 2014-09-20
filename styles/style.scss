@@ -1,0 +1,262 @@
+/************************
+*		VARIABLES		*
+************************/
+
+@import url('http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
+@import url('http://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+
+/*	Colors
+************************/
+$white: rgba(255,255,255,1);
+$black: rgba(30,30,30,1);
+$verylightgrey: rgba(245,245,245,1);
+$lightgrey: rgba(200,200,200,1);
+$grey: rgba(150,150,150,1);
+$darkgrey: rgba(100,100,100,1);
+
+/************************
+*		TYPOGRAPHY		*
+************************/
+
+body 	{
+	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+	color: $black;
+	background-color: $white;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.6em;
+	text-align: left;
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: inherit;
+	overflow-x: hidden;
+	word-wrap: normal;
+}
+
+a	{
+	color: $grey;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px white;
+	background-image: linear-gradient(to bottom, $white 88%, $lightgrey 90%, $white 93%);
+	background-repeat: repeat-x;
+	
+	&:hover	{
+		color: $black;
+		text-decoration: none;
+		cursor: pointer;
+		background-image: linear-gradient(to bottom, $white 88%, $grey 90%, $white 93%);	
+	}
+}
+
+b, strong	{
+	font-weight: 500;
+}
+
+p	{
+	margin-bottom: 0.7rem;
+}
+
+h1	{
+	font-size: 1.75rem;
+	line-height: 1em;
+	font-weight: 500;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+h1:first-child	{
+    margin-top: 0;
+}
+
+h2	{
+	font-size: 1.2rem;
+	line-height: 1em;
+	font-weight: 500;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+h2:first-child	{
+	padding-top: 0;
+    margin-top: 0;
+}
+
+h3	{
+	line-height: 1em;
+	font-weight: 500;
+	margin-top: .6rem;
+	padding-top: 1rem;
+	margin-bottom: 0.6rem;
+}
+
+h3:first-child	{
+	padding-top: 0;
+    margin-top: 0;
+}
+
+li:before	{
+	content: "_";	
+	padding-right: .2rem;
+	margin-left: -.7rem;
+}
+
+::selection {
+    color: $white; 
+    background: $black;
+}
+
+.source	{
+	font-size: 13px;
+    color: $lightgrey;
+    padding: 0.2rem 0.2rem;
+    display: inline-block;
+    width: 100%;
+    
+    a	{
+    	color: $lightgrey;
+    	text-decoration: none;
+    	background: none;
+    	transition: all 0.3s;
+    	
+    	&:hover	{
+    		color: $grey;
+    	}
+    }		
+}
+
+blockquote	{
+	//font-style: italic;
+	
+	color: $darkgrey;
+	background-color: $verylightgrey;
+	border: 1px solid $lightgrey;
+	border-radius: 3px;				
+	padding: 1rem;
+	margin-bottom: 1rem;
+	
+	p:last-child	{
+		margin-bottom: 0;
+	}	
+}
+
+.tag	{
+	font-family: "Fira Mono";
+	font-size: 13px;	
+	padding: 0 2px;
+	border-radius: 3px;
+	color: $darkgrey;
+	background-color: $verylightgrey;
+	border: 1px solid $lightgrey;		
+}
+
+.code-snippet	{
+	font-family: "Fira Mono";
+	font-size: 13px;	
+	margin-bottom: 1rem;
+	width: 100%;
+	
+	.source	{
+		font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+		color: $lightgrey;
+		padding: 0.2rem 0.2rem;
+		display: inline-block;
+		width: 100%;
+		
+		a	{
+			color: $lightgrey;
+			text-decoration: none;
+			background: none;
+			transition: all 0.3s;
+			
+			&:hover	{
+				color: $grey;
+			}
+		}		
+	}	
+	
+	.lines	{
+		color: $grey;
+		background-color: $lightgrey;
+		border: 1px solid $lightgrey;
+		border-radius: 3px 0 0 3px;		
+		padding: 0.5rem 0.3rem;
+		text-align: right;
+		float: left;
+		display: block;
+		width: 5.3%;
+	}	
+	
+	code	{
+		float: left;
+		display: block;
+		tab-size:      3;	
+		color: $darkgrey;
+		background-color: $verylightgrey;
+		border: 1px solid $lightgrey;
+		border-radius: 0 3px 3px 0;				
+		padding: 0.5rem 0.7rem;
+		width: 94.7%;
+		overflow-wrap: normal;
+		overflow-x: scroll;
+	}	
+}
+
+/************************
+*		STRUCTURE		*
+************************/
+
+section	{
+	width: 100%;
+}
+
+article	{
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 4rem;
+}
+
+/************************
+*		CONTENTS		*
+************************/
+
+
+/************************
+*		RESPONSIVE		*
+************************/
+
+
+@media all and (min-width: 440px) {
+}
+
+@media all and (min-width: 640px) {
+}
+
+
+@media all and (min-width: 720px) {					
+}
+
+/************************
+*		CLEARFIX		*
+************************/
+
+.cf:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+html[xmlns] .cf {
+    display: block;
+}
+ 
+* html .cf {
+    height: 1%;
+}
+
+/*************************************************/
+
+
