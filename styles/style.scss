@@ -52,9 +52,11 @@ b, strong	{
 	font-weight: 500;
 }
 
-i	{
-	text-style: italic;
-	font-weight: 500;
+i, em	{
+	font-style: italic;
+	font-weight: 200;
+	//color: $grey;
+
 }
 
 p	{
@@ -66,7 +68,7 @@ h1	{
 	line-height: 1em;
 	font-weight: 500;
 	margin-top: 4rem;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 
 h1:first-child	{
@@ -199,7 +201,7 @@ blockquote	{
 	code	{
 		float: left;
 		display: block;
-		tab-size:      3;	
+		tab-size: 3;	
 		color: $darkgrey;
 		background-color: $verylightgrey;
 		border: 1px solid $lightgrey;
@@ -207,7 +209,7 @@ blockquote	{
 		padding: 0.5rem 0.7rem;
 		width: 94.7%;
 		overflow-wrap: normal;
-		overflow-x: scroll;
+		overflow-x: auto;
 	}	
 }
 
