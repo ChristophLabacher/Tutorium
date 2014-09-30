@@ -4,13 +4,21 @@
 
 /*	Colors
 ************************/
+
+// Background
 $white: rgba(255,255,255,1);
+// Text, LinksHover
 $black: rgba(30,30,30,1);
+// CodeBG
 $verylightgrey: rgba(245,245,245,1);
-$lightgrey: rgba(200,200,200,1);
-$grey: rgba(150,150,150,1);
-$semidarkgrey: rgba(125,125,125,1);
-$darkgrey: rgba(100,100,100,1);
+// LinksInactive, LinksCite, CodeBorder, CodeNumbersBG
+$lightgrey: rgba(220,220,220,1);
+// LinksUnderline, LinksCiteHover, CodeNumbers
+$grey: rgba(170,170,170,1);
+// Links, CodeText
+$darkgrey: rgba(125,125,125,1);
+// LinksUnderlineHover
+$verydarkgrey: rgba(100,100,100,1);
 
 /************************
 *		TYPOGRAPHY		*
@@ -36,7 +44,7 @@ body 	{
 }
 
 a	{
-	color: $semidarkgrey;
+	color: $darkgrey;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px white;
 	background-image: linear-gradient(to bottom, $white 88%, $grey 90%, $white 93%);
@@ -46,7 +54,7 @@ a	{
 		color: $black;
 		text-decoration: none;
 		cursor: pointer;
-		background-image: linear-gradient(to bottom, $white 88%, $darkgrey 90%, $white 93%);	
+		background-image: linear-gradient(to bottom, $white 88%, $verydarkgrey 90%, $white 93%);	
 	}
 }
 
@@ -70,8 +78,6 @@ b, strong	{
 i, em	{
 	font-style: italic;
 	font-weight: 200;
-	//color: $grey;
-
 }
 
 p	{
@@ -122,10 +128,14 @@ ul, ol 	{
 	margin-bottom: 0.7rem;
 }
 
-ul li:before	{
-	content: "_";	
-	padding-right: .2rem;
-	margin-left: -.7rem;
+ul li	{
+	list-style: none;
+
+	&:before	{
+		content: "_";	
+		padding-right: .2rem;
+		margin-left: -.7rem;
+	}
 }
 
 ::selection {
@@ -133,7 +143,7 @@ ul li:before	{
     background: $black;
 }
 
-.source	{
+cite	{
 	font-size: 13px;
     color: $lightgrey;
     padding: 0.2rem 0.2rem;
@@ -148,6 +158,7 @@ ul li:before	{
     	
     	&:hover	{
     		color: $grey;
+    		background: none;
     	}
     }		
 }
@@ -155,7 +166,6 @@ ul li:before	{
 blockquote	{	
 	color: $darkgrey;
 	background-color: $verylightgrey;
-	border: 1px solid $lightgrey;
 	border-radius: 3px;				
 	padding: 1rem;
 	margin-bottom: 1rem;
@@ -166,44 +176,23 @@ blockquote	{
 }
 
 .tag	{
-	font-family: "Fira Mono";
+	font-family: "Fira Mono", monospace;
 	font-size: 13px;	
 	padding: 0 2px;
 	border-radius: 3px;
 	color: $darkgrey;
 	background-color: $verylightgrey;
-	border: 1px solid $lightgrey;		
 }
 
 .code-snippet	{
-	font-family: "Fira Mono";
+	font-family: "Fira Mono", monospace;
 	font-size: 13px;	
 	margin-bottom: 1rem;
-	width: 100%;
-	
-	.source	{
-		font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-		color: $lightgrey;
-		padding: 0.2rem 0.2rem;
-		display: inline-block;
-		width: 100%;
-		
-		a	{
-			color: $lightgrey;
-			text-decoration: none;
-			background: none;
-			transition: all 0.3s;
-			
-			&:hover	{
-				color: $grey;
-			}
-		}		
-	}	
+	width: 100%;			
 	
 	.lines	{
 		color: $grey;
 		background-color: $lightgrey;
-		border: 1px solid $lightgrey;
 		border-radius: 3px 0 0 3px;		
 		padding: 0.5rem 0.3rem;
 		text-align: right;
@@ -219,12 +208,45 @@ blockquote	{
 		tab-size: 3;	
 		color: $darkgrey;
 		background-color: $verylightgrey;
-		border: 1px solid $lightgrey;
 		border-radius: 0 3px 3px 0;				
 		padding: 0.5rem 0.7rem;
 		width: 94.7%;
 		overflow-wrap: normal;
 		overflow-x: auto;
+	}	
+}
+
+.code-snippet.split	{
+	code	{
+		width: 50% !important;
+		border-radius: 0;
+	}
+	.result	{
+		font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+		font-size: 15px;
+		float: left;
+		display: block;
+		color: $darkgrey;
+		border: 1px solid $verylightgrey;
+		border-radius: 0 3px 3px 0;				
+		padding: 1rem;
+		overflow-wrap: normal;
+		overflow-x: auto;
+		width: 44.7%;
+		
+		li	{
+			margin-left: 20px;
+		}
+		
+		ul li	{
+    list-style: disc outside none;
+			display: list-item;
+			&:before{
+				content: "";
+				padding-right: 0;
+				margin-left: 0;
+			}
+		}
 	}	
 }
 
