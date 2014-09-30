@@ -105,3 +105,61 @@ Verschiedene Tags k&ouml;nnen in einander verschachtelt werden.
 Ziel der neuesten Generation von HTML ist es, möglichst semantisch, also selbsterklärend und gut lesbar, zu sein. Deswegen gibt es zum Beispiel neue Struktur-Tags, die sich direkt auf bestimmte Bereiche einer Website beziehen, wie &lt;nav&gt;&lt;/nav&gt; für die Navigation. Beim Schreiben von HTML-Seiten sollte man diese Maxime immer Hinterkopf behalten und versuchen, eine möglichst einfache, einleuchtende Struktur zu erstellen.
 
 Die je aktuellste Spezifikation des HTML-Standarts kann [hier](http://www.w3.org/html/wg/drafts/html/master/Overview.html) nachgelesen werden. Dabei handelt es sich im Augenblick um die sich noch in Entwicklung befindende Version 5. Die aktuellste, offizielle Version von HTML, HTML 4.01, stammt von 1999 und gilt allgemein als veraltet.
+
+## Grundaufbau eines HTML-Dokuments
+
+[/einheit-01/grundaufbau.html](grundaufbau.html)
+
+```
+<html>
+	<head>
+		<title>Grundaufbau eines HTML-Dokuments</title>
+	</head>
+
+	<body>
+		Hier steht der Inhalt der Seite.
+	</body>
+</html>
+```
+
+Jede HTML-Datei enthält ein Grundger&uuml;st von Tags, die eine interne Struktur vorgeben (diese wird nicht vom Browser dargestellt.) Das erste und letzte Tag jeder HTML-Datei sind die &lt;html&gt;-Tags. Zwischen den &lt;head&gt;-Tags befinden sich Meta-Informationen und weitere eingebundene Dateien (z. B. Javascript- oder CSS-Dateien). Zwischen den &lt;body&gt;-Tags befindet sich der vom Browser dargestellte Inhalt der Seite.
+
+## Hyperlinks
+
+[/einheit-01/hyperlink.html](hyperlink.html)
+
+```
+<html>
+	<head>
+		<title>Hyperlink</title>
+	</head>
+
+	<body>
+		Das ist ein Hyperlink zum <a href="grundaufbau.html">Grundaufbau eines HTML-Dokuments.</a>
+	</body>
+</html>
+```
+
+Hyperlinks werden durch das &lt;a&gt;-Tag erstellt (a steht für anchor). Zwischen den Tags steht dabei der auf der Website anzuzeigende Text. Das Ziel des Hyperlinks wird im öffnenden Tag als Wert des Attributes „href“ („Hyperreference“) als relativer Dateipfad angegeben.
+
+```
+<a href="Zielpfad">Anzuzeigender Text</a>
+```
+
+Es ist auch möglich Hyperlinks zu verwenden, um einen Anker zu einem beliebigen Element im Dokument zu setzen. Das Zielelement muss hier für das Attribut „id“ mit einer eindeutigen Indentifikation erhalten, im „href“-Attribut des Hyperlinks wird die id des Elements mit einem vorausgehenden „#“ notiert.
+
+```
+<h1 id="zielelement">Zielelement</h1>
+```
+
+```
+<a href="#zielelement">Anzuzeigender Text</a>
+```			
+
+## Ausblick
+
+In der zweiten Einheit werden die zwischen den &lt;head&gt;-Tags abgelegten Informationen genauer betrachtet, außerdem werden die Tags zur typografischen Formatierung von Texten und die Tags für verschiedene Arten von Listen behandelt.
+
+## Downloads
+
+[einheit-01.zip](einheit-01.zip)
