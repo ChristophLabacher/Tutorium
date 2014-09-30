@@ -2,10 +2,6 @@
 *		VARIABLES		*
 ************************/
 
-@import url('http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
-@import url('http://fonts.googleapis.com/css?family=Fira+Mono:400');
-
-
 /*	Colors
 ************************/
 $white: rgba(255,255,255,1);
@@ -13,11 +9,17 @@ $black: rgba(30,30,30,1);
 $verylightgrey: rgba(245,245,245,1);
 $lightgrey: rgba(200,200,200,1);
 $grey: rgba(150,150,150,1);
+$semidarkgrey: rgba(125,125,125,1);
 $darkgrey: rgba(100,100,100,1);
 
 /************************
 *		TYPOGRAPHY		*
 ************************/
+
+/*	Webfonts
+************************/
+@import url('http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
+@import url('http://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 body 	{
 	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
@@ -34,17 +36,30 @@ body 	{
 }
 
 a	{
-	color: $grey;
+	color: $semidarkgrey;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px white;
-	background-image: linear-gradient(to bottom, $white 88%, $lightgrey 90%, $white 93%);
+	background-image: linear-gradient(to bottom, $white 88%, $grey 90%, $white 93%);
 	background-repeat: repeat-x;
 	
 	&:hover	{
 		color: $black;
 		text-decoration: none;
 		cursor: pointer;
-		background-image: linear-gradient(to bottom, $white 88%, $grey 90%, $white 93%);	
+		background-image: linear-gradient(to bottom, $white 88%, $darkgrey 90%, $white 93%);	
+	}
+}
+
+a.inactive	{
+	color: $lightgrey;
+	text-decoration: none;
+	background-image: none;
+	
+	&:hover	{
+		color: $lightgrey;
+		text-decoration: none;
+		background-image: none;
+		cursor: pointer;
 	}
 }
 
