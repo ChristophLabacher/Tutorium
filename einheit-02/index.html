@@ -62,7 +62,7 @@
 				<p>Attribute spielten vor allen Dingen in den späten 90ern, als CSS noch nicht verbreitet war, eine große Rolle, da hier das komplette (rudimentäre) Styling der Website durch Attribute erfolgt. Durch CSS nahm die Bedeutung der meisten Attribute enorm ab. In HTML5 dürfen beliebige eigene Attribute eingeführt werden, sie gewinnen also zunehmend wieder an Bedeutung.</p>
 				
 				<h2 id="kommentare">Kommentare</h2>
-				<p>Durch seine einfache Struktur braucht ein HTML-Dokument nur selten Kommentare, also vom Browser nicht dargestellten Text. Anders als bei den meisten Sprachen gibt es bei HTML nur eine Art von Kommentaren, die sowohl ein-, als auch mehrzeilig sein kann. Das öffnende und schließende Tag eines Kommentares entspricht nicht der gewohnten HTML-Syntax:</p>
+				<p>Durch seine einfache Struktur braucht ein HTML-Dokument nur selten Kommentare, also vom Browser nicht dargestellten Text. Anders als bei den meisten Sprachen gibt es bei HTML nur eine Art von Kommentaren, die sowohl ein-, als auch mehrzeilig sein kann. Das öffnende und schließende Tag eines Kommentars entspricht nicht der gewohnten HTML-Syntax:</p>
 				
 <div class="code-snippet cf">
 <div class="lines"></div>
@@ -177,7 +177,7 @@
 				
 				<h2 id="texteundtypografie">Texte & Typografie</h2>
 				
-				<p>Da HTML für das Strukturieren digitaler wissenschaftlicher Dokumente entwickelt wurde, gibt es viele Tags, die eine genaue Textstrukturierung erlauben. Teilweise wirken sich Tags nicht auf das Aussehen eines Textes aus, können aber siantisch im Dokument Sinn ergeben, zum Beispiel um auf eine bestimmte Art des Inhalts hinzuweisen.</p>
+				<p>Da HTML für das Strukturieren digitaler wissenschaftlicher Dokumente entwickelt wurde, gibt es viele Tags, die eine genaue Textstrukturierung erlauben. Teilweise wirken sich Tags nicht auf das Aussehen eines Textes aus, können aber im Dokument Sinn ergeben, zum Beispiel um auf eine bestimmte Art des Inhalts hinzuweisen.</p>
 
 				<h3>Überschriften</h3>
 				
@@ -218,13 +218,13 @@ Es besitzt kein schließendes Pendant.</pre>
 
 				<h3>Textauszeichnung</h3>
 				
-				<p>Diese Tags können innerhalb eines Textabschnitts/einer Textzeile verwendet werden. Teilweise erreichen verschiedene Tags visuell das gleiche Ergebniss, um eine möglichst gute Siantik des Dokumentes zu erreichen sollten jedoch vom Kontext abhängig bestimmte Tags verwendet werden.</p>
+				<p>Diese Tags können innerhalb eines Textabschnitts/einer Textzeile verwendet werden. Teilweise erreichen verschiedene Tags visuell das gleiche Ergebnis, um eine möglichst gute Semantik des Dokumentes zu erreichen sollten jedoch vom Kontext abhängig bestimmte Tags verwendet werden.</p>
 				
 				<p>Folgende Tags ändern die Darstellung von Text, der sich vom restlichen Text absetzt, aber keine spezielle Betonung oder Wichtigkeit besitzt. Sie sollen verwendet werden wenn eine rein <strong>optische</strong> Veränderung erwünscht ist.</p>
 				
 				<p>Das <span class="tag">b</span>-Tag markiert Text, der fettgedruckt (<i>bold</i>) dargestellt wird.</p>
 				
-				<p>Das <span class="tag">i</span>-Tag markiert Text, der üblicherweise kursiv (<i>italic</i>) dargestellt wird, beispielsweise ein Fridwort, ein Fachbegriff oder ein Name.</p>
+				<p>Das <span class="tag">i</span>-Tag markiert Text, der üblicherweise kursiv (<i>italic</i>) dargestellt wird, beispielsweise ein Fremdwort, ein Fachbegriff oder ein Name.</p>
 				
 				<p>Das <span class="tag">u</span>-Tag markiert Text, der unterstrichen (<i>underlined</i>) wird.</p>
 				
@@ -234,9 +234,9 @@ Es besitzt kein schließendes Pendant.</pre>
 				
 				<p>Folgende Tags sollten im Falle einer spezielle Betonung oder Wichtigkeit verwendet werden. Sie zeigen eine <strong>logische</strong> Veränderung im Kontext des Textes an.</p>
 				
-				<p>Das <span class="tag">i</span>-Tag (<i>iphasis</i>) wird überlicherweise kursiv dargestellt und steht für eine besondere Betonung (beispielsweise eines einzelnen Wortes in eini Satz).</p>
+				<p>Das <span class="tag">em</span>-Tag (<i>emphasis</i>) wird üblicherweise kursiv dargestellt und steht für eine besondere Betonung (beispielsweise eines einzelnen Wortes in eini Satz).</p>
 				
-				<p>Das <span class="tag">strong</span>-Tag wird standartmäßig fettgedruckt dargestellt und markiert Text, der besonders hervorgehoben werden soll, zum Beispiel eine Warnung.</p>
+				<p>Das <span class="tag">strong</span>-Tag wird standardmäßig fettgedruckt dargestellt und markiert Text, der besonders hervorgehoben werden soll, zum Beispiel eine Warnung.</p>
 				
 				<p>Während es keinen Sinn hat, das Aussehen der rein optischen Tags später mit CSS zu verändern (<span class="tag">b</span> für bold sollte immer fettgedruckt bleiben), kann es bei den logischen Tags durchaus angiessen sein (<span class="tag">strong</span> könnte auch als roter Text dargestellt werden).</p>
 				
@@ -252,45 +252,45 @@ Es besitzt kein schließendes Pendant.</pre>
 				
 				<p>Listen spielen in HTML eine große Rolle: Sie werden nicht nur für Aufzählungen, sondern häufig auch für Menüstrukturen o. ä. eingesetzt.</p>
 
-				<p>Ein Listenelient wird immer durch das <span class="tag">li</span>-Tag (<i>list</i>) markiert. Um was für eine Art von Liste es sich handelt ergibt sich aus di umschließsenden Tag: <span class="tag">ul</span> (<i>unordered list</i>) für Listen mit einfachen Aufzählungszeichen und <span class="tag">ol</span> (<i>ordered list</i>) für nummerierte Listen.</p>
+				<p>Ein Listenelient wird immer durch das <span class="tag">li</span>-Tag (<i>list</i>) markiert. Um was für eine Art von Liste es sich handelt ergibt sich aus di umschließenden Tag: <span class="tag">ul</span> (<i>unordered list</i>) für Listen mit einfachen Aufzählungszeichen und <span class="tag">ol</span> (<i>ordered list</i>) für nummerierte Listen.</p>
 				
 <div class="code-snippet split cf">
 <div class="lines"></div>
 <code>
 <pre>&lt;h3&gt;Unsortierte Liste&lt;/h3&gt;
 &lt;ul&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;Sortierte Liste&lt;/h3&gt;
 &lt;ol&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
-	&lt;li&gt;Listenelient&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
 &lt;/ol&gt;</pre>
 </code>
 <div class="result">
 <h3>Unsortierte Liste</h3>
 <ul>
-	<li>Listenelient</li>
-	<li>Listenelient</li>
-	<li>Listenelient</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
 </ul>
 
 <h3>Nummerierte Liste</h3>
 <ol>
-	<li>Listenelient</li>
-	<li>Listenelient</li>
-	<li>Listenelient</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
 </ol>
 </div>
 </div>
 
 				<h3>Definitionslisten</h3>
 				
-				<p>Eine besondere Liste ist die Defitionsliste. Sie wird durch das <span class="tag">dl</span>-Tag (<i>definition list</i>) erzeugt. In ihr befinden sich ein oder mehrere <span class="tag">dt</span>-Tags (<i>defintion term</i>), die einen zu erklärenden Text enthalten. Auf jedes <span class="tag">dt</span>-Tag müssen ein oder mehrere <span class="tag">dd</span>-Tags (<i>defintion</i>) folgen, dass die zugehörige Erklärung enthalten.</p>
+				<p>Eine besondere Liste ist die Definitionsliste. Sie wird durch das <span class="tag">dl</span>-Tag (<i>definition list</i>) erzeugt. In ihr befinden sich ein oder mehrere <span class="tag">dt</span>-Tags (<i>defintion term</i>), die einen zu erklärenden Text enthalten. Auf jedes <span class="tag">dt</span>-Tag müssen ein oder mehrere <span class="tag">dd</span>-Tags (<i>defintion</i>) folgen, dass die zugehörige Erklärung enthalten.</p>
 
 <div class="code-snippet split cf">
 <div class="lines"></div>
@@ -298,7 +298,7 @@ Es besitzt kein schließendes Pendant.</pre>
 <pre>&lt;h3&gt;Defintionsliste&lt;/h3&gt;
 &lt;dl&gt;
 	&lt;dt&gt;li-Tag&lt;/dt&gt;
-	&lt;dd&gt;Listen-Elient&lt;/dd&gt;
+	&lt;dd&gt;Listenelement&lt;/dd&gt;
 	&lt;dt&gt;ul-Tag&lt;/dt&gt;
 	&lt;dd&gt;Unsortierte Liste&lt;/dl&gt;
 	&lt;dt&gt;ol-Tag&lt;/dt&gt;
