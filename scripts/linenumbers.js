@@ -8,7 +8,7 @@ $(document).ready(function(){
 	});
 	
 	$(".code-snippet").each(function(){
-	    var height = $(this).height() - $(this).find("cite").height();
+	    var height = $(this).outerHeight() - $(this).find("cite").height();
 	    $(this).find(".lines").outerHeight(height);
 	  	$(this).find("code").outerHeight(height);
 	   	$(this).find(".result").outerHeight(height);

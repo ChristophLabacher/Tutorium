@@ -220,6 +220,8 @@ blockquote	{
 	code	{
 		width: 50% !important;
 		border-radius: 0;
+		border: 1px solid $lightgrey;
+		border-left: none;
 	}
 	.result	{
 		font-family: "Fira Sans", Helvetica, Arial, sans-serif;
@@ -227,7 +229,8 @@ blockquote	{
 		float: left;
 		display: block;
 		color: $darkgrey;
-		border: 1px solid $verylightgrey;
+		border: 1px solid $lightgrey;
+		border-left: none;
 		border-radius: 0 3px 3px 0;				
 		padding: 1rem;
 		overflow-wrap: normal;
