@@ -80,6 +80,10 @@ i, em	{
 	font-weight: 200;
 }
 
+small	{
+	font-size: 0.6rem;
+}
+
 p	{
 	margin-bottom: 0.7rem;
 }
@@ -97,10 +101,11 @@ h1:first-child	{
 }
 
 h2	{
+	border-top: 1px solid $verylightgrey;
 	font-size: 1.2rem;
 	line-height: 1em;
 	font-weight: 500;
-	margin-top: 2rem;
+	margin-top: 5rem;
 	padding-top: 1rem;
 	margin-bottom: 1rem;
 }
@@ -108,12 +113,14 @@ h2	{
 h2:first-child	{
 	padding-top: 0;
     margin-top: 0;
+    border-top: none;
 }
 
 h3	{
 	line-height: 1em;
 	font-weight: 500;
 	padding-top: 1rem;
+	margin-top: 1rem;
 	padding-bottom: 0.6rem;	
 }
 
@@ -177,7 +184,7 @@ blockquote	{
 
 .tag	{
 	font-family: "Fira Mono", monospace;
-	font-size: 13px;	
+	font-size: 0.85em;	
 	padding: 0 2px;
 	border-radius: 3px;
 	color: $darkgrey;
@@ -187,7 +194,8 @@ blockquote	{
 .code-snippet	{
 	font-family: "Fira Mono", monospace;
 	font-size: 13px;	
-	margin-bottom: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 	width: 100%;			
 	
 	.lines	{
