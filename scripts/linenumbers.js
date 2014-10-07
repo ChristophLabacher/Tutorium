@@ -9,9 +9,9 @@ $(document).ready(function(){
 	
 	$(".code-snippet").each(function(){
 	    var height = $(this).outerHeight() - $(this).find("cite").height();
-	    $(this).find(".lines").outerHeight(height);
-	  	$(this).find("code").outerHeight(height);
-	   	$(this).find(".result").outerHeight(height);
+	    $(this).children(".lines").outerHeight(height);
+	  	$(this).children("code").outerHeight(height);
+	   	$(this).children(".result").outerHeight(height);
 	    
 	});
 });
