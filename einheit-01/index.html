@@ -20,6 +20,17 @@
 
 		<!-------------------------<!--! SCRIPTS ------------------------------>
 		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55884850-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 		
 	</head>
 
@@ -45,8 +56,13 @@
 					<a href="#einführunghtml">Einführung HTML</a><br>
 					<a href="#grundaufbaueineshtmldokuments">Grundaufbau eines HTML-Dokuments</a><br>
 					<a href="#hyperlinks">Hyperlinks</a><br>
-					<a href="#ausblick">Ausblick</a><br>
-					<a href="#downloads">Downloads</a>
+					<a href="#begriffe">Begriffe</a><br>
+					<a href="#kommentare">Kommentare</a><br>	
+					<a href="#doctype">DOCTYPE</a><br>
+					<a href="#informationenimheadtag">Informationen im head-Tag</a>	<br>	
+					<a href="#blockelementevsinlinelemente">Bock-Elemente vs. Inline-Elemente</a><br>
+					<a href="#texteundtypografie">Texte & Typografie</a><br>
+					<a href="#listen">Listen</a>
 				</p>
 
 
@@ -202,15 +218,336 @@
 <code>
 <pre>&lt;a href=&quot;#zielelement&quot;&gt;Anzuzeigender Text&lt;/a&gt;</pre>
 </code>
+</div>			
+
+				<h2 id="begriffe">Begriffe</h2>
+
+				<p>HTML ist eine <b>Auszeichnungssprache</b>; die Strukturierung des Dokuments erfolgt also mit Hilfe von <b>Tags</b>. Es gibt öffnende und schließende Tags. Tags können bestimmte <b>Attribute</b> mit <b>Werten</b> haben; diese werden im öffnenden Tag notiert.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;tag attribut=&quot;wert&quot;&gt;Inhalt&lt;/tag&gt;</pre>
+</code>
+</div>
+
+				<p>Attribute spielten vor allen Dingen in den späten 90ern, als CSS noch nicht verbreitet war, eine große Rolle, da hier das komplette (rudimentäre) Styling der Website durch Attribute erfolgte. Durch CSS nahm die Bedeutung der meisten Attribute enorm ab. In HTML5 dürfen beliebige eigene Attribute eingeführt werden. Attribute gewinnen also zunehmend wieder an Bedeutung.</p>
+				
+				<h2 id="kommentare">Kommentare</h2>
+				
+				<p>Durch seine einfache Struktur braucht ein HTML-Dokument nur selten Kommentare (vom Browser nicht dargestellte Texte). Anders als bei den meisten Sprachen gibt es bei HTML nur eine Art von Kommentar, die sowohl ein- als auch mehrzeilig sein kann. Das öffnende und schließende Tag eines Kommentars entspricht nicht der gewohnten HTML-Syntax:</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;!-- Auskommentierter Text --&gt;</pre>
+</code>
 </div>				
 
-				<h2 id="ausblick">Ausblick</h2>
+				<p><strong>Achtung: Kommentare können nicht ineinander verschachtelt werden!</strong></p>
 
-				<p>In der zweiten Einheit werden die zwischen den <span class="tag">&lt;head&gt;</span>-Tags abgelegten Informationen genauer betrachtet, außerdem werden die Tags zur typografischen Formatierung von Texten und die Tags für verschiedene Arten von Listen behandelt.</p>
+				
+				<h2 id="doctype">DOCTYPE</h2>
+				
+				<p>Über die Jahre wurden verschieden Versionen von HTML entwickelt. Damit der Browser weiß, in welcher Version von HTML das Dokument geschrieben ist, wird an oberster Stelle im Dokument, also noch vor dem <span class="tag">&lt;html&gt;</span>-Tag, das DOCTYPE-Tag eingefügt. Bei früheren Versionen war das DOCTYPE-Tag furchtbar lang, komplex und unübersichtlich; bei der für uns relevanten, aktuellen Version HTML5 wurde das DOCTYPE-Tag stark gekürzt:</p>
 
-				<h2 id="downloads">Downloads</h2>
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;!DOCTYPE HTML&gt;</pre>
+</code>
+</div>	
+				
+				<h2 id="informationenimheadtag">Informationen im <span class="tag">&lt;head&gt;</span>-Tag</h2>
+				
+				<p>Im <span class="tag">&lt;head&gt;</span>-Tag eines HTML-Dokuments werden verschiedene wichtige Informationen abgelegt, die sich zwar auf das Verhalten des Browsers auswirken, von diesem aber nicht innerhalb der Website angezeigt werden.</p>
+				
+				<h3>Informationen</h3>
 
-				<p><a href="einheit-01.zip">einheit-01.zip</a></p>
+				<p>Im <span class="tag">&lt;title&gt;</span>-Tag wird der Titel der Seite angegeben, wie er oben im Browserfenster angezeigt werden soll. Dieses Tag ist laut HTML-Spezifikation zwingend erforderlich.</p>
+				
+				<p>Das <span class="tag">&lt;base&gt;</span>-Tag wird selten verwendet und gibt die Basis-URL der Website an, das bedeutet die URL, von der aus alle relativ angegeben Pfade im Dokument ausgehen.</p>
+								
+				<p>Es gibt noch einige weitere Informations-Tags, diese sind aber veraltet und wurden weitgehend durch die <span class="tag">&lt;meta&gt;</span>-Tags ersetzt.</p>
+								
+				<h3><span class="tag">&lt;meta&gt;</span>-Tags</h3>
+				
+				<p>Die meisten Informationen über den Inhalt der Website, die für Suchmaschinen relevant sind, werden über  <span class="tag">&lt;meta&gt;</span>-Tags in das Dokument geschrieben:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;meta name=&quot;author&quot; content=&quot;Name des Autors&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Kurze Beschreibung des Inhalts der Website&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;Wichtige Stichw&ouml;rter/Suchbegriffe zum Inhalt der Website&quot;&gt;
+&lt;meta name=&quot;date&quot; content=&quot;Erstellungsdatum&quot;&gt;
+&lt;meta http-equiv=&quot;language&quot; content=&quot;deutsch, de&quot;&gt;</pre>
+</code>
+</div>	
+
+				<p><span class="tag">&lt;meta&gt;</span>-Tags sind nicht zwingend in einem Dokument erforderlich. Folgendes Tag sollte aber generell in jeder Seite auftauchen:</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;meta charset=&quot;utf-8&quot;&gt;</pre>
+</code>
+</div>	
+
+				<p>Damit wird dem Browser mitgeteilt, welchen Zeichensatz die HTML-Datei verwendet. Das ist bei der Verwendung von Sonderzeichen und insbesondere Umlauten relevant. Mit UTF-8 ist man generell auf der sicheren Seite. <strong>Achtung: die Datei muss auch tatsächlich in diesem Format codiert sein!</strong></p>
+				
+				
+				<h3>Eingebundene Dateien</h3>
+				
+				<p>Mit di <span class="tag">&lt;link&gt;</span>-Tag können andere Dateien in das Dokument eingebunden werden. Es wird am häufigsten für CSS-Dateien benutzt, kann aber zum Beispiel auch das Icon der Website einbinden:</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;link rel=&quot;shortcut icon&quot; href=&quot;/favicon.ico&quot; /&gt;</pre>
+</code>
+</div>	
+				
+				<p>Zum Einbinden von Javascript-Dateien wird das <span class="tag">&lt;script&gt;</span>-Tag verwendet.</p>
+				
+				<p>Die genaue Syntax zum Einbinden von CSS und Javascript wird zu gegebenem Zeitpunkt besprochen.</p>
+
+				<h3>Beispiel eines üblichen Dokument-Kopfes</h3>
+				
+<div class="code-snippet cf">
+<cite><a href="dokumentkopf.html" target="_blank">/einheit-01/dokumentkopf.html</a></cite>
+<div class="lines"></div>
+<code>
+<pre>&lt;head&gt;
+
+    &lt;!-------------------------&lt;!--! META ------------------------------&gt;
+    &lt;title&gt;Website-Titel&lt;/title&gt;
+    
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    
+    &lt;meta name=&quot;description&quot; content=&quot;Kurze Beschreibung des Inhalts der Website&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;Wichtige Stichw&ouml;rter/Suchbegriffe zum Inhalt der Website&quot;&gt;		
+
+    &lt;!-------------------------&lt;!--! FAVICON ------------------------------&gt;
+    &lt;link rel=&quot;icon&quot; href=&quot;imgs/sprites/favicon.ico&quot; type=&quot;image/png&quot;&gt;
+
+    &lt;!-------------------------&lt;!--! STYLES ------------------------------&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/styles/reset.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/styles/style.css&quot;&gt;
+    
+    &lt;!-------------------------&lt;!--! LIBARIES ------------------------------&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/scripts/libaries/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-------------------------&lt;!--! SCRIPTS ------------------------------&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;		
+    		
+&lt;/head&gt;</pre>
+</code>
+</div>	
+			
+
+				<h2 id="blockelementevsinlinelemente">Block-Elemente vs. Inline-Elemente</h2>
+				
+				<p>Man unterscheidet bei HTML-Tags zwischen Block- und Inline-Elementen.</p>
+
+				<p>Block-Elemente zeichnet aus, dass vor und nach ihnen automatisch ein Zeilenumbruch erzeugt wird. Typische Beispiele für Block-Elemente sind Absätze, Überschriften (s.u.) oder Struktur gebende Tags (z.B. <span class="tag">&lt;article&gt;</span>). Block-Elemente können andere Block-Elemente und Inline-Elemente enthalten.</p>
+				
+				<p>Inline-Elemente erzeugen hingegen keinen Zeilenumbruch. Typische Beispiele sind die Tags zur Textauszeichnung (s.u.), also zum Beispiel solche, um kursiv oder fett zu druckenden Text zu markieren. Inline-Elemente müssen sich innerhalb von Block-Elementen oder anderen Inline-Elementen befinden und dürfen nur Inline-Elemente enthalten.</p>
+				
+				<h2 id="texteundtypografie">Texte & Typografie</h2>
+				
+				<p>Da HTML für das Strukturieren digitaler wissenschaftlicher Dokumente entwickelt wurde, gibt es viele Tags, die eine genaue Textstrukturierung erlauben. Teilweise wirken sich Tags nicht auf das Aussehen eines Textes aus, können aber semantisch im Dokument Sinn ergeben, zum Beispiel um auf eine bestimmte Art des Inhalts hinzuweisen.</p>
+
+				<h3>Überschriften</h3>
+				
+				<p>Es können Überschriften ersten bis sechsten Grades ausgezeichnet werden. Die Tags hierfür heißen, abgeleitet von „<i>heading</i>“, &lt;h1&gt; bis &lt;h6&gt;.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1&gt;&Uuml;berschrift ersten Grades&lt;/h1&gt;
+&lt;h2&gt;&Uuml;berschrift zweiten Grades&lt;/h2&gt;
+&lt;h3&gt;&Uuml;berschrift dritten Grades&lt;/h3&gt;
+&lt;h4&gt;&Uuml;berschrift vierten Grades&lt;/h4&gt;
+&lt;h5&gt;&Uuml;berschrift f&uuml;nften Grades&lt;/h5&gt;
+&lt;h6&gt;&Uuml;berschrift sechsten Grades&lt;/h6&gt;</pre>
+</code>
+</div>				
+
+				<h3>Absätze</h3>
+
+				Ein Textabsatz (<i>paragraph</i>) wird durch das <span class="tag">&lt;p&gt;</span>-Tag gekennzeichnet. Üblicherweise folgt auf das <span class="tag">&lt;p&gt;</span>-Tag ein Abstand.
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;p&gt;Ein Absatz eines l&auml;ngeren Textes&lt;/p&gt;</pre>
+</code>
+</div>	
+
+				<p>Ein Zeilenumbruch (<i>linebreak</i>) innerhalb eines Absatzes wird durch das <span class="tag">&lt;br&gt;</span>-Tag erzeugt, sollte aber möglichst sparsam eingesetzt werden.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>Ein Zeilenumbruch erreicht man durch ein einfaches Tag.&lt;br&gt;
+Es besitzt kein schließendes Pendant.</pre>
+</code>
+</div>								
+
+				<h3>Textauszeichnung</h3>
+				
+				<p>Diese Tags können innerhalb eines Textabschnitts/einer Textzeile verwendet werden. Teilweise erreichen verschiedene Tags visuell das gleiche Ergebnis. Um eine möglichst gute Semantik des Dokumentes zu erreichen, sollten jedoch vom Kontext abhängig bestimmte Tags verwendet werden.</p>
+
+				<p>Folgende Tags ändern die Darstellung von Text, der sich vom restlichen Text absetzt, aber keine spezielle Betonung oder Wichtigkeit besitzt. Sie sollen verwendet werden, wenn eine rein <strong>optische</strong> Veränderung erwünscht ist.</p>
+				
+				<p>Das <span class="tag">&lt;b&gt;</span>-Tag markiert Text, der fettgedruckt (<i>bold</i>) dargestellt wird.</p>
+				
+				<p>Das <span class="tag">&lt;i&gt;</span>-Tag markiert Text, der üblicherweise kursiv (<i>italic</i>) dargestellt wird, beispielsweise ein Fremdwort, ein Fachbegriff oder ein Name.</p>
+				
+				<p>Das <span class="tag">&lt;u&gt;</span>-Tag markiert Text, der unterstrichen (<i>underlined</i>) wird.</p>
+				
+				<p>Das <span class="tag">&lt;s&gt;</span>-Tag markiert Text, der durchgestrichen (<i>strikethrough</i>) ist.</p>
+				
+				<p>Das <span class="tag">&lt;small&gt;</span>-Tag wird für kleiner geschriebenen Text verwendet.</p>
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;b&gt;Fett&lt;/b&gt;&lt;br&gt;
+&lt;i&gt;Kursiv&lt;/i&gt;&lt;br&gt;
+&lt;u&gt;Unterstrichen&lt;/u&gt;&lt;br&gt;
+&lt;s&gt;Durchgestrichen&lt;/s&gt;&lt;br&gt;
+&lt;small&gt;Klein&lt;/small&gt;</pre>
+</code>
+<div class="result">
+<b>Fett</b><br>
+<i>Kursiv</i><br>
+<u>Unterstrichen</u><br>
+<s>Durchgestrichen</s><br>
+<small>Klein</small>
+</div>
+</div>					
+				
+				<p>Folgende Tags sollten im Falle einer spezielle Betonung oder Wichtigkeit verwendet werden. Sie zeigen eine <strong>logische</strong> Veränderung im Kontext des Textes an.</p>
+				
+				<p>Das <span class="tag">&lt;em&gt;</span>-Tag (<i>emphasis</i>) wird üblicherweise kursiv dargestellt und steht für eine besondere Betonung (beispielsweise eines einzelnen Wortes in einem Satz).</p>
+				
+				<p>Das <span class="tag">&lt;strong&gt;</span>-Tag wird standardmäßig fettgedruckt dargestellt und markiert Text, der besonders hervorgehoben werden soll, zum Beispiel eine Warnung.</p>
+				
+				<p>Das <span class="tag">&lt;mark&gt;</span>-Tag markiert Text, der in einem bestimmten Kontext relevant ist, also zum Beispiel die für den Kontext relevante Stelle in einem längeren Zitat oder jedes Auftauchen eines Suchbegriffes in einem Text.</p>
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;em&gt;Betont&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Hervorgehoben&lt;/strong&gt;&lt;br&gt;
+&lt;mark&gt;Relevant&lt;/mark&gt;</pre>
+</code>
+<div class="result">
+<em>Betont</em><br>
+<strong>Hervorgehoben</strong><br>
+<mark>Relevant</mark>
+</div>
+</div>					
+				
+				<p>Während es keinen Sinn hat, das Aussehen der rein optischen Tags später mit CSS zu verändern (<span class="tag">&lt;b&gt;</span> für bold sollte immer fettgedruckt bleiben), kann es bei den logischen Tags durchaus angemessen sein (<span class="tag">&lt;strong&gt;</span> könnte auch als roter Text dargestellt werden).</p>
+				
+				<p>Einige Tags müssen nicht zwingend eine optische Veränderung bewirken, sondern können auch nur die Art des Inhalts spezifizieren:</p>
+				
+				<p>Das <span class="tag">&lt;time&gt;</span>-Tag markiert eine Uhrzeit (im 24-Stunden-Format).</p>
+				
+				<p>Das <span class="tag">&lt;blockquote&gt;</span>-Tag markiert einen Textabschnitt, der ein Zitat ist. Das Pendant, das innerhalb eines Absatzes verwendet werden soll, ist das <span class="tag">&lt;q&gt;</span>-Tag. Mit dem <span class="tag">&lt;cite&gt;</span>-Tag sollte die dazugehörige Quelle markiert werden.</p>
+				
+				<p>Das <span class="tag">&lt;code&gt;</span>-Tag markiert einen Code-Block (dieser wird meist in einer Monospace-Font dargestellt). <strong>Achtung: Tags innerhalb dieses Tags werden vom Browser trotzdem als HTML-Interpretiert!</strong></p>
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;time&gt;24:00&lt;/time&gt;&lt;br&gt;
+&lt;q&gt;Zitat&lt;/q&gt;&lt;br&gt;
+&lt;cite&gt;Quelle&lt;/cite&gt;&lt;br&gt;
+&lt;code&gt;Code&lt;/code&gt;</pre>
+</code>
+<div class="result">
+<time>24:00</time><br>
+<q>Zitat</q><br>
+<span class="cite">Quelle</span><br>
+<code>Code</code>
+</div>
+</div>	
+
+				<h2 id="listen">Listen</h2>
+				
+				<p>Listen spielen in HTML eine große Rolle: Sie werden nicht nur für Aufzählungen, sondern häufig auch für Menüstrukturen o. ä. eingesetzt.</p>
+				
+				<p>Ein Listenelement wird immer durch das <span class="tag">&lt;li&gt;</span>-Tag (<i>list</i>) markiert. Um was für eine Art von Liste es sich handelt, ergibt sich aus dem umschließenden Tag: <span class="tag">&lt;ul&gt;</span> (<i>unordered list</i>) für Listen mit einfachen Aufzählungszeichen und <span class="tag">&lt;ol&gt;</span> (<i>ordered list</i>) für nummerierte Listen.</p>
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h3&gt;Unsortierte Liste&lt;/h3&gt;
+&lt;ul&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Sortierte Liste&lt;/h3&gt;
+&lt;ol&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+&lt;/ol&gt;</pre>
+</code>
+<div class="result">
+<h3>Unsortierte Liste</h3>
+<ul>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+</ul>
+
+<h3>Nummerierte Liste</h3>
+<ol>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+	<li>Listenelement</li>
+</ol>
+</div>
+</div>
+
+				<h3>Definitionslisten</h3>
+				
+				<p>Eine besondere Liste ist die Definitionsliste. Sie wird durch das <span class="tag">&lt;dl&gt;</span>-Tag (<i>definition list</i>) erzeugt. In ihr befinden sich ein oder mehrere <span class="tag">&lt;dt&gt;</span>-Tags (<i>definition term</i>), die einen zu erklärenden Text enthalten. Auf jedes dt-Tag müssen ein oder mehrere <span class="tag">&lt;dd&gt;</span>-Tags (<i>definition</i>) folgen, die die zugehörige Erklärung enthalten.</p>
+
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h3&gt;Defintionsliste&lt;/h3&gt;
+&lt;dl&gt;
+	&lt;dt&gt;li-Tag&lt;/dt&gt;
+	&lt;dd&gt;Listenelement&lt;/dd&gt;
+	&lt;dt&gt;ul-Tag&lt;/dt&gt;
+	&lt;dd&gt;Unsortierte Liste&lt;/dl&gt;
+	&lt;dt&gt;ol-Tag&lt;/dt&gt;
+	&lt;dd&gt;Nummerierte Liste&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+</code>
+<div class="result">
+<h3>Defintionsliste</h3>
+<dl>
+	<dt>li-Tag</dt>
+	<dd>Listenelement</dd>
+	<dt>ul-Tag</dt>
+	<dd>Unsortierte Liste</dd>
+	<dt>ol-Tag</dt>
+	<dd>Nummerierte Liste</dd>
+</dl>
+</div>
+</div>								
+	
 				
 			</article>
 
