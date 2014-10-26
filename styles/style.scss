@@ -284,6 +284,11 @@ h1  + .code-snippet, h2  + .code-snippet, h3 + .code-snippet	{
 	}	
 }
 
+img 	{
+	width: 100%;
+	display: block;
+	margin: 4rem 0;
+}
 /************************
 *		STRUCTURE		*
 ************************/
