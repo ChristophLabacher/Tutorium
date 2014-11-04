@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 3 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 3</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#bilder">Bilder</a> <br>
+					<a href="#kontur">Kontur</a> <br>
+					<a href="#das-box-modell">Das Box-Modell</a> <br>
+					<a href="#klassen">Klassen</a> <br>
+					<a href="#ids">IDs</a> <br>
+					<a href="#vererbung">Vererbung</a> <br>
+					<a href="#div-und-span">&lt;div&gt; und &lt;span&gt;</a>
+				</p>
+				
+				<h2 id="bilder">Bilder</h2>
+				
+				<p>Um Bilder in ein HTML-Dokument einzubetten gibt es das <span clas="tag">&lt;img&gt;</span>-Tag. Das Tag besitzt kein schließendes Pendant. Der Pfad zum Bild wird als Wert des <span class="tag">src</span>-Attributs angegeben. Zusätzlich kann das  <span class="tag">alt</span>-Attribut mit einem alternativ Text, beispielsweise für Blinde, angegeben werden.
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;img src="imgs/bild-01.png" alt="Alternativtext"&gt;</pre></code></div>
+
+				<h2 id="kontur">Kontur</h2>
+				
+				<p>Mit Hilfe von CSS ist es möglich, Elementen eine Kontur zu geben. Hierfür gibt es drei Eigenschaften:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+}</pre></code></div>
+
+				<p><span class="tag">border-style</span> gibt die Art der Kontur an. Mögliche Werte sind <span class="tag">solid</span>, <span class="tag">dotted</span> und <span class="tag">dashed</span>.</p>
+				
+				<p><span class="tag">border-width</span> gibt die Breite der Kontur an.</p>
+				
+				<p>Mit <span class="tag">border-color</span> wird die Farbe der Kontur definiert.</p>
+				
+				<p>Häufig wird für die drei Werte folgende Kurzschreibweise verwendet:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border: 1px solid #000000;
+}</pre></code></div>
+
+				<p>Es ist möglich, für jeder Seite des Elements eigene Kontureigenschaften zuzuweisen. Dafür wird folgende Syntax verwendet:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-top: 1px solid #000000;
+	border-bottom: 3px solid #FF0000;
+	border-left: 5px dashed #0000FF;
+	border-right: 1px solid #00FFFF;
+}</pre></code></div>
+
+				<p>Sollen nicht alle drei, sondern nur ein Wert für eine Seite angepasst werden, so ist auch dies möglich:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-top-style: dashed;
+	border-bottom-width: 2px;
+}</pre></code></div>
+
+				<h2 id="das-box-modell">Das Box-Modell</h2>
+
+				<p>Mit Hilfe der Strukturtags, die aus <a href="../einheit-02/#tags-zur-strukturierung">Einheit 2</a> bekannt sind, können wir nun also das HTML-Dokument in die Bereiche einteilen, aus denen später das Layout bestehen wird. Um den nächsten Schritt in Richtung des finalen Layouts zu gehen, gilt es nun die Größe der Elemente festzulegen. Hierfür gibt es das CSS Box-Modell.</p>
+
+				<p>Das im folgenden erklärte Box-Modell funktioniert allerdings nur bei Block-Elementen (z. B. die Strukturtags, <span class="tag">&lt;p&gt;</span>, <span class="tag">&lt;h1&gt;</span>). Der Unterschied zwischen Block- und Inline-Elementen ist aus <a href="../einheit-01/#blockelementevsinlinelemente">Einheit 1</a> bekannt.</p>
+
+				<p><strong>Achtung: Das ursprüngliche Box-Modell von CSS ist umintuitiv und für die meisten Fälle komplett ungeeignet. Deshalb wird in diesem Tutorium nur das moderne Box-Modell verwendet – dieses ist aber nicht standardmäßig aktiv.</strong></p>
+				
+				<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft box-sizing auf border-box gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;body&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>body	{
+	box-sizing: border-box;
+}</pre></code></div>
+
+				<p>Um die Größe eines Objekts anzugeben gibt es in CSS drei Eigenschaften: die Größe (<span class="tag">width</span> & <span class="tag">heigth</span>), den Innenabstand (<span class="tag">padding</span>) und den Außenabstand (<span class="tag">margin</span>).</p>
+
+				<p>Mit <span class="tag">width</span> und <span class="tag">height</span> wird die Breite und die Höhe des Objekts angegeben. Mit <span class="tag">padding</span> der Abstand, den der sich im Objekt befindende Inhalt vom Rand des Elements haben soll. <span class="tag">margin</span> gibt den Abstand an, den das Objekt zum nächsten Objekt haben soll, bzw. denn das Objekt vom Rand seines Elternelements hat.</p>
+
+				<p>Beim modernen Box-Modell sind die Breite der Kontur (<span class="tag">border-width</span>) und der Innenabstand (<span class="tag">padding</span>) in den Angaben für Breite (<span class="tag">width</span>) und Höhe (<span class="tag">height</span>) enthalten. </p>
+				
+				<img src="imgs/04.png">
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	width: 500px;
+	height: 400px;
+	padding: 25px;
+	margin: 50px;
+	border: 1px solid black;
+}</pre></code></div>
+
+				<p>Dieser Code bewirkt also, dass das Element insgesamt 500px breit und 400px hoch ist. Der sich im Element befindende Inhalt kann also 448px (500px - 25px - 25px - 1px - 1px: Breite abzügliche linkem und rechtem Innenabstand und linker und rechter Kontur) breit und 348px (400px - 25px - 25px - 1px - 1px: Höhe abzüglich oberem und unterem Innenabstand und oberer und unterer Kontur) hoch sein.</p>
+
+				<p>Das nächste Element muss mindestens 50px entfernt von diesem Element sein. Dabei ist wichtig, dass die Außenabstände zweier Elemente nicht zusammenaddiert, sondern miteinander verrechnet werden. Sollte auf das <span class="tag">&lt;article&gt;</span>-Element also noch ein <span class="tag">&lt;article&gt;</span>-Element folgen, so betr&auml;gt der Abstand zwischen den beiden 50px. Sollte auf das <span class="tag">&lt;article&gt;</span>-Element ein <span class="tag">&lt;footer&gt;</span>-Element folgen, dass einen Au&szlig;enabstand von 70px hat, so wird der Abstand zwischen den beiden Elementen 70px sein.</p>
+
+				<p><span class="tag">padding</span> und <span class="tag">margin</span> können, genau wie <span class="tag">border</span>, auch für einzelne Seiten angegeben werden:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	padding-top: 25px;
+	padding-right: 50px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+}</pre></code></div>
+
+				<p>Hierfür gibt es auch eine Kurzschreibweise. Für <span class="tag">margin</span> und <span class="tag">padding</span> können auch vier Werte in Folge angegeben werden. Diese geben dann die Werte für <span class="tag">top</span>, <span class="tag">right</span>, <span class="tag">bottom</span> und <span class="tag">left</span> an. Der Code oben kann also auch so geschrieben werden:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	padding: 25px 50px 25px 50px;
+}</pre></code></div>
+
+				<h2 id="klassen">Klassen</h2>
+				
+				<p>Mit den bisher bekannten CSS-Selektoren (<a href="../einheit-02/#einfache-selektoren">Einheit 2</a>) ist es möglich, das Aussehen jedes Elements, das mit einem bestimmten Tag ausgezeichnet ist, zu beeinflussen (z. B. <span class="tag">h1</span> oder <span class="tag">p</span>) oder die Auswahl genauer zu fokussieren, in dem man nur die Elemente, die mit einem bestimmten Tag ausgezeichnet sind auswählt, die sich innerhalb eines anderen, spezifizierten Tag befinden (z. B. <span class="tag">header h1</span>, <span class="tag">article p strong</span>). Mit Hilfe von Klassen ist es zusätzlich möglich, ganz bestimmte, von Hand im HTML-Code gekennzeichnete Elemente auszuwählen (sowohl abhängig von ihrem Tag (bestimmtest Tag mit bestimmter Klasse), als auch unabhängig davon (bestimmte Klassen)).</p>
+
+				<p>Eine Klasse wird als Wert des Attributs <span class="tag">class</span> in das öffnende Tag eines HTML-Elements geschrieben. Der Name der Klasse ist frei wählbar, Groß- und Kleinschreibung sind unerheblich. Der Name darf nicht mit einer Zahl beginnen und darf kein Leerzeichen enthalten (es ist Konvention stattdessen einen Bindestrich zu verwenden). Eine Klasse darf beliebig oft im Dokument bei beliebigen Elementen vorkommen.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1 class=&quot;farbig&quot;&gt;&Uuml;berschrift&lt;/h1&gt;
+
+&lt;p class=&quot;farbig&quot;&gt;Beispieltext 1&lt;/p&gt;
+&lt;p&gt;Beispieltext 2&lt;/p&gt;</pre></code></div>
+
+				<p>Um eine Klasse als Selektor in CSS zu verwenden, wird vor den Klassenname ein Punkt geschrieben. Wird nur die Klasse als Selektor angegeben, werden alle Elemente, die mit dieser Klasse gekennzeichnet sind ausgewählt:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>.farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Durch diesen CSS-Code werden alle Elemente mit der Klasse <span class="tag">farbig</span> rot dargestellt, im oberen Beispiel die Überschrift und der Beispieltext 1.</p>
+
+				<p>Sollen nur Elemente, die mit einem bestimmten Tag ausgezeichnet sind und die Klasse besitzen, selektiert werden, so wird die Klasse direkt an das Tag gehängt:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p.farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Durch diesen CSS-Code wird jedes <span class="tag">&lt;p&gt;</span>-Tag mit der Klasse <span class="tag">farbig</span> rot dargestellt, im oberen Beispiel nur der Beispieltext 1.</p>
+
+				<p>Es ist wichtig, dass zwischen Tag und Klasse kein Punkt steht, da der Klassenselektor auch mit den aus Einheit 1 bekannten einfachen Selektoren kombiniert werden kann:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>p .farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Durch diesen CSS-Code wird jedes Beliebige Tag mit der Klasse <span class="tag">farbig</span> rot dargestellt, dass sich innerhalb eines <span class="tag">&lt;p&gt;</span>-Tags befindet.</p>
+
+				<h2 id="ids">IDs</h2>
+
+				<p>Ähnlich wie Klassen funktionieren auch IDs:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1 id=&quot;title&quot;&gt;&Uuml;berschrift&lt;/h1&gt;</pre></code></div>
+
+				<p>Der entsprechende CSS-Selektor lautet:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>#title	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>IDs dürfen aber nur ein einziges Mal im Dokument vorkommen. IDs werden heute <b>nicht</b> mehr eingesetzt um sie als CSS-Selektor zu verwenden (für Javascript durchaus). IDs bieten keinerlei Vorteile gegenüber Klassen (auch Klassen <em></em>müssen nicht mehrmals eingesetzt werden) und beschränken die Flexibilität und Skalierbarkeit des Codes enorm.</p>
+				
+				<h2 id="vererbung">Vererbung</h2>
+				
+				<p>Beginnt man im CSS Klassen einzusetzen, so muss man sich unbedingt mit Vererbung auseinandersetzen. Der CSS-Code, der auf ein Element angewendet wird, wird automatisch auch auf alle Kinder weitergegeben.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>body	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Dieser CSS-Code ver&auml;ndert also nicht nur die Farbe des Textes, der sich direkt <span class="tag">&lt;body&gt;</span>-Tag befindet, sondern auch die Textfarbe aller von diesem Element abstammender Elemente, das bedeutet aller Elemente, die sich innerhalb dieses Tags befinden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	color: #00FF00;
+}</pre></code></div>
+
+				<p>Durch den oberen Beispiel-Code w&auml;re nun also aller Text, auch &Uuml;berschriften, rot. Dieser CSS-Code &uuml;berschreibt nun die an das <span class="tag">&lt;h1&gt;</span>-Tag vererbte Eigenschaft aber f&uuml;r dieses. Die &Uuml;berschrift wird nun gr&uuml;n Dargestellt.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>article h1	{
+	color: #0000FF;
+}</pre></code></div>
+
+				<p>Durch den zweiten Beispiel-Code werden nun also alle <span class="tag">&lt;h1&gt;</span>-Tags auf der Seite gr&uuml;n dargestellt. Dieser CSS-Code &uuml;berschreibt nun diese Eigenschaft des <span class="tag">&lt;h1&gt;</span>-Tags f&uuml;r alle <span class="tag">&lt;h1&gt;</span>-Tags, die sich innerhalb eines <span class="tag">&lt;article&gt;</span>-Tags befinden. Dies liegt aber nicht an der Reihenfolge der Definitionen im CSS-Code, diese ist v&ouml;llig unerheblich, sondern daran, dass der hier verwendete Selektor spezifischer ist. Das bedeutet, die Angabe &bdquo;alle <span class="tag">&lt;h1&gt;</span>-Tags in einem <span class="tag">&lt;article&gt;</span>-Tag&ldquo; ist genauer als &bdquo;alle <span class="tag">&lt;h1&gt;</span>-Tags&ldquo;. Je spezifischer ein Selektor ist, desto wichtiger sind die definierten Eigenschaften und desto eher &uuml;berschreiben sie bereits definierte oder vererbte Eigenschaften.</p>
+
+				<p>Nach spezifischer als eine Reihe von Tags, wie im dritten Beispiel-Code ist die Angabe einer Klasse.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>h1.title	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Dieser CSS-Code w&uuml;rde also die Textfarbe auch f&uuml;r <span class="tag">&lt;h1&gt;</span>-Tags &auml;ndern, die sich innerhalb des <span class="tag">&lt;article&gt;</span>-Tags befinden, wenn sie die Klasse <span class="tag">title</span> besitzen.</p>
+
+				<p>Durch Vererbung und &Uuml;berschreiben von Eigenschaften ist es m&ouml;glich, Eigenschaften die f&uuml;r alle oder viele Elemente gelten sollen nicht immer wieder zu schreiben, sondern diese nur einmal f&uuml;r ein Eltern-Element zu definieren. Ein typisches Beispiel w&auml;re die Schriftfamilie (<span class="tag">font-family</span>), die h&auml;ufig als Eigenschaft des <span class="tag">&lt;body&gt;</span>-Tags definiert wird. Sollten dann zum Beispiel alle <span class="tag">&lt;h1&gt;</span>-Tags eine andere Schriftfamilie zugewiesen bekommen, so kann die vom <span class="tag">&lt;body&gt;</span>-Tag vererbte Familie leicht &uuml;berschreiben werden.</p>
+
+				<h2 id="div-und-span"><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span></h2>
+
+				<p>Manchmal reichen die vorhanden HTML-Tags nicht aus und es w&auml;re praktisch eigene Tags zu definieren. In diesem Fall kommen die Tags <span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> ins Spiel.</p>
+
+				<p>In diesem Dokument sind zum Beispiel alle HTML-Tags anders dargestellt als normaler Text: sie sind in einer Monospace-Schrift geschrieben und haben eine graue Hintergrundfarbe. Es gibt aber kein <span class="tag">&lt;tag&gt;</span>-Tag, mit dem die Tags einfach ausgezeichnet werden k&ouml;nnten.</p>
+
+				<p><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> sind Platzhalter-Tags, die von sich aus weder eine optische Ver&auml;nderung bewirken, noch eine semantische Bedeutung besitzen. Mit Hilfe von Klassen ist es damit m&ouml;glich, eigene Tags zu erstellen. Bei <span class="tag">&lt;div&gt;</span> handelt es sich um ein Block-Tag, bei <span class="tag">&lt;span&gt;</span> um ein Inline-Tag.</p>
+
+				<p>Die HTML-Tags, denen ich eigene Eigenschaften zuweisen m&ouml;chte befinden sich im Flie&szlig;text, es ist also ein Inline-Tag n&ouml;tig. Ich zeichnete also alle Tags wie folgt aus:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;p&gt;
+Durch den zweiten Beispiel-Code werden nun also alle &lt;span class=&quot;tag&quot;&gt;&lt;h1&gt;&lt;span&gt;-Tags auf der Seite gr&uuml;n dargestellt.  [&hellip;]
+&lt;/p&gt;</pre></code></div>
+
+				<p>Und definierte dann im CSS-Code meine Eigenschaften f&uuml;r die Klasse <span class="tag">tag</span>.</p>
+
+				<p><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> sind m&auml;chtige Instrumente, da sie es erlauben von vorgegeben Schemen abzuweichen und ganz eigene Definitionen zu schaffen.</p>
+
+ 					</article>
+
+		</main>
+
+	</body>
+	
+</html>
