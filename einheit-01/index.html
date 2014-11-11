@@ -518,6 +518,46 @@ Es besitzt kein schließendes Pendant.</pre>
 </div>
 </div>
 
+				Listen eignen sich für komplexere Strukturen, da sie ineinander verschachtelt werden können:
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;h3&gt;Verschachtelte Liste&lt;/h3&gt;
+&lt;ul&gt;
+	&lt;li&gt;Titel der Unterliste 1&lt;/li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Listenelement&lt;/li&gt;
+			&lt;li&gt;Listenelement&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;li&gt;Titel der Unterliste 2&lt;/li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Listenelement&lt;/li&gt;
+			&lt;li&gt;Listenelement&lt;/li&gt;
+			&lt;li&gt;Listenelement&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;li&gt;Listenelement&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</code>
+<div class="result">
+<h3>Verschachtelte Liste</h3>
+<ul>
+	<li>Titel der Unterliste 1</li>
+		<ul>
+			<li>Listenelement</li>
+			<li>Listenelement</li>
+		</ul>
+	<li>Titel der Unterliste 2</li>
+		<ul>
+			<li>Listenelement</li>
+			<li>Listenelement</li>
+			<li>Listenelement</li>
+		</ul>
+	<li>Listenelement</li>
+</ul>
+</div>
+</div>
+
 				<h3>Definitionslisten</h3>
 				
 				<p>Eine besondere Liste ist die Definitionsliste. Sie wird durch das <span class="tag">&lt;dl&gt;</span>-Tag (<i>definition list</i>) erzeugt. In ihr befinden sich ein oder mehrere <span class="tag">&lt;dt&gt;</span>-Tags (<i>definition term</i>), die einen zu erklärenden Text enthalten. Auf jedes dt-Tag müssen ein oder mehrere <span class="tag">&lt;dd&gt;</span>-Tags (<i>definition</i>) folgen, die die zugehörige Erklärung enthalten.</p>

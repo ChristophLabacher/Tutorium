@@ -47,7 +47,7 @@
 
 				<p>
 					<a href="#bilder">Bilder</a> <br>
-					<a href="#kontur">Kontur</a> <br>
+					<a href="#konturen">Konturen</a> <br>
 					<a href="#das-box-modell">Das Box-Modell</a> <br>
 					<a href="#klassen">Klassen</a> <br>
 					<a href="#ids">IDs</a> <br>
@@ -57,14 +57,16 @@
 				
 				<h2 id="bilder">Bilder</h2>
 				
-				<p>Um Bilder in ein HTML-Dokument einzubetten gibt es das <span clas="tag">&lt;img&gt;</span>-Tag. Das Tag besitzt kein schließendes Pendant. Der Pfad zum Bild wird als Wert des <span class="tag">src</span>-Attributs angegeben. Zusätzlich kann das  <span class="tag">alt</span>-Attribut mit einem alternativ Text, beispielsweise für Blinde, angegeben werden.
+				<p>Um Bilder in ein HTML-Dokument einzubetten gibt es das <span clas="tag">&lt;img&gt;</span>-Tag. Das Tag besitzt kein schließendes Pendant. Der Pfad zum Bild wird als Wert des <span class="tag">src</span>-Attributs angegeben. Zusätzlich kann das  <span class="tag">alt</span>-Attribut mit einem alternativ Text, beispielsweise für Blinde, angegeben werden.</p>
 
 <div class="code-snippet cf">
 <div class="lines"></div>
 <code>
 <pre>&lt;img src="imgs/bild-01.png" alt="Alternativtext"&gt;</pre></code></div>
 
-				<h2 id="kontur">Kontur</h2>
+				<p><strong>Achtung, bei Bildern handelt es sich (unintuitiverweise) um <a href="../einheit-01/#blockelementevsinlinelemente">Inline-Elemente</a>!</strong></p>
+
+				<h2 id="konturen">Konturen</h2>
 				
 				<p>Mit Hilfe von CSS ist es möglich, Elementen eine Kontur zu geben. Hierfür gibt es drei Eigenschaften:</p>
 
@@ -122,7 +124,7 @@
 
 				<p><strong>Achtung: Das ursprüngliche Box-Modell von CSS ist umintuitiv und für die meisten Fälle komplett ungeeignet. Deshalb wird in diesem Tutorium nur das moderne Box-Modell verwendet – dieses ist aber nicht standardmäßig aktiv.</strong></p>
 				
-				<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft box-sizing auf border-box gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;body&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
+				<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft <span class="tag">box-sizing</span> auf <span class="tag">border-box</span> gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;body&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
 
 <div class="code-snippet cf">
 <div class="lines"></div>
@@ -179,7 +181,7 @@
 				
 				<p>Mit den bisher bekannten CSS-Selektoren (<a href="../einheit-02/#einfache-selektoren">Einheit 2</a>) ist es möglich, das Aussehen jedes Elements, das mit einem bestimmten Tag ausgezeichnet ist, zu beeinflussen (z. B. <span class="tag">h1</span> oder <span class="tag">p</span>) oder die Auswahl genauer zu fokussieren, in dem man nur die Elemente, die mit einem bestimmten Tag ausgezeichnet sind auswählt, die sich innerhalb eines anderen, spezifizierten Tag befinden (z. B. <span class="tag">header h1</span>, <span class="tag">article p strong</span>). Mit Hilfe von Klassen ist es zusätzlich möglich, ganz bestimmte, von Hand im HTML-Code gekennzeichnete Elemente auszuwählen (sowohl abhängig von ihrem Tag (bestimmtest Tag mit bestimmter Klasse), als auch unabhängig davon (bestimmte Klassen)).</p>
 
-				<p>Eine Klasse wird als Wert des Attributs <span class="tag">class</span> in das öffnende Tag eines HTML-Elements geschrieben. Der Name der Klasse ist frei wählbar, Groß- und Kleinschreibung sind unerheblich. Der Name darf nicht mit einer Zahl beginnen und darf kein Leerzeichen enthalten (es ist Konvention stattdessen einen Bindestrich zu verwenden). Eine Klasse darf beliebig oft im Dokument bei beliebigen Elementen vorkommen.</p>
+				<p>Eine Klasse wird als Wert des Attributs <span class="tag">class</span> in das öffnende Tag eines HTML-Elements geschrieben. Der Name der Klasse ist frei wählbar, Groß- und Kleinschreibung sind unerheblich. Der Name darf nicht mit einer Zahl beginnen und darf kein Leerzeichen enthalten (es ist Konvention stattdessen einen Bindestrich zu verwenden). Eine Klasse darf beliebig oft im Dokument bei beliebigen Elementen vorkommen. Ein HTML-Element kann auch mehrere Klassen besitzen, diese werden mit Leerzeichen getrennt angegeben.</p>
 
 <div class="code-snippet cf">
 <div class="lines"></div>
@@ -221,7 +223,7 @@
 }</pre></code></div>
 
 				<p>Durch diesen CSS-Code wird jedes Beliebige Tag mit der Klasse <span class="tag">farbig</span> rot dargestellt, dass sich innerhalb eines <span class="tag">&lt;p&gt;</span>-Tags befindet.</p>
-
+				
 				<h2 id="ids">IDs</h2>
 
 				<p>Ähnlich wie Klassen funktionieren auch IDs:</p>
@@ -240,7 +242,7 @@
 	color: #FF0000;
 }</pre></code></div>
 
-				<p>IDs dürfen aber nur ein einziges Mal im Dokument vorkommen. IDs werden heute <b>nicht</b> mehr eingesetzt um sie als CSS-Selektor zu verwenden (für Javascript durchaus). IDs bieten keinerlei Vorteile gegenüber Klassen (auch Klassen <em></em>müssen nicht mehrmals eingesetzt werden) und beschränken die Flexibilität und Skalierbarkeit des Codes enorm.</p>
+				<p>IDs dürfen aber nur ein einziges Mal im Dokument vorkommen. <b>IDs werden heute nicht mehr eingesetzt um sie als CSS-Selektor zu verwenden</b> (für Javascript durchaus). IDs bieten keinerlei Vorteile gegenüber Klassen (Klassen <em>müssen</em> nicht mehrmals eingesetzt werden) und beschränken die Flexibilität und Skalierbarkeit des Codes enorm.</p>
 				
 				<h2 id="vererbung">Vererbung</h2>
 				
