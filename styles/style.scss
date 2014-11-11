@@ -217,12 +217,14 @@ blockquote	{
 		display: block;
 		tab-size: 3;	
 		color: $darkgrey;
-		background-color: $verylightgrey;
 		border-radius: 0 3px 3px 0;				
 		padding: 0.5rem 0.7rem;
 		width: 94.7%;
 		overflow-wrap: normal;
 		overflow-x: auto;
+		background-color: $verylightgrey;
+		//border: 1px solid $lightgrey;
+
 	}	
 }
 
@@ -261,8 +263,17 @@ h1  + .code-snippet, h2  + .code-snippet, h3 + .code-snippet	{
 			display: list-item;
 			&:before{
 				content: "";
-				padding-right: 0;
+				padding-right: 0;	
 				margin-left: 0;
+			}
+		}
+		
+		ul ul	{
+			margin-left: 20px;
+			margin-bottom: 0;
+			
+			li	{
+				list-style: circle;
 			}
 		}
 		

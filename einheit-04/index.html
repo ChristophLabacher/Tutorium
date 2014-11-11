@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 4 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 4</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#groessenangaben">Größenangaben</a> <br>
+					<a href="#float">float</a><br>
+					<a href="#clearfix">Clearfix</a><br>
+					<a href="#display">display</a><br>
+					<a href="#normalize">Normalize</a>
+				</p>
+				
+				<h2 id="groessenangaben">Größenangaben</h2>
+				
+				<p>Bis jetzt war die einzige bekannte Einheit zum Angeben von Größen in CSS Pixel. Es gibt aber noch einige weitere Arten Größen zu spezifizieren, von denen jede besondere Stärken besitzt. Besonders im Zusammenhang mit dem <a href="../einheit-03/#das-box-modell">Box-Modell</a> ist es wichtig, die verschiedenen Einheiten zu kennen.</p>
+				
+				<h3>Pixel</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	font-size: 20px;
+}</pre></code></div>
+
+				<p>Größen können mit einem absoluten Pixelwerte spezifiziert werden.</p>
+					
+				<h3>Prozent</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 50%;
+}</pre></code></div>
+
+				<p>Eine weitere Möglichkeit ist es, einen Prozentwert anzugeben. Dieser bezieht sich immer auf die Größe des Elternelements. (Wenn das <span class="tag">&lt;div&gt;</span>-Element im oberen Beispiel sich also in einem <span class="tag">&lt;header&gt</span>-Element mit width: 500px befindet, so ist es 250px breit.) Prozentangaben für Größen sind besonders im Responsive-Design sehr häufig.</p>
+					
+				<h3>em</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	font-size: 20px;
+	width: 5em;
+	margin: 0.5em;
+}</pre></code></div>
+
+				<p>Ein em entspricht der Schriftgröße des Elements (diese kann auch vererbt sein). Im oberen Beispiel wäre das <span class="tag">&lt;div&gt;</span>-Element also 100px breit. Die Einheit em ist besonders praktisch für die Eigenschaft <span class="tag">line-height</span>, die damit relativ zur Schriftgröße angegeben werden kann.</p>
+				
+				<h3>rem</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>html	{
+	font-size: 15px;
+}	
+
+div	{
+	font-size 20px;
+	width: 5rem;
+	padding: 1rem;
+}</pre></code></div>
+
+				<p>Der Gedanke, em als eine Art Grundeinheit eines Dokuments zu verwenden und so ein Raster zu schaffen liegt nahe. Dabei stößt man jedoch schnell auf ein Problem. Möchte man zum Beispiel ein <span class="tag">&lt;h1&gt;</span>-Tag formatieren und ver&auml;ndert dessen Schriftgr&ouml;&szlig;e, so ist die Rastereinheit f&uuml;r alle weiteren Eigenschaften dieses Tags ver&auml;ndert. Daf&uuml;r gibt es die Gr&ouml;&szlig;eneinheit rem (<i>rootem</i>). Ein rem entspricht der f&uuml;r die Dokumentwurzel (also das <span class="tag">&lt;html&gt;</span>-Tag) festgelegten Schriftgr&ouml;&szlig;e. Im oberen Beispiel bedeutet das, dass das <span class="tag">&lt;div&gt;</span>-Element 5 &times; 15px, also 75px breit ist. Dass die Schriftgr&ouml;&szlig;e des Elements ver&auml;ndert ist, hat keinen Einfluss.</p>
+				
+				<h2 id="float"><span class="tag">float</span></h2>
+				
+				<p>Der Umgang mit der Eigenschaft <span class="tag">float</span> ist eines der schwierigsten, aber auch wichtigsten CSS-Inhalten. Es ist wichtig, die historischen Hintergründe zu kennen, um das Verhalten von <span class="tag">float</span> abschätzen zu können.</p>
+
+				<p>Ursprünglich bestanden HTML-Dokumente hauptsächlich aus Text mit einigen Bildern dazwischen, Strukturtags waren keine vorhanden. Die Bilder konnten entweder zwischen Textabschnitten, oder innerhalb eines Abschnitts stehen (Bilder sind Inline-Elemente). Häufig ist es wünschenswert, dass der Platz rechts und links vom Bild nicht frei bleibt, sondern der Text um das Bild herum fließt. In diesem Zusammenhang wurde die Eigenschaft <span class="tag">float</span> entwickelt.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;body&gt;
+	[weitere Textabs&auml;tze]
+	&lt;p&gt;Brownie applicake macaroon jelly lollipop sweet roll icing. Liquorice marshmallow cheesecake sugar plum chocolate cake. Pudding cupcake chocolate. Tootsie roll jelly powder caramels fruitcake jelly marzipan topping. Cotton candy caramels cupcake carrot cake.&lt;/p&gt;
+	&lt;img src=&quot;bildquelle.jpg&quot;&gt;
+	&lt;p&gt;Bear claw marzipan caramels sesame snaps lemon drops pudding cheesecake. Pie powder applicake chocolate bar macaroon. Icing pie halvah sesame snaps jelly-o cupcake gingerbread. Cheesecake pastry gummi bears tiramisu chocolate applicake jujubes. Icing jujubes sweet roll icing. Sweet candy canes jujubes souffl&eacute; applicake. Chocolate caramels tootsie roll cupcake cupcake apple pie. Icing tootsie roll toffee souffl&eacute;. Chocolate lollipop toffee croissant chocolate bar applicake. Souffl&eacute; gingerbread cake sugar plum jelly-o chocolate cake jelly powder. Pudding muffin halvah brownie chupa chups. Ice cream toffee lollipop bear claw cupcake. Sesame snaps chocolate pastry.&lt;/p&gt;
+	[weitere Textabs&auml;tze]
+&lt;/body&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>img	{
+	float: left;
+}</pre></code></div>
+
+			<p>Die Eigenschaft <span class="tag">float</span> gibt an, ob ein Element umflossen werden soll. Mögliche Werte sind <span class="tag">none</span>, <span class="tag">left</span> und <span class="tag">right</span>. Dabei bestimmt der Wert, wo sich das Element befindet. Ein Element mit <span class="tag">float: left;</span> befindet sich auf der linken Seite, es wird also recht umflossen.</p>
+
+			<p>Eine weitere mit <span class="tag">float</span> in Zusammenhang stehende Eigenschaft ist <span class="tag">clear</span>. <span class="tag">clear</span> gibt an, um ein Element andere Elemente umfließt. Mögliche Werte sind <span class="tag">none</span>, <span class="tag">lef</span>t, <span class="tag">right</span> und <span class="tag">both</span>. Dabei bestimmt der Wert, auf welcher Seite des Elements sich kein zu umfließendes Element befinden darf. Ein mit <span class="tag">clear: both;</span> ausgezeichnetes Element bricht also in jedem Fall um und beginnt erst unter dem mit <span class="tag">float</span> ausgezeichneten Element.</p>
+			
+			<p>In diesem historischen Zusammenhang wurde eine wichtige technische Entscheidung getroffen: In dem Moment, in dem ein Element die Eigenschaft <span class="tag">float</span> erhält, wirkt es sich nicht mehr auf die Größe des Elternelements aus. Dies ist möglich, da das Element ja den anderen Inhalt des Elternelements verdrängt, dieser also entsprechend der Größe des Elements das die Eigenschaft <span class="tag">float</span> besitzt nach unten verschoben wird.</p>
+			
+			<p>Das Ganze kann man sich so vorstellen: Schwimmt in einer Badewanne ein mit Luft gefüllter Ball, so definiert man den Füllstand als die Höhe aller enthaltenen Elemente addiert, also die Höhe des Wasserstand + die Höhe des Balls. Drückt man den Ball nun unter Wasser (er wird „umflossen“), so muss man den Füllstand neu definieren: jetzt wird nur noch die Höhe des Wasserstand gemessen. Das ist aber unerheblich, da der Ball ja Wasser, entsprechend seinem Volumen, verdrängt. Der Wasserstand steigt um das Volumen des Balls. Seine Größe ist also in den (neuen) Füllstand mit eingerechnet, obwohl sie nicht ausdrücklich dazu addiert wird.</p>
+			
+			<p>Im modernen Webdesign wird <span class="tag">float</span> hauptsächlich nicht mehr dazu verwendet, einzelne Elemente umfließen zu lassen, sondern mehrere Elemente nebeneinander zu platzieren:</p>
+			
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;body&gt;
+	&lt;main&gt;
+		&lt;aside&gt;Seitenspalte&lt;/aside&gt;
+		&lt;article&gt;Artikel&lt;/article&gt;
+	&lt;/main&gt;
+&lt;/body&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>aside	{
+	width: 200px;
+	margin-right: 20px;
+	float: left;
+}
+
+article	{
+	width: 500px;
+	float: left;
+}</pre></code></div>
+
+			<p>Hier wird erst die Seitenspalte nach links bewegt, dann der Artikel. Die beiden liegen nun also wie geplant neben einander. M&ouml;chte man nun aber zum Beispiel unter dem <span class="tag">&lt;main&gt;</span>-Element ein <span class="tag">&lt;footer&gt;</span>-Element platzieren, so f&auml;llt einem auf, dass man etwas nicht bedacht hat: Das <span class="tag">&lt;main&gt;</span>-Element enth&auml;lt nur Elemente mit der Eigenschaft <span class="tag">float</span> &ndash; diese wirken sich nicht auf seine Gr&ouml;&szlig;e aus. Die H&ouml;he und Breite des <span class="tag">&lt;main&gt;</span>-Elements ist also 0px &ndash; das ganze Layout wird durcheinander geworfen.</p>
+
+			<p>Damit der Größe der beiden Elemente sich nun auch auf das Elternelement auswirkt muss also Inhalt hinzugefügt werden, der von ihnen verdrängt werden kann, und an dem sich die Größe des Elternelements ausrichtet. Damit dieser nicht rechts von den Elementen auftaucht (er würde sie ja umfließen) bekommt dieser Inhalt die Eigenschaft <span class="tag">clear: both;</span>. Er sitzt also gezwungenermaßen unter den Elementen.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;body&gt;
+	&lt;main&gt;
+		&lt;aside&gt;Seitenspalte&lt;/aside&gt;
+		&lt;article&gt;Artikel&lt;/article&gt;
+		&lt;div class=&quot;clear&quot;&gt;Inhalt&lt;/div&gt;
+	&lt;/main&gt;
+&lt;/body&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>aside	{
+	width: 200px;
+	margin-right: 20px;
+	float: left;
+}
+
+article	{
+	width: 500px;
+	float: left;
+}
+
+.inhalt	{
+	clear: both;
+}</pre></code></div>
+
+			<p>Nun entspricht die Größe des Elternelements der Größe der Elemente mit <span class="tag">float</span> + der des Elements mit <span class="tag">clear</span>. Damit dieser Trick funktioniert muss das Element mit <span class="tag">clear</span> nicht zwingend einen Inhalt haben. Wird hinter Elemente mit <span class="tag">float</span> ein leeres Element mit <span class="tag">clear: both;</span> gesetzt, so nimmt das Elternelement die gewünschte Größe an. Dieses Vorgehen nennt man „Clearfix“.</p>
+			
+			<h2 id="clearfix">Clearfix</h2>
+
+			<p>Ein leeres Element im HTML-Dokument stehen zu haben ist unsemantisch, deswegen gibt es eine elegante Lösung. Diese verwendet komplexere CSS-Eigenschaften, die im Verlauf des Tutoriums noch erläutert werden, sie kann aber schon jetzt verwendet werden:</p>
+			
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}</pre></code></div>
+
+			<p>Damit wird hinter den Inhalt eines Elements (aber vor dem schließenden Tag) ein unsichtbares Element eingefügt, das <span class="tag">clear: both;</span> als Eigenschaft besitzt.</p>
+
+			<p>Nun muss also nicht mehr ein leeres Element in das HTML-Dokument eingefügt werden, sondern lediglich dem Elternelement die Klasse <span class="tag">clearfix</span> gegeben werden.
+				
+			<h2 id="display"><span class="tag">display</span></h2>
+
+			<p>Es gibt <a href="../einheit-01/#blockelementevsinlinelemente">Inline- und Block-Elemente</a>. Manchmal ist es praktisch, selbst zu bestimmen ob ein Element ein Inline- oder Block-Element haben soll: Der häufigste Grund ist, dass nur Block-Elemente das Box-Modell besitzen. Möchte man also zum Beispiel einem Bild einen Außenabstand geben, so muss man dieses als Block-Element definieren. Inline-Elemente dürfen außerdem nur weitere Inline-Elemente enthalten. Möchte man ein ganzes Block-Element verlinken, zum Beispiel einen Button, so muss das <span class="tag">&lt;a&gt;</span>-Tag als Block-Element definiert werden, damit es den Button enthalten darf.</p>
+
+			<p>Dies ist mit der Eigenschaft <span class="tag">display möglich. Sie besitzt sehr viele gültige Werte, die häufigste sind <span class="tag">inline</span>, <span class="tag">block</span>, <span class="tag">inline-block</span> und <span class="tag">none</span>.</p>
+
+			<p><span class="tag">inline</span> und <span class="tag">block</span> sind selbst erklärend, inline-block ist ein Mischung aus beiden: das Element wird behandelt wie ein Inline-Element, darf aber die Eigenschaften des Box-Modells verwenden.</p>
+
+			<p>Elemente mit der Eigenschaft <span class="tag">display: none;</span> werden in der Darstellung komplett aus dem Dokumentfluss entfernt.</p>
+			
+			<h2 id="normalize">Normalize</h2>
+
+			<p>Jeder Browser besitzt ein Standart-Stylesheet, das einige gängige CSS-Definition enthält (beispielsweise die große Schriftgröße für Überschriften). Das konnten wir zu beginn sehen, also wir reine HTML Websiten erstellten, einzelne Elemente aber bereits optisch hervorgehoben waren.</p>
+			
+			<p>Leider verwendet jeder Browser ein anderes Stylesheet und diese unterscheiden sich teilweise. Dafür gibt es ein so genanntes „normalize.css“ (oft auch „reset.css“). Diese Datei wird als erstes Stylesheet in die Website eingebunden und sorgt dafür, dass wir mit einer sauberen, einheitlichen, leeren Website beginnen können.</p>
+			
+<div class="code-snippet cf">
+<cite><a href="normalize.css" target="_blank">/einheit-04/normalize.css</a> (Ausschnitt)</cite>
+<div class="lines"></div>
+<code>
+<pre>html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  
+  box-sizing: border-box;
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+[…]</pre>
+</code>
+</div>
+
+ 			
+ 			</article>
+
+		</main>
+
+	</body>
+	
+</html>
