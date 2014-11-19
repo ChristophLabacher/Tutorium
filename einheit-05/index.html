@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 5 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 5</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#positionierung">Positionierung</a> <br>
+					<a href="#box-styling">Box-Styling</a>
+				</p>
+				
+				<h2 id="positionierung">Positionierung</h2>
+				
+				<p>Meistens müssen wir uns um die Positionierung von Block-Elementen keine Gedanken machen: Sie werden nacheinander vom Browser, in der Reihenfolge wie sie im HTML-Dokument angegeben sind, untereinander angezeigt. Diesen Zustand der Positionierung (also ganz normal im Dokumentfluss) nennt man <span class="tag">static</span>.</p>
+				
+				<h3><span class="tag">static</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: static;
+}</pre></code></div>
+
+				<p>Dies ist der Standardwert der Eigenschaft <span class="tag">position</span>, wir müssen ihn also fast nie ausdrücklich verwenden. Es gibt noch einige andere Arten der Positionierung:</p>
+					
+				<h3><span class="tag">relative</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: relative;
+	top: 20px;
+	left: -40px;
+}</pre></code></div>
+
+				<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">relative</span>, so wird das Element relativ zu seiner normalen Position (also der, die es hätte wenn der Wert static wäre) verschoben.</p>
+					
+				<p>Wie weit und in welche Richtung verschoben werden soll, wird durch die Eigenschaften <span class="tag">top</span>, <span class="tag">bottom</span>, <span class="tag">left</span> und <span class="tag">right</span> angegeben, wobei immer nur die Verwendung von zwei Sinn ergibt (einer horizontalen und einer vertikalen).</p>
+
+				<p>Das <span class="tag">&lt;div&gt;</span>-Element im oberen Code Beispiel w&auml;re also von seiner Ausgangsposition aus 20px nach unten und 40px nach links verschoben worden.</p>
+	
+				<p>Wird die Positionierung relative vorgenommen, so ist wichtig zu beachten, dass das <span class="tag">&lt;div&gt;</span>-Element, nur optisch verschoben wird, logisch befindet es sich noch an seiner urspr&uuml;nglichen Position. Deswegen wird anderer Inhalt auch nur dort verdr&auml;ngt, an der neuen Position &uuml;berlagert das Element den anderen Inhalt.</p>
+					
+				<h3><span class="tag">absolute</span></h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;div class=&quot;container&quot;&gt;
+	&lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;
+&lt;/div&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>.container	{
+	position: relative;
+}
+
+.content	{
+	position: absolute;
+	bottom: 20px;
+	right: 25px;
+}</pre></code></div>
+
+				<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">absolute</span>, so wird das Element relativ zum nächsten Elternelement verschoben, des position-Eigenschaft nicht den Wert static besitzt.</p>
+
+				<p>In diesem Code-Beispiel wird das Element mit der Klasse <span class="tag">content</span> also, ausgehend von der Position seines Elternelements mit der Klasse container, um  20px nach oben und um 25px nach links verschoben. Wichtig ist, dass das Element mit der Klasse <span class="tag">container</span> nicht den Wert <span class="tag">static</span> besitzt, sondern relative. Damit das Element aber trotzdem nicht verschoben wird, sind keine Angaben weiteren gemacht: das Element wird von seiner Ursprungsposition um 0px verschoben.</p>
+
+				<p>Ein Problem das häufig auftritt, wenn der Wert <span class="tag">absolute</span> verwendet wird ist, dass ein Element, das diesen Wert besitzt sich (warum auch immer) nicht mehr auf die Größe seines Elternelements auswirkt. Das Element mit der Klasse <span class="tag">container</span> im oberen Beispiel hätte also die Höhe 0px. Durch dieses Problem ist das Verwenden von <span class="tag">absolute</span> meistens nicht praktikabel.</p>
+				
+				<h3><span class="tag">fixed</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: fixed;
+	bottom: 40px;
+	right: 25px;
+}</pre></code></div>
+
+				<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">absolute</span>, so wird das Element relativ zum Browserfenster verschoben.</p>
+
+				<p>In diesem Code-Beispiel befindet sich das Element dann also in der unteren rechten Ecke des Browserfensters, 40px vom unteren und 25px vom rechten Rand entfernt. Es bleibt an dieser Stelle auch wenn gescrollt wird.</p>
+
+				<p>Auch bei diesem Wert wird das Element aus dem Dokumentfluss gehoben und die Größe wirkt sich auf keine andern Elemente mehr aus, in diesem Fall ist es jedoch meistens sinnvoll, da sich das Element ja an einem gänzlich anderen Ort befindet als zuvor.</p>
+
+				<p>Dieser Wert ist besonders für Menüs oder Header geeignet, die beim Scrollen im Bild bleiben sollen.</p>
+
+				<h3><span class="tag">z-index</span></h3>
+				
+				<p>Durch Verwendung der Eigenschaft <span class="tag">position</span> ist es möglich, dass sich verschiedenen Elemente überlagern. Generell gilt: je weiter unten sich ein Element im HTML-Dokument befindet, desto höher liegt es. Mit Hilfe der Eigenschaft <span class="tag">z-index</span> lässt sich jedoch darauf Einfluss nehmen: Elemente mit höherem Zahlenwert als Wert der Eigenschaft <span class="tag">z-index</span> überlagern Elemente mit einem niedrigeren Wert. <span class="tag">z-index</span> darf auch negative Werte enthalten.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	z-index: 2;
+}</pre></code></div> 			
+ 			
+				<h2 id="box-styling">Box-Styling</h2>
+				
+				<p>Es gibt verschiedene Eigenschaften, mit denen das Aussehen von Block-Elemente beeinflusst werden kann.
+
+				<h3>Größe</h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 100%;
+	height: 500px;
+	padding: 30px;
+	margin: 50px;
+}</pre></code></div>
+
+				<p>Bereits bekannt sind die Eigenschaften für die Größe des Elements (<a href="../ einheit-03/#das-box-modell">Einheit 3</a>), <span class="tag">width</span> (Breite), <span class="tag">heigth</span> (Höhe), <span class="tag">padding</span> (Innenabstand) und <span class="tag">margin</span> (Außenabstand).</p>
+
+				<p>Zusätzlich zu definitiven Größenangaben, ist es bei Eigenschaften, die eine Größe als Wert erwarten immer auch möglich <span class="tag">auto</span> als Wert anzugeben (dies ist der Standardwert wenn nichts angegeben wird). In diesem Fall wird versucht eine passende Größe zu finden. Gibt man Beispiel bei einem Bild eine definitive Höhe, aber als Breite <span class="tag">auto</span> an, so wird es proportional skaliert. Gibt man bei einer Box eine Höhe, aber keine Breite an, so passt sich die Breite dem Inhalt, sowie dem verfügbaren Platz an.</p>
+
+				<h3>Hintergrundfarbe</h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	background-color: rgba(0,0,0,0.5);
+}</pre></code></div>
+
+				<p>Ebenfalls bekannt ist die Eigenschaft <span class="tag">background-color</span> (<a href="../einheit-02/#farbe">Einheit 2</a>), mit der sich (auch halbtransparente) Hintergrundfarben definieren lassen.</p>
+
+				<h3>Hintergrundbild</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	background-image: url("../imgs/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left top;
+}</pre></code></div>
+
+				<p>Neu sind die Eigenschaften für Hintergrundbilder.</p>
+
+				<p>Mit Hilfe der Eigenschaft <span class="tag">background-image</span> wird angegeben, welches Bild als Hintergrundbild verwendet werden soll. Dabei wird als Wert <span class="tag">url("relativer Pfad")</span> verwendet. Der Pfad zum Bild ist relativ, ausgehen von der Position des Stylesheets anzugeben.</p>
+				
+				<p><span class="tag">background-repeat</span> gibt an, ob ein Hintergrundbild gekachelt wird. Mögliche Eigenschaften sind <span class="tag">no-repeat</span>, <span class="tag">repeat-x</span> (horizontale Kachelung), <span class="tag">repeat-y</span> (vertikale Kachelung) und <span class="tag">repeat</span> (horizontale und vertikale Kachelung).</p>
+
+				<p>Mit <span class="tag">background-size</span> wird die Größe des Hintergrundbildes angegeben. Dabei können entweder zwei Größenangaben für Höhe und Breite (zum Beispiel <span class="tag">300px 60px</span> oder <span class="tag">600px auto</span>), oder die Werte <span class="tag">cover</span> (das Hintergrundbild wird so skaliert, dass die Box immer abgedeckt ist, auch wenn ein Teil vom Bild abgeschnitten wird) oder <span class="tag">contain</span> (das Hintergrundbild wird so skaliert, dass auf jeden Fall das gesamte Bild sichtbar ist, auch wenn ein Teil der Box nicht abgedeckt wird) verwendet werden.</p>
+
+				<p><span class="tag">background-position</span> gibt für diese Fälle an, welche Punkt der Box und des Hintergrundbilds als übereinander gelegt werden sollen. Dabei wird immer ein vertikaler (<span class="tag">left</span>, <span class="tag">center</span>, <span class="tag">right</span>) und ein horizontaler Wert (<span class="tag">top</span>, <span class="tag">center</span>, <span class="tag">bottom</span>) erwartet. Bei <span class="tag">center center</span>, liegt also der Mittelpunkt des Bildes auf dem Mittelpunkt der Box, bei <span class="tag">left top</span> die linke obere Ecke des Bilder auf der linken oberen Ecke der Box, usw.</p>
+
+				<h3>Transparenz</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	opacity: .5;
+}</pre></code></div>
+
+				<p>Die Eigenschaft <span class="tag">opacity</span> gibt die Transparenz einer Box (inklusive Inhalt) an. Dabei ist der Wert 0 völlig transparent und der Wert 1 vollkommen opak.</p>
+
+				<h3>Schatten</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	box-shadow: 3px 3px 4px 5px #000000;
+}</pre></code></div>
+
+				<p><span class="tag">box-shadow</span> gibt einer Box einen Schatten. Dabei sind müssen mehrere Werte angegeben werden: horizontale Verschiebung, vertikale Verschiebung, Blur, Größe und Farbe.</p>
+
+				<p>Blur und Größe sind optional, folgende Angaben sind also auch möglich:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>header	{
+	box-shadow: 3px 3px #000000;
+}
+
+footer	{
+	box-shadow: 3px 3px 4px #000000;
+}</pre></code></div>
+
+				<h3>Konturen</h3>
+				
+				<p>Wie bereits in <a href="../einheit-03/#konturen">Einheit 3</a> behandelt, sind Konturen von Boxen möglich.</p>
+
+				<h3>Runde Ecken</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	border-radius: 10px;
+}</pre></code></div>
+
+				<p>Der Wert der Eigenschaft <span class="tag">border-radius</span> gibt den Radius der abgerundeten Ecken einer Box an. Dabei kann auch für jede Ecke, ausgehend von der links oberen im Uhrzeigersinn ein eigener Wert angegeben werden:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	border-radius: 10px 5px 10px 5px;
+}</pre></code></div>
+			</article>
+
+		</main>
+
+	</body>
+	
+</html>

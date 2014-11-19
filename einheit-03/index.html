@@ -124,13 +124,19 @@
 
 				<p><strong>Achtung: Das ursprüngliche Box-Modell von CSS ist umintuitiv und für die meisten Fälle komplett ungeeignet. Deshalb wird in diesem Tutorium nur das moderne Box-Modell verwendet – dieses ist aber nicht standardmäßig aktiv.</strong></p>
 				
-				<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft <span class="tag">box-sizing</span> auf <span class="tag">border-box</span> gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;body&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
+				<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft <span class="tag">box-sizing</span> auf <span class="tag">border-box</span> gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;html&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
 
 <div class="code-snippet cf">
 <div class="lines"></div>
 <code>
-<pre>body	{
-	box-sizing: border-box;
+<pre>html {  
+  box-sizing: border-box; /* Ch, Saf 5.1+, IE 8+, Op 9+  */
+  -webkit-box-sizing: border-box; /* Saf &lt;5.1, */
+  -moz-box-sizing: border-box; /* Fx */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }</pre></code></div>
 
 				<p>Um die Größe eines Objekts anzugeben gibt es in CSS drei Eigenschaften: die Größe (<span class="tag">width</span> & <span class="tag">heigth</span>), den Innenabstand (<span class="tag">padding</span>) und den Außenabstand (<span class="tag">margin</span>).</p>

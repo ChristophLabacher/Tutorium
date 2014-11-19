@@ -11,7 +11,13 @@ html {
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
   
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ch, Saf 5.1+, IE 8+, Op 9+  */
+  -webkit-box-sizing: border-box; /* Saf <5.1, */
+  -moz-box-sizing: border-box; /* Fx */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /**

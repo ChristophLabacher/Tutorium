@@ -135,9 +135,9 @@ div	{
 
 			<p>Die Eigenschaft <span class="tag">float</span> gibt an, ob ein Element umflossen werden soll. Mögliche Werte sind <span class="tag">none</span>, <span class="tag">left</span> und <span class="tag">right</span>. Dabei bestimmt der Wert, wo sich das Element befindet. Ein Element mit <span class="tag">float: left;</span> befindet sich auf der linken Seite, es wird also recht umflossen.</p>
 
-			<p>Eine weitere mit <span class="tag">float</span> in Zusammenhang stehende Eigenschaft ist <span class="tag">clear</span>. <span class="tag">clear</span> gibt an, um ein Element andere Elemente umfließt. Mögliche Werte sind <span class="tag">none</span>, <span class="tag">lef</span>t, <span class="tag">right</span> und <span class="tag">both</span>. Dabei bestimmt der Wert, auf welcher Seite des Elements sich kein zu umfließendes Element befinden darf. Ein mit <span class="tag">clear: both;</span> ausgezeichnetes Element bricht also in jedem Fall um und beginnt erst unter dem mit <span class="tag">float</span> ausgezeichneten Element.</p>
+			<p>Eine weitere mit <span class="tag">float</span> in Zusammenhang stehende Eigenschaft ist <span class="tag">clear</span>. <span class="tag">clear</span> gibt an, ob ein Element von anderen Elemente umflossen wird. Mögliche Werte sind <span class="tag">none</span>, <span class="tag">lef</span>t, <span class="tag">right</span> und <span class="tag">both</span>. Dabei bestimmt der Wert, auf welcher Seite des Elements sich kein zu umfließendes Element befinden darf. Ein mit <span class="tag">clear: both;</span> ausgezeichnetes Element bricht also in jedem Fall um und beginnt erst unter dem mit <span class="tag">float</span> ausgezeichneten Element.</p>
 			
-			<p>In diesem historischen Zusammenhang wurde eine wichtige technische Entscheidung getroffen: In dem Moment, in dem ein Element die Eigenschaft <span class="tag">float</span> erhält, wirkt es sich nicht mehr auf die Größe des Elternelements aus. Dies ist möglich, da das Element ja den anderen Inhalt des Elternelements verdrängt, dieser also entsprechend der Größe des Elements das die Eigenschaft <span class="tag">float</span> besitzt nach unten verschoben wird.</p>
+			<p>In diesem historischen Zusammenhang wurde eine wichtige technische Entscheidung getroffen: In dem Moment, in dem ein Element die Eigenschaft <span class="tag">float</span> erhält, wirkt es sich nicht mehr auf die Größe des Elternelements aus. Dies ist möglich, da das Element den anderen Inhalt des Elternelements verdrängt, dieser also entsprechend der Größe des Elements das die Eigenschaft <span class="tag">float</span> besitzt nach unten verschoben wird.</p>
 			
 			<p>Das Ganze kann man sich so vorstellen: Schwimmt in einer Badewanne ein mit Luft gefüllter Ball, so definiert man den Füllstand als die Höhe aller enthaltenen Elemente addiert, also die Höhe des Wasserstand + die Höhe des Balls. Drückt man den Ball nun unter Wasser (er wird „umflossen“), so muss man den Füllstand neu definieren: jetzt wird nur noch die Höhe des Wasserstand gemessen. Das ist aber unerheblich, da der Ball ja Wasser, entsprechend seinem Volumen, verdrängt. Der Wasserstand steigt um das Volumen des Balls. Seine Größe ist also in den (neuen) Füllstand mit eingerechnet, obwohl sie nicht ausdrücklich dazu addiert wird.</p>
 			
@@ -247,7 +247,13 @@ article	{
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
   
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ch, Saf 5.1+, IE 8+, Op 9+  */
+  -webkit-box-sizing: border-box; /* Saf &lt;5.1, */
+  -moz-box-sizing: border-box; /* Fx */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /**
