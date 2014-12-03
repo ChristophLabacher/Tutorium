@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 6 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 6</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#pseudoklassen">Pseudoklassen</a><br>
+					<a href="#transition">transition</a><br>
+					<a href="#transform">transform</a><br>
+					<a href="#browserspezifische-praefixe">Browserspezifische Präfixe</a><br>
+					<a href="#overflow">overflow</a>
+				</p>
+				
+				<h2 id="pseudoklassen">Pseudoklassen</h2>
+				
+				<p>Zusätzlich zu den <a href="../einheit-03/#klassen">Klassen</a>, die man selbst vergeben kann, gibt es so genannte „Pseudoklassen“. Diese Klassen werden nicht von Hand vergeben (es sind also keine normalen Klassen), sondern sie werden bestimmten Elementen in bestimmten Situationen vom Browser automatisch vergeben. Der <a href="../einheit-02/#einfache-selektoren">Selektor</a> von Pseudoklassen beginnt immer mit einem Doppelpunkt (im Gegensatz zu einem Punkt bei Klassen); ansonsten verhält er sich wie ein ganz normaler Klassen-Selektor.</p>
+				
+				<h3><span class="tag">:hover
+</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>a	{
+	color: #000000;
+}
+
+a:hover	{
+	color: #FF0000;
+}</pre></code></div>
+
+				<p>Die Pseudoklasse <span class="tag">:hover</span> erhält ein Element in dem Moment, wenn sich der Mauszeiger darüber befindet.</p>
+
+				<p>In diesem Codebeispiel werden zuerst alle Links selektiert und die Textfarbe auf schwarz gesetzt. Mit dem zweiten Selektor werden die Links ausgewählt, die die Pseudoklasse <span class="tag">:hover</span> besitzen, und deren Textfarbe auf rot gesetzt. Fährt man nun mit der Maus über einen Link, so erhält er die Pseudoklasse <span class="tag">:hover</span>. Da der untere Selektor <a href="../einheit-03/#vererbung">spezifischer</a> als der obere ist, überschreibt dieser den oberen, und der Text wird rot dargestellt.</p>
+					
+				<h3><span class="tag">:first-child</span> und <span class="tag">:last-child</span></h3>
+				
+				<p>Die Pseudoklassen <span class="tag">:first-child</span> und <span class="tag">:last-child</span> werden allen Elementen vergeben, die je das erste bzw. letzte Kind ihres Elternelements sind.</p>
+				
+				<h3><span class="tag">:nth-child(n)</span></h3>
+				
+				<p>Mit dem Pseudoselektor <span class="tag">:nth-child(n)</span> lässt sich ein bestimmtes Element auswählen, das das n-te Kinde seines Elternelements ist. Außer Zahlen können auch die Begriffe <span class="tag">even</span> (gerade) und <span class="tag">odd</span> (ungerade) eingesetzt werden.</p>
+				
+				<h3><span class="tag">:first-of-type</span>, <span class="tag">:last-of-type</span> und <span class="tag">:nth-of-type(n)</span></h3>
+				
+				Diese Pseudoklassen verhalten sich genau so, sie werden jedoch an das erste, bzw. letzte, bzw. n-te Element einer Art vergeben.
+				
+				<h3>Beispiel</h3>
+
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;ul&gt;
+	&lt;li&gt;Erstes Element&lt;/li&gt;
+	&lt;li&gt;Zweites Element&lt;/li&gt;
+	&lt;li&gt;Drittes Element&lt;/li&gt;
+	&lt;li&gt;Viertes Element&lt;/li&gt;
+	&lt;li&gt;F&uuml;nftes Element&lt;/li&gt;
+	&lt;li&gt;Sechstes Element&lt;/li&gt;
+	&lt;li&gt;Siebtes Element&lt;/li&gt;
+	&lt;li&gt;Achtes Element&lt;/li&gt;
+&lt;/ul&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>li	{
+	background-color: #FF0000;
+}
+
+li:first-child, li:last-child	{
+	background-color: #00FFFF;
+}
+
+li:nth-child(even)	{
+	background-color: #0000FF;
+}
+
+li:nth-child(6)	{
+	background-color: #00FF00;
+}</pre></code></div>
+
+				<h2 id="transition"><span class="tag">transition</span></h2>
+				
+				<p>Mit der Eigenschaft <span class="tag">transition</span> lässt sich einstellen, dass bestimmte Eigenschaften, wenn der entsprechende Wert verändert wird (zum Beispiel da er innerhalb des Pseudoselektors :hover überschrieben wird) nicht einfach „springen“, sondern ein sanfter Übergang zwischen den Werten dargestellt wird.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 5rem;
+	transition: all 1s;
+}
+
+div:hover	{
+	width: 10rem;
+}</pre></code></div>
+
+				<p>Die Eigenschaft <span class="tag">transition</span> erhält mindestens zwei, maximal vier Werte. Der erst gibt an welche Eigenschaft einen Übergang erhalten soll. Soll jede Eigenschaft, für die ein Übergang möglich ist, einen Übergang erhalten, so wird <span class="tag">all</span> angegeben, ansonsten wird der Name der Eigenschaft angegeben. Als zweites folgt die Dauer des Übergangs. Als optionale dritte Eigenschaft kann die Kurve, in der der Übergang erfolgt angegeben werden; mögliche Werte sind <span class="tag">ease</span> (Standardwert), <span class="tag">linear</span>, <span class="tag">ease-in</span>, <span class="tag">ease-out</span>, ease-in-out. Die optionale vierte Eigenschaft gibt an, mit welcher Verzögerung der Übergang beginnen soll, hier wird wiederum eine Dauer angegeben.</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transition: all 1s ease-in-out 2s;
+}</pre></code></div>
+
+				<p><strong>Achtung, Nicht alle Eigenschaften können einen Übergang haben. <a href="http://www.w3schools.com/cssref/css_animatable.asp" target="_blank">Hier</a> ist eine Liste der „animatable properties“.</strong></p>
+					
+				<p>Manchmal sollen verschiedene Eigenschaften verschiedene Übergänge erhalten. Die Eigenschaft transition darf deshalb auch mehrmals angegeben werden:</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transition: width 1s;
+	transition: background-color 2s;
+}</pre></code></div>
+
+				<h2 id="transform"><span class="tag">transform</span></h2>
+
+				<p>Mit Hilfe der Eigenschaft <span class="tag">transform</span> können Elemente verschoben, gedreht und verzerrt werden. Die verschiedenen Werte werden dabei als eine Art Funktion mit Argumenten angegeben.</p>
+				
+				<h3><span class="tag">translate</span></h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translate(x,y);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translateX(x);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translate3d(x,y,z);</pre></code></div>
+
+				<p>Mit dem Wert <span class="tag">translate</span> kann das Element in x- und y-Richtung verschoben werden (anstelle der Platzhalter müssen Größenangaben eingegeben werden). Soll nur eine Richtung genutzt werden, so können die Werte <span class="tag">translateX</span> oder <span class="tag">translateY</span> verwendet werden. Außerdem ist eine dreidimensionale Verschiebung mit Hilfe des Wertes <span class="tag">translate3d</span> möglich, dabei wird zusätzlich ein z-Wert erwartet.</p>
+
+				<h3><span class="tag">scale</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: scale(x,y);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: scaleX(x);</pre></code></div>
+
+				<p>Mit dem Wert <span class="tag">scale</span> kann ein Element vergrößert oder verkleinert, bzw. verzerrt werden. Soll das Element nur in eine Richtung verändert werden, so sind auch die Werte <span class="tag">scaleX</span>, bzw. <span class="tag">scaleY</span> möglich.</p>
+
+				<h3><span class="tag">rotate</span></h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: rotate(angle);</pre></code></div>
+
+				<p>Mit dem Wert <span class="tag">rotate</span> kann ein Element gedreht werden. Dabei wird eine Winkelangabe, zum Beispiel „30deg“. Auch eine dreidimensionale Rotation ist möglich, diese ist aber sehr komplex.</p>
+				
+				<p>Mehrere Werte für die Eigenschaft <span class="tag">transform</span> können verwendet werden. Die Eigenschaft <span class="tag">transform</span> wird dann mehrmals angegeben:</p>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transform: rotate(20deg);
+	transform: scaleX(20px);
+}</pre></code></div>
+
+				<p>Insbesondere in Verbindung mit der Pseudoklasse <span class="tag">:hover</span> und der Eigenschaft <span class="tag">transition</span> ist die Eigenschaft <span class="tag">transform</span> ein enorm mächtiges Werkzeug zum Beeinflussen von Elementen auf der Seite: Sie können sich drehen, wenn der Nutzer mit der Maus darüber geht, o.ä.</p>
+
+				<h2 id="browserspezifische-praefixe">Browserspezifische Präfixe</h2>
+				
+				<p>Leider sind einige der modernen CSS-Eigenschaften, zum Beispiel transition und transform, noch nicht in allen Browsern vollkommen unterstützt. Deshalb müssen bei diesen Eigenschaften Präfixe verwendet werden, die zeigen dass die Eigenschaft experimentell ist. Jeder Browser erwartet eigene Präfixe, weshalb dann häufig eine lange Liste mit Eigenschaften entsteht. Welche CSS-Eigenschaften Präfixe benötigen: <a href="http://shouldiprefix.com" target="_blank">www.shouldiprefix.com</a>. Hier können die entsprechenden Präfixe auch direkt kopiert werden. Alternativ kann der CSS-Code auch einfach hier eingefügt werden: <a href="http://pleeease.io/play" target="_blank">www.pleeease.io/play</a>. Dort werden Präfixe hinzugefügt, und das Ergebnis speichert man dann wieder</p>
+				
+				<h2 id="overflow"><span class="tag">overflow</span></h2>
+
+				<p>Wenn der Inhalt eines Containers größer ist als der Container selbst, wird standardmäßig der Inhalt trotzdem angezeigt, er überlagert dann unter Umständen andere Elemente. Dieses Verhalten kann mit der Eigenschaft <span class="tag">overflow</span> beeinflusst werden. Der beschriebene Standardwert ist <span class="tag">visible</span>, mögliche weitere Werte sind <span class="tag">hidden</span> (der Inhalt wird am Rand des Containers abgeschnitten), <span class="tag">scroll</span> (am Rand des Containers werden Scrollbars angezeigt) und <span class="tag">auto</span> (nur wenn der Inhalt tatsächlich größer als der Container ist werden Scrollbars angezeigt).</p>
+
+				<p>Soll das Verhalten nur in einer Dimension beeinflusst werden, so kann die Eigenschaft <span class="tag">overflow-x</span>, bzw. <span class="tag">overflow-y</span> verwendet werden.</p>
+
+			</article>
+
+		</main>
+
+	</body>
+	
+</html>
