@@ -206,14 +206,13 @@ div:hover	{
 
 				<p>Mit dem Wert <span class="tag">rotate</span> kann ein Element gedreht werden. Dabei wird eine Winkelangabe, zum Beispiel „30deg“. Auch eine dreidimensionale Rotation ist möglich, diese ist aber sehr komplex.</p>
 				
-				<p>Mehrere Werte für die Eigenschaft <span class="tag">transform</span> können verwendet werden. Die Eigenschaft <span class="tag">transform</span> wird dann mehrmals angegeben:</p>
+				<p>Mehrere Werte für die Eigenschaft <span class="tag">transform</span> können verwendet werden. Sie werden nacheinander angegeben:
 				
 <div class="code-snippet cf">
 <div class="lines"></div>
 <code>
 <pre>div	{
-	transform: rotate(20deg);
-	transform: scaleX(20px);
+	transform: rotate(20deg) scaleX(20px);
 }</pre></code></div>
 
 				<p>Insbesondere in Verbindung mit der Pseudoklasse <span class="tag">:hover</span> und der Eigenschaft <span class="tag">transition</span> ist die Eigenschaft <span class="tag">transform</span> ein enorm mächtiges Werkzeug zum Beeinflussen von Elementen auf der Seite: Sie können sich drehen, wenn der Nutzer mit der Maus darüber geht, o.ä.</p>
