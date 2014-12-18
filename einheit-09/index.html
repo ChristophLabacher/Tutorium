@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 9 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 9</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#css">.css()</a><br>
+					<a href="#hasClass">.hasClass()</a><br>
+					<a href="#appendprepend">.append() / .prepend()</a><br>
+				</p>
+
+				<h2 id="css"><span class="tag">.css()</span></h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var backgroundColor = $(".box-container").css("background-color");</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(".box-container").css("background-color": "#FF0000");</pre></code></div>
+
+				<p>Mit der Funktion <span class="tag">.css()</span> können CSS-Eigenschaften eines selektierten Elements ausgelesen, bzw. gesetzt werden. Mit der Funktion gesetzte Eigenschaften überschreiben die in der CSS-Datei gesetzten Eigenschaften und Werte.</p>	
+				
+				<h2 id="hasClass"><span class="tag">.hasClass()</span></h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var boxIsActive = $(".box").hasClass("active");
+if (boxIsActive == true)	{
+	// Code
+}</pre></code></div>
+
+				<p>Mit der Funktion <span class="tag">.hasClass()</span> lässt sich überprüfen, ob das im Selektor ausgewählte Element eine bestimmte Klasse besitzt. Der Rückgabewert ist entweder true oder false. Er kann mit einer <a href="../einheit-08/#if-Abfrage">if-Abfrage</a> überprüft werden.</p>	
+				
+<h2 id="appendprepend"><span class="tag">.append() / .prepend()</span></h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var box1 = $("#box1");
+$(".box-container").prepend(box1);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var box2 = $("#box2");
+$(".box-container").append(box2);</pre></code></div>
+
+				<p>In <a href="../einheit-08/#variablen">Variablen</a> können nicht nur einzelne Werte, sondern auch ganze HTML-Elemente zwischengespeichert werden. Dafür wird das Element per Selektor ausgewählt und einer Variable zugewiesen (es befindet sich in diesem Moment im HTML-Dokument noch an seiner ursprünglichen Position, ist aber mit der Variable verknüpft). Das Element kann dann in ein anderes HTML-Element eingefügt werden, entweder an erster Stelle mit der Funktion <span class="tag">.prepend()</span>, oder an letzter Stelle mit der Funktion <span class="tag">.append()</span>. In diesem Moment wird das Element aus seiner ursprünglichen Position entfernt und an der neuen Position eingefügt.</p>			
+
+			</article>
+
+		</main>
+
+	</body>
+	
+</html>
