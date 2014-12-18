@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<!-------------------------<!--! META ------------------------------>
+		<title>Einheit 8 – Interaktive Prototypen mit HTML, CSS & JS</title>
+		<link rel="icon" href="imgs/sprites/favicon.ico" type="image/png" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="../scripts/libaries/jquery.js"></script>
+
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="../scripts/linenumbers.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55884850-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<main>
+
+			<article>
+
+				<h1>Einheit 8</h1>
+				
+				<p><a href="..">Zurück zur Übersicht</a></p>
+
+				<h2>Inhalt</h2>
+
+				<p>
+					<a href="#javascript">JavaScript</a><br>
+					<a href="#einbindung-von-javascript-dateien-in-html">Einbindung von JavaScript-Dateien in HTML</a><br>
+					<a href="#konsole-kommentare">Konsole & Kommentare</a><br>
+					<a href="#variablen">Variablen</a><br>
+					<a href="#if-Abfrage">if-Abfrage</a><br>
+					<a href="#if-else-Abfrage">if-else-Abfrage</a><br>
+					<a href="#for-schleife">for-Schleife</a><br>
+					<a href="#jquery">jQuery</a><br>
+					<a href="#einbindung-von-jquery-in-html">Einbindung von jQuery in HTML</a><br>
+					<a href="#selektion">Selektion</a><br>
+					<a href="#groesse">Größe</a><br>
+					<a href="#position">Position</a><br>
+					<a href="#ready">.ready()</a><br>
+					<a href="#klassen">Klassen</a><br>
+					<a href="#mouseevents">Mouseevents</a><br>
+					<a href="#scroll">.scroll()</a><br>
+				</p>
+				
+				<h2 id="javascript">JavaScript</h2>
+				
+				<p>JavaScript ist eine 1995 entwickelte Script-Sprache, die es unter anderem erlaubt Websiten auch nach dem sie geladen sind noch zu verändern (also zum Beispiel Klassen zu Elementen hinzuzufügen oder auf Klicks zu reagieren).</p>
+				
+				<p>In diesem Tutorium wird hauptsächlich jQuery behandelt. Damit man jQuery versteht ist es aber nötig, minimale Grundkenntnisse in JavaScript zu besitzen.</p>
+
+				<h2 id="einbindung-von-javascript-dateien-in-html">Einbindung von JavaScript-Dateien in HTML</h2>
+
+				<p>JavaScript-Dateien m&uuml;ssen genau wie CSS-Dateien im <span class="tag">&lt;head&gt;</span>-Bereich des HTML-Dokuments eingebunden werden.
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/scripts.js&quot;&gt;&lt;/script&gt;</pre></code></div>
+
+				<p>Der JavaScript-Code kann auf beliebig viele JavaScript aufgeteilt werden, so lange diese alle eingebunden werden. Die Dateien werden von oben nach unten ausgeführt.</p>
+
+				<h2 id="konsole-kommentare">Konsole & Kommentare</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>console.log("test");</pre></code></div>
+
+				<p>In den meisten Browser kann eine JavaScript-Konsole geöffnet werden (unter „Entwickler“ o.ä.) in der Fehler ausgegeben werden. Man kann auch selbst aus dem JavaScript-Code heraus in diese Konsole schreiben, was hilfreich sein kann wenn man sich an bestimmten Stellen des Codes Informationen oder Werte ausgeben lassen möchte.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>// Kommentar
+/* Kommentar */</pre></code></div>
+
+				<p>In JavaScript gibt es einzeilige und mehrzeilige Kommentare.</p>
+				<h2 id="variablen">Variablen</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var i = 0;
+var j = 0.1
+var k = "String";
+var l = true;</pre></code></div>
+
+				<p>In Variablen können Informationen (Zahlen, Texte („Strings“) oder <span class="tag">true</span>/<span class="tag">false</span>) gespeichert werden. Bei der Initialisierung von Variablen muss der Typ der Variable nicht angegeben werden. Alle Variablen werden folgendermaßen initialisiert:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var name = wert;</pre></code></div>
+
+				<h2 id="if-Abfrage"><span class="tag">if</span>-Abfrage</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+}</pre></code></div>
+
+				<p>Bei einer <span class="tag">if</span>-Abfrage wird der Inhalt einer Variable überprüft. Trifft die Bedingung zu, so wird der Code in den geschweiften Klammern ausgeführt (Wenn, dann).</p>
+
+				<p>Bedingungen können mit „Vergleichsoperatoren“ formuliert werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>i == 1 // i ist gleich 1
+i != 1 // i ist ungleich 1
+i &lt; 1 // i ist kleiner 1
+i &lt;= 1 // i ist kleiner-gleich 1
+i &gt; 1 // i ist gr&ouml;&szlig;er 1
+i &gt;= 1 // i ist gr&ouml;&szlig;er-gleich 1</pre></code></div>
+
+				<p>Bedingungen können mit „Logischen Operatoren“ aneinander gehängt werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>i == 1 && j != 2 // i ist gleich 1 und j ist ungleich 2
+i == 1 || j != 2 // i ist ungleich 1 oder j ist ungleich 2</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>if (test == true && j == 2)	{
+	console.log("Test ist wahr und j ist 2");
+}</pre></code></div>
+
+				<h2 id="if-else-Abfrage"><span class="tag">if-else</span>-Abfrage</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+} else {
+	console.log("Test ist nicht wahr");
+}</pre></code></div>
+
+				<p>Bei einer <span class="tag">if-else</span>-Abfrage kann zusätzlich noch Code angegeben werden, der ausgeführt werden soll, wenn die erste Bedingung nicht zutrifft.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+} else if (test == false && j == 1) {
+	console.log("Test ist nicht wahr und j ist 1");
+} else {
+	console.log("Test ist nicht wahr und j ist nicht 1");
+}</pre></code></div>
+
+				<p>Beliebig viele <span class="tag">if</span>-Abfragen können aneinander gehängt werden. Dafür wird <span class="tag">else if () {}</span> verwendet. Wichtig ist, dass sobald eine Bedingung zutrifft und er entsprechende Code ausgeführt wurde die gesamte Abfrage verlassen wird und die Ausführung des Codes darunter fortgesetzt wird.</p>
+
+				<h2 id="for-schleife"><span class="tag">for</span>-Schleife</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>for (var i = 0; i &lt; 5; i++)	{
+	console.log(i);
+}</pre></code></div>
+
+				<p>Eine <span class="tag">for</span>-Schleife erhält in ihrem Aufruf drei Informationen: zuerst eine Variablen-Initialisierung, dann eine Bedingung und zum Schluss ein Stück Code, dass immer am Ende der Schleife ausgeführt wird.</p>
+
+				<p>Im Beispielcode bedeutet das folgendes: Eine Variable i wird mit dem Wert 0 initialisiert. Die for-Schleife wird so lange wiederholt, bis i nicht mehr kleiner 5 ist. Am Ende jedes Durchlaufs wird i um 1 erhöht (<span class="tag">i++</span> ist eine Kurzschreibweise für <span class="tag">i = i + 1</span>). Jeder Durchlauf der Schleife bewirkt, dass der Wert von i in die Konsole ausgegeben wird. Die Ausgabe sähe also folgendermaßen aus: </p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>0
+1
+2
+3
+4</pre></code></div>
+
+				<p>Nach dem 4 ausgeben wird wird i um 1 erhöht, ist also 5. Die Bedingung <span class="tag">i &lt; 5</span> trifft nicht mehr zu, die Schleife wird also nicht mehr ausgeführt.</p>
+
+				<h2 id="jquery">jQuery</h2>
+
+				<p>jQuery ist eine Bibliothek für JavaScript, die viele Funktionen zum Auswählen, Auslesen und Verändern von HTML-Elementen und ihren Eigenschaften bereitstellt. jQuery wird seit 2006 entwickelt und wird von sehr vielen Websites eingesetzt: 2014 waren es mehr als drei Viertel der 10.000 meistbesuchten Websites.</p>
+
+				<h2 id="einbindung-von-jquery-in-html">Einbindung von jQuery in HTML</h2>
+
+				<p>Die aktuelle Version von jQuery kann von der <a href="https://jquery.org" target="_blank">Website</a> des Projekts heruntergeladen werden und muss in das Verzeichnis, in dem die Website entwickelt wird kopiert werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/libaries/jquery.js&quot;&gt;&lt;/script&gt;</pre></code></div>
+
+				<p>JavaScript-Bibliotheken müssen wie ganz normales JavaScript-Dateien in die HTML-Datei eingebunden. Wichtig ist dass die Bibliothek über den eigenen JavaScript-Dateien, in denen ihre Funktionen verwendet werden, steht.</p>
+
+				<h2 id="selektion">Selektion</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(selector).action().action(wert);</pre></code></div>
+
+				<p>Ein Aufruf in jQuery beginnt immer mit einer Selektion. Darauf folgt nach einem Punkt ein Funktionsaufruf. Mehrere Funktionsaufrufe können aneinander gereiht werden, teilweise werden Funktionen bestimmte Werte übergeben.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("header")
+$(".tag")
+$("main .box")</pre></code></div>
+
+				<p>Eine Selektion besteht aus dem Dollarzeichen, dann wird in Klammern der Selektor geschrieben. Meistens soll ein HTML-Element ausgewählt werden. Dazu wird in Zollstrichen ein Selektor im Stile eines CSS-Selektors angegeben.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(window)
+$(document)
+$(this)</pre></code></div>
+
+				<p>In jQuery gibt es einige Selektoren, die besondere Objekte auswählen. Mit window wird das Browserfenster ausgewählt, so dass dessen Größe o.ä. ausgelesen werden kann. document wählt die gesamte Seite aus, so dass zum Beispiel ermittelt werden kann, wie weit gescrollt wurde. this wählt immer das aktuelle Objekt aus, auf dass sich eine action bezieht. Das kann sehr hilfreich sein, wenn verschiedene Funktionen ineinander verschachtelt werden. </p>
+
+				<h2 id="groesse">Größe</h2>
+
+				<p>Funktionen in jQuery können (teilweise) sowohl zum auslesen von Werten, als auch zum schreiben verwendet werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var width = $("main #box“).width();
+var height = $("main #box“).height();</pre></code></div>
+
+				<p>In diesem Codebeispiel wird die Höhe und die Breite das selektierten Elements in Variablen geschrieben.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var width = 200;
+$("main #box“).width(width) </pre></code></div>
+
+				<p>In diesem Codebeispiel wird die Größe des Elements auf 200 gesetzt.
+
+				<p>jQuery ignoriert dabei das in CSS eingestellte Box-Modell: <span class="tag">.width()</span> und <span class="tag">.height()</span> beziehen sich immer auf die Größe des Inhalts. Zum auslesen der Größe der gesamten Box (Inhalt, <span class="tag">padding</span>, <span class="tag">border-width</span>) können die Funktionen <span class="tag">.outerWidth()</span>, bzw. <span class="tag">.outerHeight()</span> verwendet werden. Diese Funktionen können aber keine Größe setzen.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var height = $("main #box").outerHeight();</pre></code></div>
+
+				<h2 id="position">Position</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>var offsetTop = $("main #box“).offset().top;
+var offsetLeft = $("main #box“).offset().left;</pre></code></div>
+
+				<p>jQuery kann mithilfe der Funktion <span class="tag">.offset()</span> die Position eines Elements auslesen und setzen. Anders als bei den Größenfunktionen gibt es hier allerdings nicht für jede Dimension eine eigene Funktion, sondern die Funktion gibt mehrere Werte in Form eines JavaScript-Objekts aus. Der gewünschte Wert kann durch anhängen der Seite angegeben werden (<span class="tag">.top</span>, <span class="tag">.right</span>, <span class="tag">.bottom</span>, <span class="tag">.left</span>).</p>
+
+				<p><strong>Achtung: Es handelt sich hier nicht um Funktionen, deshalb sind keine Klammern nötig.</strong></p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main #box").offset({top: 10, left: 20});</pre></code></div>
+
+				<p>Damit Werte gesetzt werden können, muss der Funktion ein JavaScript-Objekt mit den Werten übergeben werden. Eine JavaScript-Objekt wird in geschweiften Klammern angegeben, dann folgen jeweils Eigenschaft und Wert, getrennt durch einen Doppelpunkt. Mehrere Eigenschaften sind mit Kommas getrennt.</p>
+
+				<h2 id="ready"><span class="tag">.ready()</span></h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(document).ready( function()	{
+	// jQuery-Code	
+});</pre></code></div>
+
+				<p>Viele jQuery-Funktionen beziehen sich auf HTML-Elemente. JavaScript wird vom Browser ausgeführt, so bald es geladen ist – unter Umständen ist in diesem Moment die Seite aber noch gar nicht vollständig aufgebaut (die Elemente sind also noch nicht da). Das kann zu Fehlern führen. Es ist deshalb sinnvoll, allen jQuery-Code in die oben angegeben Funktion zu schreiben – er wird dann erst ausgeführt, wenn das document „ready“ ist, also alle Elemente aufgebaut sind.</p>
+
+				<h2 id="klassen">Klassen</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main #box“).addClass("active");
+$("main #box“).removeClass("active");
+$("main #box“).toggleClass("active");</pre></code></div>
+
+				<p>Mit den Funktionen <span class="tag">.addClass()</span>, <span class="tag">.removeClass()</span> und <span class="tag">.toggleClass()</span> können HTML-Elementen Klassen hinzugefügt, entfernt, bzw. getoggelt werden (das bedeutet wenn sie nicht vorhanden sind werden sie hinzugefügt, wenn sie vorhanden sind entfernt). Die Klassen werden in dem Moment verändert, in dem die Funktion aufgerufen wird.</p>
+
+				<h2 id="mouseevents">Mouseevents</h2>
+
+				<p>Man kann Mouseevents an Elemente hängen, das bedeutet dass wenn über diesem Element das entsprechende Mouseevent aus geführt wird, wird der in der Funktion angegeben Code ausgeführt.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$(this).toggleClass("active");
+});</pre></code></div>
+
+				<p>Dieser Beispielcode bewirkt, dass bei einem Klick auf eine Element mit der Klasse box die Klasse <span class="tag">active</span> getoggelt wird. Innerhalb der Funktion wird der Selektor <span class="tag">this</span> verwendet, damit die Klasse nicht beim Klicken auf ein Element mit der Klasse <span class="tag">box</span> allen Elementen mit der Klasse <span class="tag">box</span> hinzugefügt oder entfernt wird, sondern nur bei dem, dass das Event ausgelöst hat, also das, auf welches geklickt wurde.</p>
+
+				<p>Das muss nicht zwingend der Fall sein:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$("nav").toggleClass("active");
+});</pre></code></div>
+
+				<p>Es können auch mehrere Anweisungen nacheinander ausgeführt werden:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$("nav").toggleClass("active");
+	$("header h1“).removeClass("rote-ueberschrift");
+});</pre></code></div>
+
+				<p>Mögliche Mouseevents sind <span class="tag">.click()</span>, <span class="tag">.dblclick()</span>, <span class="tag">.mouseenter()</span>, <span class="tag">.mouseleave()</span>, <span class="tag">.mousdown()</span> und <span class="tag">.mouseup()</span>.</p>
+
+				<p><strong>Achtung: Der auszuführende Code wird nicht direkt in die Klammern geschrieben, sondern als Funktion übergeben, deshalb steht in den Klammern <span class="tag">function() { //code }</span>.</strong></p>
+
+				<h2 id="scroll"><span class="tag">.scroll()</span></h2>
+
+				<p>Das Event <span class="tag">.scroll()</span> wird ausgelöst, wenn der Nutzer im selektierten Element scrollt.
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(document).scroll( function()	{
+	var scrollTop = $(this).scrollTop();
+	$("main .box").offset({top: scrollTop);	
+});</pre></code></div>
+
+				<p>In diesem Fall wird document, also die gesamte Seite selektiert. Wenn auf der gesamte Seite gescrollt wird, wird mithilfe der Funktion <span class="tag">.scrollTop()</span> ausgelesen, wie weit im Dokument bereits gescrollt wurde. Dieser Wert wird den Elementen mit Klasse als Abstand von oben gegeben, das Element bleibt also immer auf gleicher Höhe im Fenster (es ist fixed).</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").scroll( function()	{
+	var scrollTop = $(this).scrollTop();
+	$(this).offset({left: scrollTop/2});
+});</pre></code></div>
+
+				<p><span class="tag">.scroll()</span> kann auch auf einzelne Elemente angewendet werden. Das macht nur sinn, wenn diese Elemente die CSS-Eigenschaft <span class="tag">overflow: scroll</span> besitzen.</p>
+  
+				
+
+			</article>
+
+		</main>
+
+	</body>
+	
+</html>
