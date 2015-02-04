@@ -58,17 +58,8 @@ a	{
 	}
 }
 
-a.inactive	{
+.inactive	{
 	color: $lightgrey;
-	text-decoration: none;
-	background-image: none;
-	
-	&:hover	{
-		color: $lightgrey;
-		text-decoration: none;
-		background-image: none;
-		cursor: pointer;
-	}
 }
 
 b, strong	{
@@ -139,9 +130,10 @@ ul li	{
 	list-style: none;
 
 	&:before	{
-		content: "_";	
+		color: $lightgrey;
+		content: "›";	
 		padding-right: .2rem;
-		margin-left: -.7rem;
+		margin-left: -.55rem;
 	}
 }
 
