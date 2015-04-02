@@ -1,0 +1,83 @@
+body	{
+	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+	color: $black;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.6em;
+	
+	-webkit-font-feature-settings: 'tnum';
+	-moz-font-feature-settings: 'tnum';
+	-ms-font-feature-settings: 'tnum';
+	font-feature-settings: 'tnum';
+}
+
+b, strong	{
+	font-weight: 500;
+}
+
+i, em	{
+	font-style: italic;
+	font-weight: 200;
+}
+
+small	{
+	font-size: 0.8rem;
+}
+
+p	{
+	margin-bottom: 0.7rem;
+}
+
+
+::selection {
+    color: $white; 
+    background: $black;
+}
+
+main	{
+
+	h1	{
+		border-top: 1px solid $verylightgrey;
+		font-size: 1.5em;
+		line-height: 1em;
+		font-weight: 500;
+		margin-top: 5rem;
+		padding-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	
+	h1:first-child	{
+		padding-top: 0;
+	    margin-top: 0;
+	    border-top: none;
+	}
+	
+	h3	{
+		line-height: 1em;
+		font-weight: 500;
+		padding-top: 1rem;
+		margin-top: 1rem;
+		padding-bottom: 0.6rem;	
+	}
+	
+	h3:first-child, h2 + h3	{
+	    margin-top: 0;
+	    padding-top: 0;
+	}
+	
+	
+	ul, ol 	{
+		margin-bottom: 0.7rem;
+	}
+	
+	ul li	{
+		list-style: none;
+	
+		&:before	{
+			color: $lightgrey;
+			content: "›";	
+			padding-right: .2rem;
+			margin-left: -.55rem;
+		}
+	}
+}
