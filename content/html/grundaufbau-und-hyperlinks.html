@@ -1,0 +1,65 @@
+<header>
+	HTML › <h1>Grundaufbau und Hyperlinks</h1>
+</header>
+
+<h2 id="grundaufbau">Grundaufbau</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Grundaufbau eines HTML-Dokuments&lt;/title&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		Hier steht der Inhalt der Seite.
+	&lt;/body&gt;
+&lt;/html&gt;</pre>
+</code>
+</div>
+
+<p>Jede HTML-Datei enthält ein Grundger&uuml;st von Tags, die eine interne Struktur vorgeben (diese wird nicht vom Browser dargestellt.) Das erste und letzte Tag jeder HTML-Datei sind die <span class="tag">&lt;html&gt;</span>-Tags. Zwischen den <span class="tag">&lt;head&gt;</span>-Tags befinden sich Meta-Informationen und weitere eingebundene Dateien (z. B. Javascript- oder CSS-Dateien). Zwischen den <span class="tag">&lt;body&gt;</span>-Tags befindet sich der vom Browser dargestellte Inhalt der Seite.</p>
+
+<h2 id="hyperlinks">Hyperlinks</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Hyperlink&lt;/title&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		Das ist ein Hyperlink zum &lt;a href=&quot;grundaufbau.html&quot;&gt;Grundaufbau eines HTML-Dokuments.&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</pre>
+</code>
+</div>
+
+<p>Hyperlinks werden durch das <span class="tag">&lt;a&gt;</span>-Tag erstellt (a steht für anchor). Zwischen den Tags steht dabei der auf der Website anzuzeigende Text. Das Ziel des Hyperlinks wird im öffnenden Tag als Wert des Attributes „href“ („Hyperreference“) als <a href="/#/meta/datei-pfade">relativer Dateipfad</a> angegeben.</p>
+
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;a href=&quot;Zielpfad&quot;&gt;Anzuzeigender Text&lt;/a&gt;</pre>
+</code>
+</div>
+
+<p>Es ist auch möglich Hyperlinks zu verwenden, um einen Anker zu einem beliebigen Element im Dokument zu setzen. Das Zielelement muss hier für das Attribut „id“ mit einer eindeutigen Indentifikation erhalten, im „href“-Attribut des Hyperlinks wird die id des Elements mit einem vorausgehenden „#“ notiert.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1 id=&quot;zielelement&quot;&gt;Zielelement&lt;/h1&gt;</pre>
+</code>
+</div>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;a href=&quot;#zielelement&quot;&gt;Anzuzeigender Text&lt;/a&gt;</pre>
+</code>
+</div>			

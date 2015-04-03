@@ -1,0 +1,106 @@
+<header>
+	HTML › <h1>DOCTYPE und Dokumentkopf</h1>
+</header>
+
+<h2 id="doctype">DOCTYPE</h2>
+				
+<p>Über die Jahre wurden verschieden Versionen von HTML entwickelt. Damit der Browser weiß, in welcher Version von HTML das Dokument geschrieben ist, wird an oberster Stelle im Dokument, also noch vor dem <span class="tag">&lt;html&gt;</span>-Tag, das DOCTYPE-Tag eingefügt. Bei früheren Versionen war das DOCTYPE-Tag furchtbar lang, komplex und unübersichtlich; bei der für uns relevanten, aktuellen Version HTML5 wurde das DOCTYPE-Tag stark gekürzt:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;!DOCTYPE HTML&gt;</pre>
+</code>
+</div>	
+				
+<h2 id="informationenimheadtag">Informationen im Dokumentkopf</h2>
+
+<p>Im <span class="tag">&lt;head&gt;</span>-Tag eines HTML-Dokuments werden verschiedene wichtige Informationen abgelegt, die sich zwar auf das Verhalten des Browsers auswirken, von diesem aber nicht innerhalb der Website angezeigt werden.</p>
+
+<h3>Informationen</h3>
+
+<p>Im <span class="tag">&lt;title&gt;</span>-Tag wird der Titel der Seite angegeben, wie er oben im Browserfenster angezeigt werden soll. Dieses Tag ist laut HTML-Spezifikation zwingend erforderlich.</p>
+
+<p>Das <span class="tag">&lt;base&gt;</span>-Tag wird selten verwendet und gibt die Basis-URL der Website an, das bedeutet die URL, von der aus alle relativ angegeben Pfade im Dokument ausgehen.</p>
+				
+<p>Es gibt noch einige weitere Informations-Tags, diese sind aber veraltet und wurden weitgehend durch die <span class="tag">&lt;meta&gt;</span>-Tags ersetzt.</p>
+				
+<h3><span class="tag">&lt;meta&gt;</span>-Tags</h3>
+
+<p>Die meisten Informationen über den Inhalt der Website, die für Suchmaschinen relevant sind, werden über  <span class="tag">&lt;meta&gt;</span>-Tags in das Dokument geschrieben:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;meta name=&quot;author&quot; content=&quot;Name des Autors&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Kurze Beschreibung des Inhalts der Website&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;Wichtige Stichw&ouml;rter/Suchbegriffe zum Inhalt der Website&quot;&gt;
+&lt;meta name=&quot;date&quot; content=&quot;Erstellungsdatum&quot;&gt;
+&lt;meta http-equiv=&quot;language&quot; content=&quot;deutsch, de&quot;&gt;</pre>
+</code>
+</div>	
+
+<p><span class="tag">&lt;meta&gt;</span>-Tags sind nicht zwingend in einem Dokument erforderlich. Folgendes Tag sollte aber generell in jeder Seite auftauchen:</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;meta charset=&quot;utf-8&quot;&gt;</pre>
+</code>
+</div>	
+
+<p>Damit wird dem Browser mitgeteilt, welchen Zeichensatz die HTML-Datei verwendet. Das ist bei der Verwendung von Sonderzeichen und insbesondere Umlauten relevant. Mit UTF-8 ist man generell auf der sicheren Seite. <strong>Achtung: die Datei muss auch tatsächlich in diesem Format codiert sein!</strong></p>
+
+
+<h3>Eingebundene Dateien</h3>
+
+<p>Mit di <span class="tag">&lt;link&gt;</span>-Tag können andere Dateien in das Dokument eingebunden werden. Es wird am häufigsten für CSS-Dateien benutzt, kann aber zum Beispiel auch das Icon der Website einbinden:</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles/style.css&quot;&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/favicon.ico&quot; /&gt;</pre>
+</code>
+</div>	
+				
+<p>Zum Einbinden von Javascript-Dateien wird das <span class="tag">&lt;script&gt;</span>-Tag verwendet.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/scripts.js&quot;&gt;&lt;/script&gt;</pre>
+</code>
+</div>	
+<h3>Beispiel eines üblichen Dokument-Kopfes</h3>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;head&gt;
+
+    &lt;!-- META --&gt;
+    &lt;title&gt;Website-Titel&lt;/title&gt;
+    
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    
+    &lt;meta name=&quot;description&quot; content=&quot;Kurze Beschreibung des Inhalts der Website&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;Wichtige Stichw&ouml;rter/Suchbegriffe zum Inhalt der Website&quot;&gt;		
+
+   &lt;!-- FAVICON --&gt;
+    &lt;link rel=&quot;icon&quot; href=&quot;imgs/sprites/favicon.ico&quot; type=&quot;image/png&quot;&gt;
+
+    &lt;!-- STYLES --&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/styles/reset.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/styles/style.css&quot;&gt;
+    
+    &lt;!-- LIBRARIES --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/scripts/libraries/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-- SCRIPTS --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;		
+    		
+&lt;/head&gt;</pre>
+</code>
+</div>	

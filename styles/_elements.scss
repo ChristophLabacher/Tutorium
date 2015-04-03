@@ -1,0 +1,80 @@
+.code-snippet	{
+	@include clearfix;
+	
+	font-family: "Fira Mono", monospace;
+	font-size: 13px;	
+	margin: 2rem 0;
+	width: 100%;	
+	border-radius: 3px;		
+	
+	.lines	{
+		color: $grey;
+		background-color: $lightgrey;
+		border-radius: 3px 0 0 3px;		
+		padding: 1rem 0.3rem;
+		text-align: right;
+		float: left;
+		display: block;
+		overflow: hidden;
+		width: 5.3%;
+	}	
+	
+	code	{
+		float: left;
+		display: block;
+		tab-size: 3;	
+		color: $darkgrey;
+		background-color: $verylightgrey;
+		border-radius: 0 3px 3px 0;				
+		padding: 1rem;
+		width: 94.7%;
+		overflow-wrap: normal;
+		overflow-x: auto;
+	}	
+}
+
+	
+h1  + .code-snippet, h2  + .code-snippet, h3 + .code-snippet	{
+	margin-top: 0;
+}
+
+.tag	{
+	font-family: "Fira Mono", monospace;
+	font-size: 0.85em;	
+	padding: 0 2px;
+	border-radius: 3px;
+	color: $darkgrey;
+	background-color: $verylightgrey;
+}
+
+cite	{
+	font-size: 13px;
+    color: $lightgrey;
+    padding: 0.2rem 0.2rem;
+    display: inline-block;
+    width: 100%;
+    
+    a	{
+    	color: $lightgrey;
+    	text-decoration: none;
+    	background: none;
+    	transition: all 0.3s;
+    	
+    	&:hover	{
+    		color: $grey;
+    		background: none;
+    	}
+    }		
+}
+
+blockquote	{	
+	color: $darkgrey;
+	background-color: $verylightgrey;
+	border-radius: 3px;				
+	padding: 1rem;
+	margin-bottom: 2rem;
+	
+	p:last-child	{
+		margin-bottom: 0;
+	}	
+}

@@ -1,0 +1,38 @@
+<header>
+	HTML › <h1>Einführung</h1>
+</header>
+
+
+<p>Ziel der Entwicklung des World Wide Webs war es, Forschungsergebnisse möglichst schnell und unkompliziert mit anderen Forschern, auch an anderen Standorten zu teilen. Dazu wurde 1992 von einer Arbeitsgruppe um Tim Bernes-Lee am CERN HTML zur Strukturierung digitaler Dokumente und der erste Webbrowser zur Anzeige dieser entwickelt. Eine der wichtigsten Erneuerungen, die mit dem WWW im Vergleich zu klassischen Medien eingeführt wurden, ist, dass es sich bei den Websites um so genannten HyperText handelt.</p>
+
+<cite><a href="http://www.w3.org/Proposal.html" target="_blank">T. Berners-Lee & R. Cailliau – WorldWideWeb: Proposal for a HyperText Project – 1990</a> </cite>
+<blockquote>
+<p>HyperText is a way to link and access information of various kinds as a web of nodes in which the user can browse at will.
+A hypertext page has pieces of text which refer to other texts.</p>
+
+<p>Such references are highlighted and can be selected with a mouse. When you select a reference, the browser presents you with the text which is referenced: you have made the browser follow a hypertext link.</p>
+</blockquote>
+
+<p>HTML steht für „HyperText Markup Language“ und ermöglicht es, zusätzlich zur Strukturierung von Dokumenten auch Verknüpfungen zu anderen Dokumenten („Hyperlinks“) einzufügen. Bei HTML handelt es sich um eine Auszeichnungssprache, es werden also Tags, die als Text in der HTML-Datei eingefügt werden, aber nicht im Browser als Text dargestellt werden, verwendet. Es gibt Tags, die sich direkt auf das Aussehen des Inhaltes auswirken (z. B. <span class="tag">&lt;h1&gt;</span><span class="tag">&lt;/h1&gt;</span> f&uuml;r &Uuml;berschriften ersten Grades) und Tags die nur der Strukturierung dienen (z. B. <span class="tag">&lt;section&gt;</span><span class="tag">&lt;/section&gt;</span>).</p>
+
+<p>HTML-Tags werden immer in spitzen Klammern geschrieben: <span class="tag">&lt;tag&gt;</span>. Bis auf wenige Ausnahmen gibt es zu jedem Tag auch ein schlie&szlig;endes Tag, das hinter der ersten spitzen Klammer einen Str&auml;gstrich enth&auml;lt: <span class="tag">&lt;/tag&gt;</span>. Das Tag wirkt sich auf alles aus, was sich zwischen dem öffnenden und schließenden Tag befindet.
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1&gt;&Uuml;berschrift ersten Grades&lt;/h1&gt;</pre>
+</code>
+</div>
+
+<p>Verschiedene Tags k&ouml;nnen in einander verschachtelt werden.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;p&gt;Dies ist eine &lt;u&gt;Unterstreichung&lt;/u&gt; in einem Absatz.&lt;/p&gt;</pre>
+</code>
+</div>
+
+<p>Ziel der neuesten Generation von HTML ist es, möglichst semantisch, also selbsterklärend und gut lesbar, zu sein. Deswegen gibt es zum Beispiel neue Struktur-Tags, die sich direkt auf bestimmte Bereiche einer Website beziehen, wie <span class="tag">&lt;nav&gt;</span><span class="tag">&lt;/nav&gt;</span> für die Navigation. Beim Schreiben von HTML-Seiten sollte man diese Maxime immer Hinterkopf behalten und versuchen, eine möglichst einfache, einleuchtende Struktur zu erstellen.</p>
+
+<p>Die je aktuellste Spezifikation des HTML-Standarts kann <a href="http://www.w3.org/html/wg/drafts/html/master/Overview.html" target="_blank">hier</a> nachgelesen werden. Dabei handelt es sich im Augenblick um die sich noch in Entwicklung befindende Version 5. Die aktuellste, offizielle Version von HTML, HTML 4.01, stammt von 1999 und gilt allgemein als veraltet.</p>
