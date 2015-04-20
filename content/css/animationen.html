@@ -1,0 +1,41 @@
+<header>
+	CSS › <h1>Animationen</h1>
+</header>
+
+<h2 id="transition"><span class="tag">transition</span></h2>
+				
+<p>Mit der Eigenschaft <span class="tag">transition</span> lässt sich einstellen, dass bestimmte Eigenschaften, wenn der entsprechende Wert verändert wird (zum Beispiel da er innerhalb des Pseudoselektors :hover überschrieben wird) nicht einfach „springen“, sondern ein sanfter Übergang zwischen den Werten dargestellt wird.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 5rem;
+	transition: all 1s;
+}
+
+div:hover	{
+	width: 10rem;
+}</pre></code></div>
+
+<p>Die Eigenschaft <span class="tag">transition</span> erhält mindestens zwei, maximal vier Werte. Der erst gibt an welche Eigenschaft einen Übergang erhalten soll. Soll jede Eigenschaft, für die ein Übergang möglich ist, einen Übergang erhalten, so wird <span class="tag">all</span> angegeben, ansonsten wird der Name der Eigenschaft angegeben. Als zweites folgt die Dauer des Übergangs. Als optionale dritte Eigenschaft kann die Kurve, in der der Übergang erfolgt angegeben werden; mögliche Werte sind <span class="tag">ease</span> (Standardwert), <span class="tag">linear</span>, <span class="tag">ease-in</span>, <span class="tag">ease-out</span>, ease-in-out. Die optionale vierte Eigenschaft gibt an, mit welcher Verzögerung der Übergang beginnen soll, hier wird wiederum eine Dauer angegeben.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transition: all 1s ease-in-out 2s;
+}</pre></code></div>
+
+<p><strong>Achtung, Nicht alle Eigenschaften können einen Übergang haben. <a href="http://www.w3schools.com/cssref/css_animatable.asp" target="_blank">Hier</a> ist eine Liste der „animatable properties“.</strong></p>
+	
+<p>Manchmal sollen verschiedene Eigenschaften verschiedene Übergänge erhalten. Die Eigenschaft transition darf deshalb auch mehrmals angegeben werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transition: width 1s;
+	transition: background-color 2s;
+}</pre></code></div>
+

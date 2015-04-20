@@ -1,0 +1,29 @@
+<header>
+	CSS › <h1>Einbindung von CSS-Dateien</h1>
+</header>
+<p>Um CSS-Code in die HTML Datei einzubinden, gibt es zwei Möglichkeiten. Die erste ist es, den CSS-Code direkt in das HTML-Dokument zu schreiben. Er wird dabei mit dem  <span class="tag">&lt;style&gt;</span>-Tag ausgezeichnet.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;style&gt;
+	Selektor	{
+		Eigenschaft: Wert;
+		Eigenschaft: Wert;
+	}
+&lt;/style&gt;</pre>
+</code>
+</div>
+				
+<p>Diese Art CSS-Code einzubinden funktioniert, wenn man nur einzelne Elemente stylen möchte. Bei einer normalen Website wird der CSS-Code aber schnell mehre hundert Zeilen lang. Dann wird das HTML-Dokument unübersichtlich und der Sinn der strengen Trennung zwischen Inhalt und Aussehen durch HTML und CSS geht vollkommen verloren.</p>
+				
+<p>Deshalb empfiehlt es sich immer die zweite Möglichkeit zu nutzen: dabei wird der CSS-Code in eine eigene Datei geschrieben (diese heißt in der Regel „style.css“) und diese wird dann mit Hilfe der folgenden Zeile in den HTML-Code eingebunden:</p>
+	
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;</pre>
+</code>
+</div>
+
+<p>Diese Zeile wird in den  <span class="tag">&lt;head&gt;</span>-Bereich des HTML-Dokuments eingefügt. Das Attribut href erhält dabei als Wert den relativen Pfad zu der CSS-Datei. Im Code-Beispiel oben würde also die Datei „style.css“, die sich im selben Verzeichnis wie das HTML-Dokument befindet, eingebunden werden.</p>

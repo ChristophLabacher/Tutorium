@@ -1,0 +1,151 @@
+<header>
+	CSS › <h1>Positionierung</h1>
+</header>
+
+<h2><span class="tag">position</span></h2>
+
+<p>Meistens müssen wir uns um die Positionierung von Block-Elementen keine Gedanken machen: Sie werden nacheinander vom Browser, in der Reihenfolge wie sie im HTML-Dokument angegeben sind, untereinander angezeigt. Diesen Zustand der Positionierung (also ganz normal im Dokumentfluss) nennt man <span class="tag">static</span>.</p>
+				
+<h3><span class="tag">static</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: static;
+}</pre></code></div>
+
+<p>Dies ist der Standardwert der Eigenschaft <span class="tag">position</span>, wir müssen ihn also fast nie ausdrücklich verwenden. Es gibt noch einige andere Arten der Positionierung:</p>
+	
+<h3><span class="tag">relative</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: relative;
+	top: 20px;
+	left: -40px;
+}</pre></code></div>
+
+<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">relative</span>, so wird das Element relativ zu seiner normalen Position (also der, die es hätte wenn der Wert static wäre) verschoben.</p>
+	
+<p>Wie weit und in welche Richtung verschoben werden soll, wird durch die Eigenschaften <span class="tag">top</span>, <span class="tag">bottom</span>, <span class="tag">left</span> und <span class="tag">right</span> angegeben, wobei immer nur die Verwendung von zwei Sinn ergibt (einer horizontalen und einer vertikalen).</p>
+
+<p>Das <span class="tag">&lt;div&gt;</span>-Element im oberen Code Beispiel w&auml;re also von seiner Ausgangsposition aus 20px nach unten und 40px nach links verschoben worden.</p>
+
+<p>Wird die Positionierung relative vorgenommen, so ist wichtig zu beachten, dass das <span class="tag">&lt;div&gt;</span>-Element, nur optisch verschoben wird, logisch befindet es sich noch an seiner urspr&uuml;nglichen Position. Deswegen wird anderer Inhalt auch nur dort verdr&auml;ngt, an der neuen Position &uuml;berlagert das Element den anderen Inhalt.</p>
+	
+<h3><span class="tag">absolute</span></h3>
+								
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;div class=&quot;container&quot;&gt;
+	&lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;
+&lt;/div&gt;</pre></code></div>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>.container	{
+	position: relative;
+}
+
+.content	{
+	position: absolute;
+	bottom: 20px;
+	right: 25px;
+}</pre></code></div>
+
+<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">absolute</span>, so wird das Element relativ zum nächsten Elternelement verschoben, des position-Eigenschaft nicht den Wert static besitzt.</p>
+
+<p>In diesem Code-Beispiel wird das Element mit der Klasse <span class="tag">content</span> also, ausgehend von der Position seines Elternelements mit der Klasse container, um  20px nach oben und um 25px nach links verschoben. Wichtig ist, dass das Element mit der Klasse <span class="tag">container</span> nicht den Wert <span class="tag">static</span> besitzt, sondern relative. Damit das Element aber trotzdem nicht verschoben wird, sind keine Angaben weiteren gemacht: das Element wird von seiner Ursprungsposition um 0px verschoben.</p>
+
+<p>Ein Problem das häufig auftritt, wenn der Wert <span class="tag">absolute</span> verwendet wird ist, dass ein Element, das diesen Wert besitzt sich (warum auch immer) nicht mehr auf die Größe seines Elternelements auswirkt. Das Element mit der Klasse <span class="tag">container</span> im oberen Beispiel hätte also die Höhe 0px. Durch dieses Problem ist das Verwenden von <span class="tag">absolute</span> meistens nicht praktikabel.</p>
+				
+<h3><span class="tag">fixed</span></h3>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	position: fixed;
+	bottom: 40px;
+	right: 25px;
+}</pre></code></div>
+
+<p>Ist der Wert der Eigenschaft <span class="tag">position</span> <span class="tag">absolute</span>, so wird das Element relativ zum Browserfenster verschoben.</p>
+
+<p>In diesem Code-Beispiel befindet sich das Element dann also in der unteren rechten Ecke des Browserfensters, 40px vom unteren und 25px vom rechten Rand entfernt. Es bleibt an dieser Stelle, auch wenn gescrollt wird.</p>
+
+<p>Auch bei diesem Wert wird das Element aus dem Dokumentfluss gehoben und die Größe wirkt sich auf keine andern Elemente mehr aus, in diesem Fall ist es jedoch meistens sinnvoll, da sich das Element ja an einem gänzlich anderen Ort befindet als zuvor.</p>
+
+<p>Dieser Wert ist besonders für Menüs oder Header geeignet, die beim Scrollen im Bild bleiben sollen.</p>
+
+<h3><span class="tag">z-index</span></h3>
+
+<p>Durch Verwendung der Eigenschaft <span class="tag">position</span> ist es möglich, dass sich verschiedenen Elemente überlagern. Generell gilt: je weiter unten sich ein Element im HTML-Dokument befindet, desto höher liegt es. Mit Hilfe der Eigenschaft <span class="tag">z-index</span> lässt sich jedoch darauf Einfluss nehmen: Elemente mit höherem Zahlenwert als Wert der Eigenschaft <span class="tag">z-index</span> überlagern Elemente mit einem niedrigeren Wert. <span class="tag">z-index</span> darf auch negative Werte enthalten.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	z-index: 2;
+}</pre></code></div> 	
+
+<h2 id="transform"><span class="tag">transform</span></h2>
+
+<p>Mit Hilfe der Eigenschaft <span class="tag">transform</span> können Elemente verschoben, gedreht und verzerrt werden. Die verschiedenen Werte werden dabei als eine Art Funktion mit Argumenten angegeben.</p>
+
+<h3><span class="tag">translate</span></h3>
+				
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translate(x,y);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translateX(x);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: translate3d(x,y,z);</pre></code></div>
+
+<p>Mit dem Wert <span class="tag">translate</span> kann das Element in x- und y-Richtung verschoben werden (anstelle der Platzhalter müssen Größenangaben eingegeben werden). Soll nur eine Richtung genutzt werden, so können die Werte <span class="tag">translateX</span> oder <span class="tag">translateY</span> verwendet werden. Außerdem ist eine dreidimensionale Verschiebung mit Hilfe des Wertes <span class="tag">translate3d</span> möglich, dabei wird zusätzlich ein z-Wert erwartet.</p>
+
+<h3><span class="tag">scale</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: scale(x,y);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: scaleX(x);</pre></code></div>
+
+<p>Mit dem Wert <span class="tag">scale</span> kann ein Element vergrößert oder verkleinert, bzw. verzerrt werden. Soll das Element nur in eine Richtung verändert werden, so sind auch die Werte <span class="tag">scaleX</span>, bzw. <span class="tag">scaleY</span> möglich.</p>
+
+<h3><span class="tag">rotate</span></h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>transform: rotate(angle);</pre></code></div>
+
+<p>Mit dem Wert <span class="tag">rotate</span> kann ein Element gedreht werden. Dabei wird eine Winkelangabe, zum Beispiel „30deg“. Auch eine dreidimensionale Rotation ist möglich, diese ist aber sehr komplex.</p>
+
+<p>Mehrere Werte für die Eigenschaft <span class="tag">transform</span> können verwendet werden. Sie werden nacheinander angegeben:
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	transform: rotate(20deg) scaleX(20px);
+}</pre></code></div>
+

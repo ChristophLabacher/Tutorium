@@ -9,6 +9,7 @@ $(document).ready(function()	{
 			
 			$.get(source, function( data ) {
 				$("main article").html( data );
+				$("main").scrollTop(0);
 				lineNumbers();
 			});
 			
@@ -24,6 +25,7 @@ $(document).ready(function()	{
 		$("ul.main > li").removeClass("selected");
 		$(this).addClass("selected");
 		
+/*
 		var source = "content/";
 		source += $(this).next("ul.sub").attr("source") + "/";
 		source += "einfuehrung";
@@ -31,13 +33,15 @@ $(document).ready(function()	{
 		
 		$.get(source, function( data ) {
 			$("main article").html( data );
+			$("main").scrollTop(0);
 			lineNumbers();
 		});
 		
 		$("ul.sub").find(".selected").removeClass("selected");
-		$(this).next("ul.sub").find("li[source=einfuehrung]").addClass("selected");
+		$(this).next("ul.sub").scrollTop(0).find("li[source=einfuehrung]").addClass("selected");
 		
 		location.hash = "#/" + $(this).next("ul.sub").attr("source") + "/einfuehrung";
+*/
 	});
 		
 	// Root is meta/introduction else URL-Routing
@@ -46,6 +50,7 @@ $(document).ready(function()	{
 	
 		$.get("content/meta/einfuehrung.html", function( data ) {
 			$("main article").html( data );
+			$("main").scrollTop(0);
 		});
 	} else	{
 		var path = location.hash.split("/");

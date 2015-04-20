@@ -1,0 +1,87 @@
+<header>
+	CSS › <h1>Grundaufbau, Begriffe und Kommentare</h1>
+</header>
+
+<h2>Grundaufbau und Begriffe</h2>
+
+<p>Anders als bei einem HTML-Dokument gibt es bei CSS-Dateien keine Grundstruktur, die in jeder Datei vorhanden sein muss. Stylesheets enthalten einfach eine Aneinanderreihung verschiedener Aussehensdefinitionen. Diese werden folgendermaßen erstellt:</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>Selektor	{
+	Eigenschaft: Wert;
+	Eigenschaft: Wert;
+}</pre>
+</code>
+</div>	
+
+<p>Mit einem Selektor wird das zu formatierende HTML-Tag ausgewählt. Dann folgt in geschweiften Klammern die Aussehensdefinition: Die Eigenschaft, die verändert werden soll, wird aufgeführt, dann folgt nach einem Doppelpunkt der gewünschte Wert. Die Zeile wird abgeschlossen mit einem Semikolon. So können untereinander beliebig viele Eigenschaften definiert werden.</p>
+				
+<p>Es gibt für verschiedene optische Eigenschaften vorgegebene Eigenschaftsnamen mit vorgegebenen möglichen Werten. Diese werden im Laufe des Kurses vorgestellt.</p>
+				
+<p>Soll dass <span class="tag">&lt;h1&gt;</span>-Tag formatiert werden, könnte das also zum Beispiel wie folgt aussehen:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	font-size: 30px;
+	line-height: 35px;
+	font-weight: bold;
+}</pre>
+</code>
+</div>	
+
+<p>Hier werden alle im Dokument vorkommenden <span class="tag">&lt;h1&gt;</span>-Tags ausgewählt, die Eigenschaft <span class="tag">font-size</span> (Schriftgröße) auf <span class="tag">30px</span> gesetzt, die Eigenschaft <span class="tag">line-height</span> (Zeilenabstand) auf <span class="tag">35px</span> gesetzt und die Eigenschaft <span class="tag">font-weight</span> (Schriftdicke) auf <span class="tag">bold</span> gesetzt.</p>
+				
+<p>Sollte nun auch noch das <span class="tag">&lt;h2&gt;</span>-Tag gestylt werden, so würde diese Definition einfach darunter gesetzt werden. Die gesamte CSS-Datei sähe dann folgendermaßen aus:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	font-size: 30px;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+h2	{
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: bold;
+}</pre>
+</code>
+</div>
+
+<p>Die Reihenfolge, in der die Eigenschaften genannt werden hat unter Umständen eine Auswirkung auf deren Gültigkeit. Wird der Wert einer Eigenschaft weiter unten im Dokument noch einmal verändert, so gilt der später genannte. Im nachfolgenden Beispiel wäre die Schriftgröße des <span class="tag">&lt;h1&gt;</span>-Tags also 50px, die des <span class="tag">&lt;h2&gt;</span>-Tags 18px.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	font-size: 30px;
+}
+
+h2	{
+	font-size: 24px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+h1	{
+	font-size: 50px;
+}</pre>
+</code>
+</div>
+
+<h2>Kommentare</h2>
+
+<p>In CSS gibt es nur eine Art von Kommentar, dieser kann einzeilig oder mehrzeilig sein. Das öffnende Tag ist dabei <span class="tag">/*</span> das schließende <span class="tag">*/</span>.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>/* Kommentar */</pre>
+</code>
+</div>

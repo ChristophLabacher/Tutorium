@@ -1,0 +1,77 @@
+<header>
+	CSS › <h1>Das Box-Modell</h1>
+</header>
+
+<p>Mit Hilfe der Strukturtags können wir das HTML-Dokument in die Bereiche einteilen, aus denen später das Layout bestehen wird. Um den nächsten Schritt in Richtung des finalen Layouts zu gehen, gilt es die Größe der Elemente festzulegen. Hierfür gibt es das CSS Box-Modell.</p>
+
+<p>Das im folgenden erklärte Box-Modell funktioniert allerdings nur bei <a href="#/html/block-elemente-vs-inline-elemente">Block-Elementen</a> (z. B. die Strukturtags, <span class="tag">&lt;p&gt;</span>, <span class="tag">&lt;h1&gt;</span>).</p>
+
+<p><strong>Achtung: Das ursprüngliche Box-Modell von CSS ist unintuitiv und für die meisten Fälle komplett ungeeignet. Deshalb wird in diesem Tutorium nur das moderne Box-Modell verwendet – dieses ist aber nicht standardmäßig aktiv.</strong></p>
+
+<p>Damit das moderne Box-Modell verwendet wird muss die Eigenschaft <span class="tag">box-sizing</span> auf <span class="tag">border-box</span> gesetzt werden. Folgender Code setzt die Eigenschaft für alle vom <span class="tag">&lt;html&gt;</span>-Tag abstammenden (also alle) Elemente.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>html {  
+  box-sizing: border-box; /* Ch, Saf 5.1+, IE 8+, Op 9+  */
+  -webkit-box-sizing: border-box; /* Saf &lt;5.1, */
+  -moz-box-sizing: border-box; /* Fx */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}</pre></code></div>
+
+<p>Um die Größe eines Objekts anzugeben gibt es in CSS drei Eigenschaften: die Größe (<span class="tag">width</span> & <span class="tag">heigth</span>), den Innenabstand (<span class="tag">padding</span>) und den Außenabstand (<span class="tag">margin</span>).</p>
+
+<p>Mit <span class="tag">width</span> und <span class="tag">height</span> wird die Breite und die Höhe des Objekts angegeben. Mit <span class="tag">padding</span> der Abstand, den der sich im Objekt befindende Inhalt vom Rand des Elements haben soll. <span class="tag">margin</span> gibt den Abstand an, den das Objekt zum nächsten Objekt haben soll, bzw. denn das Objekt vom Rand seines Elternelements hat.</p>
+
+<p>Beim modernen Box-Modell sind die Breite der Kontur (<span class="tag">border-width</span>) und der Innenabstand (<span class="tag">padding</span>) in den Angaben für Breite (<span class="tag">width</span>) und Höhe (<span class="tag">height</span>) enthalten. </p>
+
+<img src="imgs/box-modell.png">
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	width: 500px;
+	height: 400px;
+	padding: 25px;
+	margin: 50px;
+	border: 1px solid black;
+}</pre></code></div>
+
+<p>Dieser Code bewirkt also, dass das Element insgesamt 500px breit und 400px hoch ist. Der sich im Element befindende Inhalt kann also 448px (500px - 25px - 25px - 1px - 1px: Breite abzügliche linkem und rechtem Innenabstand und linker und rechter Kontur) breit und 348px (400px - 25px - 25px - 1px - 1px: Höhe abzüglich oberem und unterem Innenabstand und oberer und unterer Kontur) hoch sein.</p>
+
+<p>Das nächste Element muss mindestens 50px entfernt von diesem Element sein. Dabei ist wichtig, dass die Außenabstände zweier Elemente nicht zusammenaddiert, sondern miteinander verrechnet werden. Sollte auf das <span class="tag">&lt;article&gt;</span>-Element also noch ein <span class="tag">&lt;article&gt;</span>-Element folgen, so betr&auml;gt der Abstand zwischen den beiden 50px. Sollte auf das <span class="tag">&lt;article&gt;</span>-Element ein <span class="tag">&lt;footer&gt;</span>-Element folgen, dass einen Au&szlig;enabstand von 70px hat, so wird der Abstand zwischen den beiden Elementen 70px sein.</p>
+
+<p><span class="tag">padding</span> und <span class="tag">margin</span> können auch für einzelne Seiten angegeben werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	padding-top: 25px;
+	padding-right: 50px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+}</pre></code></div>
+
+<p>Hierfür gibt es auch eine Kurzschreibweise: Für <span class="tag">margin</span> und <span class="tag">padding</span> können vier Werte in Folge angegeben werden. Diese geben dann die Werte für <span class="tag">top</span>, <span class="tag">right</span>, <span class="tag">bottom</span> und <span class="tag">left</span> an. Der Code oben kann also auch so geschrieben werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	padding: 25px 50px 25px 50px;
+}</pre></code></div>
+
+<p>In diesem Fall geht es sogar noch kürzer: Sollen die Werte für <span class="tag">top</span> und <span class="tag">bottom</span>, bzw. für <span class="tag">left</span> und <span class="tag">right</span> die selben sein, kann der Code auch so geschrieben werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article	{
+	padding: 25px 50px;
+}</pre></code></div>

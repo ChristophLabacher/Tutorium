@@ -1,0 +1,37 @@
+<header>
+	CSS › <h1>Farbanagaben</h1>
+</header>
+
+<p>Um Farben in CSS anzugeben, gibt es verschiedene Möglichkeiten.</p>
+
+<p>Die erste ist es, einfach den englischen Farbbegriff zu schreiben, also <span class="tag">black</span>, <span class="tag">red</span>, <span class="tag">blue</span>, usw. Dabei ist man aber auf sehr wenige Farben beschränkt, deshalb wird diese Methode kaum angewendet.</p>
+
+<p>Die zweite Möglichkeit eine Farbe anzugeben ist der „Hex-Code“. Dabei wird die Farbe als sechsstellige Zahl im hexadezimalen Format angegeben (mögliche Ziffern sind als 0 bis 9, sowie A bis F). Je zwei Ziffern geben den Wert für Rot, Grün bzw. Blau an (zwei hexadezimale Ziffern ermöglichen alle Zahlen von 0 bis – dezimal ausgedrückt – 255). Am Anfang des Hex-Codes steht immer „#“.</p>
+
+<p>Schwarz würde demnach als <span class="tag">#000000</span> angegeben werden, weiß als <span class="tag">#FFFFFF</span>, rot als <span class="tag">#FF0000</span>, türkis als <span class="tag">#00FFFF</span>, usw.; <span class="tag">#A036A3</span> wäre beispielsweise ein dunkler Lilaton. Hex-Werte können direkt aus dem Colorpicker bei Photoshop o. ä. kopiert werden.</p>
+
+<p>Die dritte Möglichkeit besteht darin, Farben als RGB anzugeben. Dabei kann für rot, grün und blau je eine Ganzzahl zwischen 0 und 255 angegeben werden. RGB-Werte werden folgendermaßen definiert:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>rgb(255, 255, 255);</pre></code></div>
+
+<p>Auch die Angabe von Farben in HSL <i>(Hue, Saturation, Lightness)</i> ist möglich. Dabei ist der Farbton zwischen 0 und 360 anzugeben, Sättigung und Helligkeit in Prozent.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>hsl(260, 80%, 30%);</pre></code></div>
+
+Es zusätzlich möglich, einen Alpha-Wert zwischen 0 und 1 anzugeben, um halbtransparente Farben zu definieren. Dabei wird die Farbe als RGBA oder HSLA angegeben:
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>rgba(255, 255, 255, .4);</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>hsla(260, 80%, 30%, .9);</pre></code></div>

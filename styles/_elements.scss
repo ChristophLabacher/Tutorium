@@ -38,6 +38,69 @@ h1  + .code-snippet, h2  + .code-snippet, h3 + .code-snippet	{
 	margin-top: 0;
 }
 
+.code-snippet.split	{
+	code	{
+		width: 50% !important;
+		border-radius: 0;
+		border: 1px solid $lightgrey;
+		border-left: none;
+	}
+	.result	{
+		font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+		font-size: 15px;
+		float: left;
+		display: block;
+		color: $darkgrey;
+		border: 1px solid $lightgrey;
+		border-left: none;
+		border-radius: 0 3px 3px 0;				
+		padding: 1rem;
+		overflow-wrap: normal;
+		overflow-x: auto;
+		width: 44.7%;
+		
+		li	{
+			margin-left: 20px;
+		}
+		
+		ul li	{
+			list-style: disc outside none;
+			display: list-item;
+			&:before{
+				content: "";
+				padding-right: 0;	
+				margin-left: 0;
+			}
+		}
+		
+		ul ul	{
+			margin-left: 20px;
+			margin-bottom: 0;
+			
+			li	{
+				list-style: circle;
+			}
+		}
+		
+		q	{ font-style: italic;	}
+		
+		span.cite	{
+			color: $lightgrey;
+			font-style: italic;
+		}
+			
+		code	{
+			display: inline;
+			color: $darkgrey;
+			background-color: transparent;
+			border-radius: 0;				
+			padding: 0;
+			border: none;
+		}
+	}	
+}
+
+
 .tag	{
 	font-family: "Fira Mono", monospace;
 	font-size: 0.85em;	

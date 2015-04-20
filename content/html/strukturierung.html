@@ -1,0 +1,119 @@
+<header>
+	HTML › <h1>Strukturierung</h1>
+</header>
+
+<p>Es gibt außer den Tags, die die Grundstruktur des HTML-Dokuments festlegen (<span class="tag">&lt;html&gt;</span>, <span class="tag">&lt;head&gt;</span>, <span class="tag">&lt;body&gt;</span>), dem Hyperlink-Tag (<span class="tag">&lt;a&gt;</span>) und den Tags zur Textauszeichnung (z. B. <span class="tag">&lt;h1&gt;</span>, <span class="tag">&lt;p&gt;</span>, <span class="tag">&lt;i&gt;</span>, <span class="tag">&lt;strong&gt;</span>, <span class="tag">&lt;time&gt;</span>) auch noch Tags zur Einteilung des Dokuments in verschiedene Bereiche.</p>
+
+<p>Mit den Tags zur Textauszeichnung können wir den Inhalt eines Dokument sauber formatieren, aber eine Website ist noch mehr: Sie besteht aus verschiedenen Bereichen (Menü, Inhalt, Seitenleiste, …), nicht nur aus einem Fließtext. Das gilt natürlich besonders für Interfaceprototypen.</p>
+
+<p>Deshalb gibt es verschiedene Tags, mit denen wir größere Bereiche markieren können. Die Tags bewirken von sich aus keine optische Veränderung (insbesondere kein bestimmtes Layout), aber sie können später mit CSS gestylt werden und helfen dann dabei, ein Layout zu erstellen.</p>
+
+<p>Wenn man eine Website oder einen Prototypen erstellt, geht man meistens wie folgt vor: Zuerst erstellt man einen Entwurf, dann überlegt man, aus welchen Bereichen dieser besteht, und überlegt sich eine Struktur. Diese erstellt man in HTML. Erst dann wird die Struktur mit Inhalt gefüllt, der anschließend formatiert wird.</p>
+
+<img src="imgs/aufteilung_02.png">
+
+<p>Das <span class="tag">&lt;nav&gt;</span>-Tag markiert die Navigation der Seite, also die Men&uuml;struktur. Es darf mehrmals pro Seite eingesetzt werden, sollte aber m&ouml;glichst nur einmal vorkommen.</p>
+
+<p>Das <span class="tag">&lt;main&gt;</span>-Tag markiert den Hauptinhalt der Seite, also den Bereich, in dem der tats&auml;chliche Inhalt steht. Es darf nur einmal pro Seite vorkommen.</p>
+
+<p>Das <span class="tag">&lt;aside&gt;</span>-Tag kann als Pendant zum <span class="tag">&lt;main&gt;</span>-Tag verstanden werden; in diesem Fall markiert es einen weniger relevanten Teil der Seite, zum Beispiel eine Seitenleiste. Das muss es aber nicht: Es kann sich auch innerhalb des main-Tags befinden, und zum Beispiel die Anmerkungen zu einem Text enthalten.</p>
+
+<p>Das <span class="tag">&lt;header&gt;</span>-Tag markiert einen Kopfabschnitt. Dies kann sowohl der Kopfabschnitt der Seite sein, also Informationen die auf jeder Seite stehen (es k&ouml;nnte zum Bespiel ein <span class="tag">&lt;nav&gt;</span>-Tag mit Navigation enthalten), als auch der Kopfteil eines Abschnittes (also zum Beispiel den Teil eines Blogeintrags, der den Titel und einen ersten hervorgehobenen Abschnitt o. &auml;. enth&auml;lt). Es darf beliebig oft auf der Seite vorkommen.</p>
+
+<p>Dasselbe gilt f&uuml;r das <span class="tag">&lt;footer&gt;</span>-Tag: Es markiert ein Fu&szlig;element und darf beliebig oft vorkommen.</p>
+
+<p>Das <span class="tag">&lt;article&gt;</span>-Tag markiert einen gr&ouml;&szlig;eren Inhaltsabschnitt einer Seite, also zum Beispiel ein Kapitel, einen Blogeintrag oder einen l&auml;ngeren Abschnitt.</p>
+
+<p>Das <span class="tag">&lt;section&gt;</span>-Tag wird oft missverstanden: Es markiert <em>nicht</em> einen gr&ouml;&szlig;eren Bereich einer Seite, wie den Inhaltsbereich o. &auml;., sondern einen Abschnitt eines gr&ouml;&szlig;eren Elements (also zum Beispiel ein Unterkapitel, oder bei einer einer Liste von Profilen mit mehreren Informationen zu jedem Profil die einzelnen Profile. Die gesamte Liste k&ouml;nnte dann zum Beispiel ein <span class="tag">&lt;article&gt;</span>-Element sein).</p>
+
+<p>Die Struktur der oben skizzierten Seite (mit ein paar Beispielinhalten) würde also folgendermaßen aussehen:</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Beispielstruktur&lt;/title&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;header&gt;
+				&lt;p&gt;Logo&lt;/p&gt;
+				
+				&lt;nav&gt;
+					&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt; |
+					&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt; |
+					&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt; |
+					&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;
+				&lt;/nav&gt;
+		&lt;/header&gt;
+		
+		&lt;main&gt;
+		
+			&lt;article&gt;
+				&lt;header&gt;
+					&lt;h1&gt;&Uuml;berschrift 1&lt;/h1&gt;
+					&lt;p&gt;Von Max Mustermann&lt;/p&gt;
+				&lt;/header&gt;
+				&lt;p&gt;
+					In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauris. Sed ullamcorper tellus erat, non ultrices sem tincidunt euismod. Fusce rhoncus porttitor velit, eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at nibh quis, facilisis accumsan turpis.
+				&lt;/p&gt;
+				&lt;footer&gt;
+					&lt;p&gt;Gepostet um 19:14 in Beispiele&lt;/p&gt;
+				&lt;/footer&gt;
+			&lt;/article&gt;
+			
+			&lt;article&gt;
+				&lt;header&gt;
+					&lt;h1&gt;&Uuml;berschrift 1&lt;/h1&gt;
+					&lt;p&gt;Von Max Mustermann&lt;/p&gt;
+				&lt;/header&gt;
+				&lt;p&gt;
+					In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauris. Sed ullamcorper tellus erat, non ultrices sem tincidunt euismod. Fusce rhoncus porttitor velit, eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at nibh quis, facilisis accumsan turpis.
+				&lt;/p&gt;
+				&lt;footer&gt;
+					&lt;p&gt;Gepostet um 19:14 in Beispiele&lt;/p&gt;
+				&lt;/footer&gt;
+			&lt;/article&gt;
+			
+		&lt;/main&gt;
+		
+		&lt;aside&gt;
+			&lt;h1&gt;Seitenleiste:&lt;/h1&gt;
+			&lt;ul&gt;
+				&lt;li&gt;Suche&lt;/li&gt;
+				&lt;li&gt;&Auml;hnliche Blogs&lt;/li&gt;
+				&lt;li&gt;Dauerhafte Infos&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/aside&gt;
+		
+		&lt;footer&gt;
+			&lt;p&gt;Copyright 2014&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</pre>
+</code>
+</div>
+
+<h2><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span></h2>
+
+<p>Manchmal reichen die vorhanden HTML-Tags nicht aus und es w&auml;re praktisch eigene Tags zu definieren. In diesem Fall kommen die Tags <span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> ins Spiel.</p>
+
+<p>In diesem Dokument sind zum Beispiel alle HTML-Tags anders dargestellt als normaler Text: sie sind in einer Monospace-Schrift geschrieben und haben eine graue Hintergrundfarbe. Es gibt aber kein <span class="tag">&lt;tag&gt;</span>-Tag, mit dem die Tags einfach ausgezeichnet werden k&ouml;nnten.</p>
+
+<p><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> sind Platzhalter-Tags, die von sich aus weder eine optische Ver&auml;nderung bewirken, noch eine semantische Bedeutung besitzen. Mit Hilfe von Klassen ist es damit m&ouml;glich, eigene Tags zu erstellen. Bei <span class="tag">&lt;div&gt;</span> handelt es sich um ein Block-Tag, bei <span class="tag">&lt;span&gt;</span> um ein Inline-Tag.</p>
+
+<p>Die HTML-Tags, denen ich eigene Eigenschaften zuweisen m&ouml;chte befinden sich im Flie&szlig;text, es ist also ein Inline-Tag n&ouml;tig. Ich zeichnete also alle Tags wie folgt aus:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;p&gt;
+	Durch den zweiten Beispiel-Code werden nun also alle &lt;span class=&quot;tag&quot;&gt;&lt;h1&gt;&lt;span&gt;-Tags auf der Seite gr&uuml;n dargestellt.  [&hellip;]
+&lt;/p&gt;</pre></code></div>
+
+<p>Und definierte dann im CSS-Code meine Eigenschaften f&uuml;r die Klasse <span class="tag">tag</span>.</p>
+
+<p><span class="tag">&lt;div&gt;</span> und <span class="tag">&lt;span&gt;</span> sind m&auml;chtige Instrumente, da sie es erlauben von vorgegeben Schemen abzuweichen und ganz eigene Definitionen zu schaffen.</p>

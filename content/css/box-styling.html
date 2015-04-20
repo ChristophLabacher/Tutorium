@@ -1,0 +1,151 @@
+<header>
+	CSS › <h1>Box-Styling</h1>
+</header>
+
+<p>Es gibt verschiedene Eigenschaften, mit denen das Aussehen von Block-Elemente beeinflusst werden kann.
+
+<h3>Größe</h3>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 100%;
+	height: 500px;
+	padding: 30px;
+	margin: 50px;
+}</pre></code></div>
+
+<p>Laut dem <a href="#/css/das-box-modell">Box-Modell</a> können die folgenden Angaben die Größe eines Elements beeinflussen: <span class="tag">width</span> (Breite), <span class="tag">heigth</span> (Höhe), <span class="tag">padding</span> (Innenabstand) und <span class="tag">margin</span> (Außenabstand).</p>
+
+<h3>Hintergrundfarbe</h3>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	background-color: rgba(0,0,0,0.5);
+}</pre></code></div>
+
+<p>Mit der Eigenschaft <span class="tag">background-color</span> lassen sich (auch halbtransparente) Hintergrundfarben definieren.</p>
+
+<h3>Hintergrundbild</h3>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	background-image: url("../imgs/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left top;
+}</pre></code></div>
+
+<p>Mit Hilfe der Eigenschaft <span class="tag">background-image</span> wird angegeben, welches Bild als Hintergrundbild verwendet werden soll. Dabei wird als Wert <span class="tag">url("relativer Pfad")</span> verwendet. Der Pfad zum Bild ist <a href="#/meta/datei-pfade">relativ</a>, ausgehen von der Position des Stylesheets anzugeben.</p>
+
+<p><span class="tag">background-repeat</span> gibt an, ob ein Hintergrundbild gekachelt wird. Mögliche Eigenschaften sind <span class="tag">no-repeat</span>, <span class="tag">repeat-x</span> (horizontale Kachelung), <span class="tag">repeat-y</span> (vertikale Kachelung) und <span class="tag">repeat</span> (horizontale und vertikale Kachelung).</p>
+
+<p>Mit <span class="tag">background-size</span> wird die Größe des Hintergrundbildes angegeben. Dabei können entweder zwei Größenangaben für Höhe und Breite (zum Beispiel <span class="tag">300px 60px</span> oder <span class="tag">600px auto</span>), oder die Werte <span class="tag">cover</span> (das Hintergrundbild wird so skaliert, dass die Box immer abgedeckt ist, auch wenn ein Teil vom Bild abgeschnitten wird) oder <span class="tag">contain</span> (das Hintergrundbild wird so skaliert, dass auf jeden Fall das gesamte Bild sichtbar ist, auch wenn ein Teil der Box nicht abgedeckt wird) verwendet werden.</p>
+
+<p><span class="tag">background-position</span> gibt für diese Fälle an, welche Punkt der Box und des Hintergrundbilds als übereinander gelegt werden sollen. Dabei wird immer ein vertikaler (<span class="tag">left</span>, <span class="tag">center</span>, <span class="tag">right</span>) und ein horizontaler Wert (<span class="tag">top</span>, <span class="tag">center</span>, <span class="tag">bottom</span>) erwartet. Bei <span class="tag">center center</span>, liegt also der Mittelpunkt des Bildes auf dem Mittelpunkt der Box, bei <span class="tag">left top</span> die linke obere Ecke des Bilder auf der linken oberen Ecke der Box, usw.</p>
+
+<h3>Transparenz</h3>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	opacity: .5;
+}</pre></code></div>
+
+<p>Die Eigenschaft <span class="tag">opacity</span> gibt die Transparenz einer Box (inklusive Inhalt) an. Dabei ist der Wert 0 völlig transparent und der Wert 1 vollkommen opak.</p>
+
+<h3>Schatten</h3>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	box-shadow: 3px 3px 4px 5px #000000;
+}</pre></code></div>
+
+<p><span class="tag">box-shadow</span> gibt einer Box einen Schatten. Dabei sind müssen mehrere Werte angegeben werden: horizontale Verschiebung, vertikale Verschiebung, Blur, Größe und Farbe.</p>
+
+<p>Blur und Größe sind optional, folgende Angaben sind also auch möglich:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>header	{
+	box-shadow: 3px 3px #000000;
+}
+
+footer	{
+	box-shadow: 3px 3px 4px #000000;
+}</pre></code></div>
+
+<h3>Konturen</h3>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+}</pre></code></div>
+
+<p><span class="tag">border-style</span> gibt die Art der Kontur an. Mögliche Werte sind (unter anderem) <span class="tag">solid</span>, <span class="tag">dotted</span> und <span class="tag">dashed</span>.</p>
+
+<p><span class="tag">border-width</span> gibt die Breite der Kontur an.</p>
+
+<p>Mit <span class="tag">border-color</span> wird die Farbe der Kontur definiert.</p>
+
+<p>Häufig wird für die drei Werte folgende Kurzschreibweise verwendet:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border: 1px solid #000000;
+}</pre></code></div>
+
+<p>Es ist möglich, für jeder Seite des Elements eigene Kontureigenschaften zuzuweisen. Dafür wird folgende Syntax verwendet:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-top: 1px solid #000000;
+	border-bottom: 3px solid #FF0000;
+	border-left: 5px dashed #0000FF;
+	border-right: 1px solid #00FFFF;
+}</pre></code></div>
+
+<p>Sollen nicht alle drei, sondern nur ein Wert für eine Seite angepasst werden, so ist auch dies möglich:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p {
+	border-top-style: dashed;
+	border-bottom-width: 2px;
+}</pre></code></div>
+
+<h3>Runde Ecken</h3>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	border-radius: 10px;
+}</pre></code></div>
+
+<p>Der Wert der Eigenschaft <span class="tag">border-radius</span> gibt den Radius der abgerundeten Ecken einer Box an. Dabei kann auch für jede Ecke, ausgehend von der links oberen im Uhrzeigersinn ein eigener Wert angegeben werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	border-radius: 10px 5px 10px 5px;
+}</pre></code></div>

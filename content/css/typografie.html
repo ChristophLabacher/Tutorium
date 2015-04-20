@@ -1,0 +1,67 @@
+<header>
+	CSS › <h1>Typografie</h1>
+</header>
+
+<p>Um die typografischen Eigenschaften des Textes zu verändern, der sich innerhalb eines bestimmten Tags befindet, gibt es in CSS folgende Eigenschaften:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>font-family: "Fira Sans", Helvetica, Arial, sans-serif;</pre></code></div>
+
+<p>Mit <span class="tag">font-family</span> wird die Schriftfamilie angegeben. Dabei kann eine Liste von möglichen Schriften angegeben werden, die der Browser von links nach rechts ausprobiert. Hat der Nutzer die erstgenannte Schrift nicht installiert, wird also nach der zweiten gesucht usw. Als letzter Wert der Auflistung sollte immer die Schriftklasse, also <span class="tag">serif</span>, <span class="tag">sans-serif</span> oder <span class="tag">monospace</span> angegeben werden. Wird keine der genannten Schriftarten gefunden, benutzt der Browser die Standardschriftart aus dieser Schriftklasse. Enthält der Name der Schriftfamilie ein Leerzeichen, so muss sie in Zollstrichen (") geschrieben werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>font-size: 14px;
+line-height: 16px;</pre></code></div>
+
+<p>Mit <span class="tag">font-size</span> wird die Schriftgröße, mit <span class="tag">line-height</span> der Zeilenabstand angegeben. Für den Moment sollten als Werte nur Pixelangaben verwendet werden; mehr Informationen zu Größeneinheiten in CSS folgen in einer späteren Einheit.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>font-weight: normal;
+font-style: regular;</pre></code></div>
+
+<p><span class="tag">font-weight</span> definiert die Schriftdicke. Dabei kann als Wert <span class="tag">normal</span>, <span class="tag">thin</span>, <span class="tag">bold</span>, oder eine Zahl (<span class="tag">300</span>, <span class="tag">400</span>, <span class="tag">500</span>, …) verwendet werden, je nachdem, welche Schriftschnitte die Schriftfamilie besitzt.</p>
+
+<p>Mit <span class="tag">font-style</span> wird der Schriftstil angegeben. Mögliche Werte sind <span class="tag">normal</span>, <span class="tag">italic</span> oder <span class="tag">oblique</span>.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>text-decoration: none;</pre></code></div>
+
+<p>Mit <span class="tag">text-decoration</span> können bestimmte Textauszeichnungen festgelegt werden. Die Werte die verwendet werden können, sind <span class="tag">none</span>, <span class="tag">overline</span>, <span class="tag">line-through</span> oder <span class="tag">underline</span>.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>text-align: left;</pre></code></div>
+
+<p><span class="tag">text-align</span> legt die horizontale Ausrichtung des Textes fest. Mögliche Werte sind <span class="tag">left</span>, <span class="tag">center</span>, <span class="tag">right</span> und <span class="tag">justify</span> (Blocksatz).</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>color: black;</pre></code></div>
+
+<p>Die Eigenschaft <span class="tag">color</span> definiert die Schriftfarbe. Dabei kann jede Farbe, die in einem <a href="/#/css/farbangaben">CSS-Farbformat</a> angegeben ist, verwendet werden.</p>
+
+<p>Möchte man also, dass aller Text, der sich innerhalb des <span class="tag">&lt;body&gt;</span>-Tags befindet, formatiert wird, würde man folgendes in seine CSS-Datei schreiben:</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>body	{
+	font-family: "Fira Sans", Helvetica, Arial, sans-serif;	
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: normal;
+	font-style: regular;
+	text-align: left;
+	text-decoration: none;
+	color: black;
+}</pre></code></div>

@@ -1,0 +1,137 @@
+<header>
+	HTML › <h1>Texte, Typografie und Bilder</h1>
+</header>
+
+<h2 id="texte-und-typografie">Texte und Typografie</h2>
+
+<p>Da HTML für das Strukturieren digitaler wissenschaftlicher Dokumente entwickelt wurde, gibt es viele Tags, die eine genaue Textstrukturierung erlauben. Teilweise wirken sich Tags nicht auf das Aussehen eines Textes aus, können aber semantisch im Dokument Sinn ergeben, zum Beispiel um auf eine bestimmte Art des Inhalts hinzuweisen.</p>
+
+<h3>Überschriften</h3>
+
+<p>Es können Überschriften ersten bis sechsten Grades ausgezeichnet werden. Die Tags hierfür heißen, abgeleitet von <i>„heading“</i>, &lt;h1&gt; bis &lt;h6&gt;.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1&gt;&Uuml;berschrift ersten Grades&lt;/h1&gt;
+&lt;h2&gt;&Uuml;berschrift zweiten Grades&lt;/h2&gt;
+&lt;h3&gt;&Uuml;berschrift dritten Grades&lt;/h3&gt;
+&lt;h4&gt;&Uuml;berschrift vierten Grades&lt;/h4&gt;
+&lt;h5&gt;&Uuml;berschrift f&uuml;nften Grades&lt;/h5&gt;
+&lt;h6&gt;&Uuml;berschrift sechsten Grades&lt;/h6&gt;</pre>
+</code>
+</div>				
+
+<h3>Absätze</h3>
+
+Ein Textabsatz <i>(paragraph)</i> wird durch das <span class="tag">&lt;p&gt;</span>-Tag gekennzeichnet. Üblicherweise folgt auf das <span class="tag">&lt;p&gt;</span>-Tag ein Abstand.
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;p&gt;Ein Absatz eines l&auml;ngeren Textes&lt;/p&gt;</pre>
+</code>
+</div>	
+
+<p>Ein Zeilenumbruch <i>(linebreak)</i> innerhalb eines Absatzes wird durch das <span class="tag">&lt;br&gt;</span>-Tag erzeugt, sollte aber möglichst sparsam  und niemals mehrmals direkt hintereinander eingesetzt werden.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>Ein Zeilenumbruch erreicht man durch ein einfaches Tag.&lt;br&gt;
+Es besitzt kein schließendes Pendant.</pre>
+</code>
+</div>								
+
+<h3>Textauszeichnung</h3>
+				
+<p>Diese Tags können innerhalb eines Textabschnitts/einer Textzeile verwendet werden. Teilweise erreichen verschiedene Tags visuell das gleiche Ergebnis. Um eine möglichst gute Semantik des Dokumentes zu erreichen, sollten jedoch vom Kontext abhängig bestimmte Tags verwendet werden.</p>
+
+<p>Folgende Tags ändern die Darstellung von Text, der sich vom restlichen Text absetzt, aber keine spezielle Betonung oder Wichtigkeit besitzt. Sie sollen verwendet werden, wenn eine rein <strong>optische</strong> Veränderung erwünscht ist.</p>
+				
+<p>Das <span class="tag">&lt;b&gt;</span>-Tag markiert Text, der fettgedruckt <i>(bold)</i> dargestellt wird.</p>
+
+<p>Das <span class="tag">&lt;i&gt;</span>-Tag markiert Text, der üblicherweise kursiv <i>(italic)</i> dargestellt wird, beispielsweise ein Fremdwort, ein Fachbegriff oder ein Name.</p>
+
+<p>Das <span class="tag">&lt;u&gt;</span>-Tag markiert Text, der unterstrichen <i>(underlined)</i> wird.</p>
+
+<p>Das <span class="tag">&lt;s&gt;</span>-Tag markiert Text, der durchgestrichen <i>(strikethrough)</i> ist.</p>
+
+<p>Das <span class="tag">&lt;small&gt;</span>-Tag wird für kleiner geschriebenen Text verwendet.</p>
+
+<div class="code-snippet split">
+<div class="lines"></div>
+<code>
+<pre>&lt;b&gt;Fett&lt;/b&gt;&lt;br&gt;
+&lt;i&gt;Kursiv&lt;/i&gt;&lt;br&gt;
+&lt;u&gt;Unterstrichen&lt;/u&gt;&lt;br&gt;
+&lt;s&gt;Durchgestrichen&lt;/s&gt;&lt;br&gt;
+&lt;small&gt;Klein&lt;/small&gt;</pre>
+</code>
+<div class="result">
+<b>Fett</b><br>
+<i>Kursiv</i><br>
+<u>Unterstrichen</u><br>
+<s>Durchgestrichen</s><br>
+<small>Klein</small>
+</div>
+</div>					
+				
+<p>Folgende Tags sollten im Falle einer spezielle Betonung oder Wichtigkeit verwendet werden. Sie zeigen eine <strong>logische</strong> Veränderung im Kontext des Textes an.</p>
+
+<p>Das <span class="tag">&lt;em&gt;</span>-Tag <i>(emphasis)</i> wird üblicherweise kursiv dargestellt und steht für eine besondere Betonung (beispielsweise eines einzelnen Wortes in einem Satz).</p>
+
+<p>Das <span class="tag">&lt;strong&gt;</span>-Tag wird standardmäßig fettgedruckt dargestellt und markiert Text, der besonders hervorgehoben werden soll, zum Beispiel eine Warnung.</p>
+
+<p>Das <span class="tag">&lt;mark&gt;</span>-Tag markiert Text, der in einem bestimmten Kontext relevant ist, also zum Beispiel die für den Kontext relevante Stelle in einem längeren Zitat oder jedes Auftauchen eines Suchbegriffes in einem Text.</p>
+				
+<div class="code-snippet split">
+<div class="lines"></div>
+<code>
+<pre>&lt;em&gt;Betont&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Hervorgehoben&lt;/strong&gt;&lt;br&gt;
+&lt;mark&gt;Relevant&lt;/mark&gt;</pre>
+</code>
+<div class="result">
+<em>Betont</em><br>
+<strong>Hervorgehoben</strong><br>
+<mark>Relevant</mark>
+</div>
+</div>					
+				
+<p>Während es keinen Sinn hat, das Aussehen der rein optischen Tags später mit CSS zu verändern (<span class="tag">&lt;b&gt;</span> für bold sollte immer fettgedruckt bleiben), kann es bei den logischen Tags durchaus angemessen sein (<span class="tag">&lt;strong&gt;</span> könnte auch als roter Text dargestellt werden).</p>
+
+<p>Einige Tags müssen nicht zwingend eine optische Veränderung bewirken, sondern können auch nur die Art des Inhalts spezifizieren:</p>
+
+<p>Das <span class="tag">&lt;time&gt;</span>-Tag markiert eine Uhrzeit (im 24-Stunden-Format).</p>
+
+<p>Das <span class="tag">&lt;blockquote&gt;</span>-Tag markiert einen Textabschnitt, der ein Zitat ist. Das Pendant, das innerhalb eines Absatzes verwendet werden soll, ist das <span class="tag">&lt;q&gt;</span>-Tag. Mit dem <span class="tag">&lt;cite&gt;</span>-Tag sollte die dazugehörige Quelle markiert werden.</p>
+
+<p>Das <span class="tag">&lt;code&gt;</span>-Tag markiert einen Code-Block (dieser wird meist in einer Monospace-Font dargestellt). <strong>Achtung: Tags innerhalb dieses Tags werden vom Browser trotzdem als HTML-Interpretiert, also nicht als Text dargestellt!</strong></p>
+				
+<div class="code-snippet split cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;time&gt;24:00&lt;/time&gt;&lt;br&gt;
+&lt;q&gt;Zitat&lt;/q&gt;&lt;br&gt;
+&lt;cite&gt;Quelle&lt;/cite&gt;&lt;br&gt;
+&lt;code&gt;Code&lt;/code&gt;</pre>
+</code>
+<div class="result">
+<time>24:00</time><br>
+<q>Zitat</q><br>
+<span class="cite">Quelle</span><br>
+<code>Code</code>
+</div>
+</div>
+
+<h2 id="bilder">Bilder</h2>
+				
+<p>Um Bilder in ein HTML-Dokument einzubetten gibt es das <span clas="tag">&lt;img&gt;</span>-Tag. Das Tag besitzt kein schließendes Pendant. Der <a href="/#/meta/datei-pfade">relative Pfad</a> zum Bild wird als Wert des <span class="tag">src</span>-Attributs angegeben. Zusätzlich kann das  <span class="tag">alt</span>-Attribut mit einem alternativ Text, beispielsweise für Blinde, angegeben werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>&lt;img src="imgs/bild-01.png" alt="Alternativtext"&gt;</pre></code></div>
+
+<p><strong>Achtung, bei Bildern handelt es sich (unintuitiverweise) um <a href="#/html/inline-elemente-vs-block-elemente">Inline-Elemente</a>!</strong></p>	

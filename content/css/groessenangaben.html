@@ -1,0 +1,60 @@
+<header>
+	CSS › <h1>Größenangaben</h1>
+</header>
+
+<h3>Pixel</h3>
+
+<p>Größen können mit einem absoluten Pixelwerte spezifiziert werden.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	font-size: 20px;
+}</pre></code></div>
+					
+<h3>Prozent</h3>
+
+<p>Eine weitere Möglichkeit ist es, einen Prozentwert anzugeben. Dieser bezieht sich immer auf die Größe des Elternelements. (Wenn das <span class="tag">&lt;div&gt;</span>-Element im oberen Beispiel sich also in einem <span class="tag">&lt;header&gt</span>-Element mit width: 500px befindet, so ist es 250px breit.) Prozentangaben für Größen sind besonders im Responsive-Design sehr häufig.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	width: 50%;
+}</pre></code></div>
+					
+<h3>em</h3>
+
+<p>Ein em entspricht der Schriftgröße des Elements (diese kann auch vererbt sein). Im oberen Beispiel wäre das <span class="tag">&lt;div&gt;</span>-Element also 100px breit. Die Einheit em ist besonders praktisch für die Eigenschaft <span class="tag">line-height</span>, die damit relativ zur Schriftgröße angegeben werden kann.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>div	{
+	font-size: 20px;
+	width: 5em;
+	margin: 0.5em;
+}</pre></code></div>
+				
+<h3>rem</h3>
+
+<p>Der Gedanke, em als eine Art Grundeinheit eines Dokuments zu verwenden und so ein Raster zu schaffen liegt nahe. Dabei stößt man jedoch schnell auf ein Problem. Möchte man zum Beispiel ein <span class="tag">&lt;h1&gt;</span>-Tag formatieren und ver&auml;ndert dessen Schriftgr&ouml;&szlig;e, so ist die Rastereinheit f&uuml;r alle weiteren Eigenschaften dieses Tags ver&auml;ndert. Daf&uuml;r gibt es die Gr&ouml;&szlig;eneinheit rem <i>(rootem)</i>. Ein rem entspricht der f&uuml;r die Dokumentwurzel (also das <span class="tag">&lt;html&gt;</span>-Tag) festgelegten Schriftgr&ouml;&szlig;e. Im oberen Beispiel bedeutet das, dass das <span class="tag">&lt;div&gt;</span>-Element 5 &times; 15px, also 75px breit ist. Dass die Schriftgr&ouml;&szlig;e des Elements ver&auml;ndert ist, hat keinen Einfluss.</p>
+
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>html	{
+	font-size: 15px;
+}	
+
+div	{
+	font-size 20px;
+	width: 5rem;
+	padding: 1rem;
+}</pre></code></div>
+
+<h3>auto</h3>
+
+<p>Häufig ist es auch möglich anstelle einer Größenangabe den Wert <span class="tag">auto</span> anzugeben (in der Regel ist das sogar der Standardwert). Der Browser ermittelt dann selbst eine passende Größe. Gibt man zum Beispiel bei einem Bild eine definitive Höhe, aber als Breite <span class="tag">auto</span> an, so wird es proportional skaliert. Gibt man bei einer Box eine Höhe, aber keine Breite an, so passt sich die Breite dem Inhalt, sowie dem verfügbaren Platz an.</p>
