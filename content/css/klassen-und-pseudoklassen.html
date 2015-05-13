@@ -1,0 +1,120 @@
+<header>
+	CSS › <h1>Klassen und Pseudoklassen</h1>
+</header>
+
+<h2>Klassen</h2>
+				
+<p>Mit den bisher bekannten CSS-Selektoren ist es möglich, das Aussehen jedes Elements, das mit einem bestimmten Tag ausgezeichnet ist, zu beeinflussen (z. B. <span class="tag">h1</span> oder <span class="tag">p</span>) oder die Auswahl genauer zu fokussieren, in dem man nur die Elemente, die mit einem bestimmten Tag ausgezeichnet sind auswählt, die sich innerhalb eines anderen, spezifizierten Tag befinden (z. B. <span class="tag">header h1</span>, <span class="tag">article p strong</span>). Mit Hilfe von Klassen ist es zusätzlich möglich, ganz bestimmte, von Hand im HTML-Code gekennzeichnete Elemente auszuwählen (sowohl abhängig von ihrem Tag (bestimmtest Tag mit bestimmter Klasse), als auch unabhängig davon (bestimmte Klassen)).</p>
+
+<p>Eine Klasse wird als Wert des Attributs <span class="tag">class</span> in das öffnende Tag eines HTML-Elements geschrieben. Der Name der Klasse ist frei wählbar, Groß- und Kleinschreibung sind unerheblich. Der Name darf nicht mit einer Zahl beginnen und darf kein Leerzeichen enthalten (es ist Konvention stattdessen einen Bindestrich zu verwenden). Eine Klasse darf beliebig oft im Dokument bei beliebigen Elementen vorkommen. Ein HTML-Element kann auch mehrere Klassen besitzen, diese werden mit Leerzeichen getrennt angegeben.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;h1 class=&quot;farbig&quot;&gt;&Uuml;berschrift&lt;/h1&gt;
+
+&lt;p class=&quot;farbig rechtsbuending<&quot;&gt;Beispieltext 1&lt;/p&gt;
+&lt;p&gt;Beispieltext 2&lt;/p&gt;</pre></code></div>
+
+<p>Um eine Klasse als Selektor in CSS zu verwenden, wird vor den Klassenname ein Punkt geschrieben. Wird nur die Klasse als Selektor angegeben, werden alle Elemente, die mit dieser Klasse gekennzeichnet sind ausgewählt:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>.farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Durch diesen CSS-Code werden alle Elemente mit der Klasse <span class="tag">farbig</span> rot dargestellt, im oberen Beispiel die Überschrift und der Beispieltext 1.</p>
+
+<p>Sollen nur Elemente, die mit einem bestimmten Tag ausgezeichnet sind und die Klasse besitzen, selektiert werden, so wird die Klasse direkt an das Tag gehängt:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p.farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Durch diesen CSS-Code wird jedes <span class="tag">&lt;p&gt;</span>-Tag mit der Klasse <span class="tag">farbig</span> rot dargestellt, im oberen Beispiel nur der Beispieltext 1.</p>
+
+<p>Es ist wichtig, dass zwischen Tag und Klasse kein Punkt steht, da der Klassenselektor auch mit den aus Einheit 1 bekannten einfachen Selektoren kombiniert werden kann:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>p .farbig	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Durch diesen CSS-Code wird jedes Beliebige Tag mit der Klasse <span class="tag">farbig</span> rot dargestellt, dass sich innerhalb eines <span class="tag">&lt;p&gt;</span>-Tags befindet.</p>
+
+
+<h2>Pseudoklassen</h2>
+				
+<p>Zusätzlich zu den Klassen, die man selbst vergeben kann, gibt es so genannte „Pseudoklassen“. Diese Klassen werden nicht von Hand vergeben (es sind also keine normalen Klassen), sondern sie werden bestimmten Elementen in bestimmten Situationen vom Browser automatisch vergeben. Der Selektor von Pseudoklassen beginnt immer mit einem Doppelpunkt (im Gegensatz zu einem Punkt bei Klassen); ansonsten verhält er sich wie ein ganz normaler Klassen-Selektor.</p>
+				
+<h3><span class="tag">:hover</span></h3>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>a	{
+	color: #000000;
+}
+
+a:hover	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Die Pseudoklasse <span class="tag">:hover</span> erhält ein Element in dem Moment, wenn sich der Mauszeiger darüber befindet.</p>
+
+<p>In diesem Codebeispiel werden zuerst alle Links selektiert und die Textfarbe auf schwarz gesetzt. Mit dem zweiten Selektor werden die Links ausgewählt, die die Pseudoklasse <span class="tag">:hover</span> besitzen, und deren Textfarbe auf rot gesetzt. Fährt man nun mit der Maus über einen Link, so erhält er die Pseudoklasse <span class="tag">:hover</span>. Da der untere Selektor spezifischer als der obere ist, überschreibt dieser den oberen, und der Text wird rot dargestellt.</p>
+	
+<h3><span class="tag">:first-child</span> und <span class="tag">:last-child</span></h3>
+
+<p>Die Pseudoklassen <span class="tag">:first-child</span> und <span class="tag">:last-child</span> werden allen Elementen vergeben, die je das erste bzw. letzte Kind ihres Elternelements sind.</p>
+
+<h3><span class="tag">:nth-child(n)</span></h3>
+
+<p>Mit dem Pseudoselektor <span class="tag">:nth-child(n)</span> lässt sich ein bestimmtes Element auswählen, das das n-te Kinde seines Elternelements ist. Außer Zahlen können auch die Begriffe <span class="tag">even</span> (gerade) und <span class="tag">odd</span> (ungerade) eingesetzt werden.</p>
+
+<h3><span class="tag">:first-of-type</span>, <span class="tag">:last-of-type</span> und <span class="tag">:nth-of-type(n)</span></h3>
+
+Diese Pseudoklassen verhalten sich genau so, sie werden jedoch an das erste, bzw. letzte, bzw. n-te Element einer Art vergeben.
+
+<h3>Beispiel</h3>
+
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>&lt;ul&gt;
+	&lt;li&gt;Erstes Element&lt;/li&gt;
+	&lt;li&gt;Zweites Element&lt;/li&gt;
+	&lt;li&gt;Drittes Element&lt;/li&gt;
+	&lt;li&gt;Viertes Element&lt;/li&gt;
+	&lt;li&gt;F&uuml;nftes Element&lt;/li&gt;
+	&lt;li&gt;Sechstes Element&lt;/li&gt;
+	&lt;li&gt;Siebtes Element&lt;/li&gt;
+	&lt;li&gt;Achtes Element&lt;/li&gt;
+&lt;/ul&gt;</pre></code></div>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>li	{
+	background-color: #FF0000;
+}
+
+li:first-child, li:last-child	{
+	background-color: #00FFFF;
+}
+
+li:nth-child(even)	{
+	background-color: #0000FF;
+}
+
+li:nth-child(6)	{
+	background-color: #00FF00;
+}</pre></code></div>

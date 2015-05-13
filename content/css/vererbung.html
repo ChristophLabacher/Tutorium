@@ -1,0 +1,45 @@
+<header>
+	CSS › <h1>Vererbung</h1>
+</header>
+				
+<p>Beginnt man im CSS Klassen einzusetzen, so muss man sich unbedingt mit Vererbung auseinandersetzen. Der CSS-Code, der auf ein Element angewendet wird, wird automatisch auch auf alle Kinder weitergegeben.</p>
+				
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>body	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Dieser CSS-Code ver&auml;ndert also nicht nur die Farbe des Textes, der sich direkt <span class="tag">&lt;body&gt;</span>-Tag befindet, sondern auch die Textfarbe aller von diesem Element abstammender Elemente, das bedeutet aller Elemente, die sich innerhalb dieses Tags befinden.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	color: #00FF00;
+}</pre></code></div>
+
+<p>Durch den oberen Beispiel-Code w&auml;re nun also aller Text, auch &Uuml;berschriften, rot. Dieser CSS-Code &uuml;berschreibt nun die an das <span class="tag">&lt;h1&gt;</span>-Tag vererbte Eigenschaft aber f&uuml;r dieses. Die &Uuml;berschrift wird nun gr&uuml;n Dargestellt.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article h1	{
+	color: #0000FF;
+}</pre></code></div>
+
+<p>Durch den zweiten Beispiel-Code werden nun also alle <span class="tag">&lt;h1&gt;</span>-Tags auf der Seite gr&uuml;n dargestellt. Dieser CSS-Code &uuml;berschreibt nun diese Eigenschaft des <span class="tag">&lt;h1&gt;</span>-Tags f&uuml;r alle <span class="tag">&lt;h1&gt;</span>-Tags, die sich innerhalb eines <span class="tag">&lt;article&gt;</span>-Tags befinden. Dies liegt aber nicht an der Reihenfolge der Definitionen im CSS-Code, diese ist v&ouml;llig unerheblich, sondern daran, dass der hier verwendete Selektor spezifischer ist. Das bedeutet, die Angabe &bdquo;alle <span class="tag">&lt;h1&gt;</span>-Tags in einem <span class="tag">&lt;article&gt;</span>-Tag&ldquo; ist genauer als &bdquo;alle <span class="tag">&lt;h1&gt;</span>-Tags&ldquo;. Je spezifischer ein Selektor ist, desto wichtiger sind die definierten Eigenschaften und desto eher &uuml;berschreiben sie bereits definierte oder vererbte Eigenschaften.</p>
+
+<p>Noch spezifischer als eine Reihe von Tags, wie im dritten Beispiel-Code ist die Angabe einer Klasse.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1.title	{
+	color: #FF0000;
+}</pre></code></div>
+
+<p>Dieser CSS-Code w&uuml;rde also die Textfarbe auch f&uuml;r <span class="tag">&lt;h1&gt;</span>-Tags &auml;ndern, die sich innerhalb des <span class="tag">&lt;article&gt;</span>-Tags befinden, wenn sie die Klasse <span class="tag">title</span> besitzen.</p>
+
+<p>Durch Vererbung und &Uuml;berschreiben von Eigenschaften ist es m&ouml;glich, Eigenschaften die f&uuml;r alle oder viele Elemente gelten sollen nicht immer wieder zu schreiben, sondern diese nur einmal f&uuml;r ein Eltern-Element zu definieren. Ein typisches Beispiel w&auml;re die Schriftfamilie (<span class="tag">font-family</span>), die h&auml;ufig als Eigenschaft des <span class="tag">&lt;body&gt;</span>-Tags definiert wird. Sollten dann zum Beispiel alle <span class="tag">&lt;h1&gt;</span>-Tags eine andere Schriftfamilie zugewiesen bekommen, so kann die vom <span class="tag">&lt;body&gt;</span>-Tag vererbte Familie leicht &uuml;berschreiben werden.</p>

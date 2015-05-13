@@ -1,0 +1,72 @@
+<header>
+	CSS › <h1>Einfache Selektoren</h1>
+</header>
+
+<p>Bis jetzt haben wir bei CSS als Selektor immer nur ein einzelnes Tag angegeben (ohne spitze Klammern). Damit wird das Aussehen jedes Elements im HTML-Dokument, das mit diesem Tag ausgezeichnet ist, definiert.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Dieser Code bewirkt also, dass jede Überschrift ersten Grades im gesamten Dokuments rot dargestellt wird.</p>
+
+<p>Es gibt aber eine Vielzahl an Möglichkeiten, den Selektor spezifischer zu formulieren.</p>
+
+<p>Die am häufigsten verwendete ist es, mehrere Tags mit Leerzeichen getrennt anzugeben. Dabei werden nur die Elemente, die mit dem ganz rechts stehenden Tag ausgezeichnet sind im HTML-Dokument ausgewählt, die sich innerhalb des Tags, das links davon steht befinden ausgewählt.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>header h1	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Dieser Code bewirkt also, dass nur die Überschriften ersten Grades rot dargestellt werden, die sich innerhalb eines <span class="tag">&lt;header&gt;</span>-Tags befinden. Alle anderen &Uuml;berschriften ersten Grades, also zum Beispiel die im <span class="tag">&lt;main&gt;</span>-Tag oder im <span class="tag">&lt;footer&gt;</span>-Tag, bleiben davon unber&uuml;hrt.</p>
+
+<p>Dabei lassen sich beliebig viele Tags aneinander reihen:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article p strong	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Damit wird der Inhalt aller <span class="tag">&lt;strong&gt;</span>-Tags rot dargestellt, die sich innerhalb eines <span class="tag">&lt;p&gt;</span>-Tags befinden, das sich innerhalb eines <span class="tag">&lt;article&gt;</span>-Tags befindet.</p>
+
+<p>Es ist dabei egal, ob das Element, innerhalb dessen sich das auszuwählende Tag befinden muss, das direkte Elternelement des Tags ist.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>article li	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Dieser Code wählt also alle <span class="tag">&lt;li&gt;</span>-Tags innerhalb von <span class="tag">&lt;article&gt;</span>-Tags aus, auch wenn die <span class="tag">&lt;li&gt;</span>-Elemente zus&auml;tzlich auch noch von <span class="tag">&lt;ul&gt;</span>-Elementen umgeben sind, und erst diese sich dann direkt im <span class="tag">&lt;article&gt;</span>-Element befinden.</p>
+
+<p>Mehrere Selektoren können auf einmal ausgewählt werden, indem sie mit einem Komma aneinander gereiht werden. </p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>h1, h2	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Dieser Code färbt also alle Überschriften ersten Grades und alle Überschriften zweiten Grades ein.</p>
+
+<p>Selbstverständlich können auch die Selektoren aneinander gereiht werden, die aus mehreren Tags bestehen:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>header h1, footer h2	{
+	color: #FF0000;	
+}</pre></code></div>
+
+<p>Dieser Code f&auml;rbt also alle &Uuml;berschriften ersten Grades ein, die sich in einem <span class="tag">&lt;header&gt;</span>-Element befinden, sowie alle &Uuml;berschriften zweiten Grades, die sich in einem <span class="tag">&lt;footer&gt;</span>-Element befinden. </p>
+
