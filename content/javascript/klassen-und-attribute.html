@@ -1,0 +1,37 @@
+<header>
+	jQuery › <h1>Klassen & Attribute</h1>
+</header>
+
+<h2 id="klassen">Klassen</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("main #box").addClass("active");
+$("main #box").removeClass("active");
+$("main #box").toggleClass("active");</pre></code></div>
+
+<p>Mit den Funktionen <span class="tag">.addClass()</span>, <span class="tag">.removeClass()</span> und <span class="tag">.toggleClass()</span> können HTML-Elementen Klassen hinzugefügt, entfernt, bzw. getoggelt werden (das bedeutet wenn sie nicht vorhanden sind werden sie hinzugefügt, wenn sie vorhanden sind entfernt). Die Klassen werden in dem Moment verändert, in dem die Funktion aufgerufen wird.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>if ($("main").hasClass("active"))	{
+	// Dieser Code wird ausgeführt wenn main die Klasse "active" besitzt.
+}
+</pre></code></div>
+
+<p>Mit <span class="tag">.hadClass()</span> kann abgefragt werden ob das selektierte Element eine bestimmte Klasse besitzt. Der Rückgabewert ist dabei entweder <span class="tag">true</span> oder <span class="tag">false</span>.</p>
+
+<h2 id="klassen">Attribute</h2>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>// Attribut auslesen
+var id = $("main").attr("id");
+
+// Attribut setzten
+var id = $("main").attr("id", "main-project");</pre></code></div>
+
+<p>Mit der Funktion <span class="tag">.attr()</span> kann der Wert eins Attribut eines Elements ausgelesen oder gesetzt werden.</p>

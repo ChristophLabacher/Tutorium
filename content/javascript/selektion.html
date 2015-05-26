@@ -1,0 +1,28 @@
+<header>
+	jQuery › <h1>Selektion</h1>
+</header>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(selector).action().action(wert);</pre></code></div>
+
+<p>Ein Aufruf in jQuery beginnt immer mit einer Selektion. Darauf folgt nach einem Punkt ein Funktionsaufruf. Mehrere Funktionsaufrufe können aneinander gereiht werden, teilweise werden Funktionen bestimmte Werte übergeben.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$("header")
+$(".tag")
+$("main .box")</pre></code></div>
+
+<p>Eine Selektion besteht aus dem Dollarzeichen, dann wird in Klammern der Selektor geschrieben. Meistens soll ein HTML-Element ausgewählt werden. Dazu wird in Zollstrichen ein Selektor im Stile eines CSS-Selektors angegeben.</p>
+
+<div class="code-snippet cf">
+<div class="lines"></div>
+<code>
+<pre>$(window)
+$(document)
+$(this)</pre></code></div>
+
+<p>In jQuery gibt es einige Selektoren, die besondere Objekte auswählen. Mit window wird das Browserfenster ausgewählt, so dass dessen Größe o.ä. ausgelesen werden kann. document wählt die gesamte Seite aus, so dass zum Beispiel ermittelt werden kann, wie weit gescrollt wurde. this wählt immer das aktuelle Objekt aus, auf dass sich eine action bezieht. Das kann sehr hilfreich sein, wenn verschiedene Funktionen ineinander verschachtelt werden. </p>

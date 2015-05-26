@@ -1,0 +1,91 @@
+<header>
+	JavaScript › <h1>if-Abfrage & for-Schleife</h1>
+</header>
+
+<h2 id="if-Abfrage"><span class="tag">if</span>-Abfrage</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+}</pre></code></div>
+
+<p>Bei einer <span class="tag">if</span>-Abfrage wird der Inhalt einer Variable überprüft. Trifft die Bedingung zu, so wird der Code in den geschweiften Klammern ausgeführt (Wenn, dann).</p>
+
+<p>Bedingungen können mit „Vergleichsoperatoren“ formuliert werden.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>i == 1 // i ist gleich 1
+i != 1 // i ist ungleich 1
+i &lt; 1 // i ist kleiner 1
+i &lt;= 1 // i ist kleiner-gleich 1
+i &gt; 1 // i ist gr&ouml;&szlig;er 1
+i &gt;= 1 // i ist gr&ouml;&szlig;er-gleich 1</pre></code></div>
+
+<p>Bedingungen können mit „Logischen Operatoren“ aneinander gehängt werden.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>i == 1 && j != 2 // i ist gleich 1 und j ist ungleich 2
+i == 1 || j != 2 // i ist ungleich 1 oder j ist ungleich 2</pre></code></div>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>if (test == true && j == 2)	{
+	console.log("Test ist wahr und j ist 2");
+}</pre></code></div>
+
+<h2 id="if-else-Abfrage"><span class="tag">if-else</span>-Abfrage</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+} else {
+	console.log("Test ist nicht wahr");
+}</pre></code></div>
+
+<p>Bei einer <span class="tag">if-else</span>-Abfrage kann zusätzlich noch Code angegeben werden, der ausgeführt werden soll, wenn die erste Bedingung nicht zutrifft.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>if (test == true)	{
+	console.log("Test ist wahr");
+} else if (test == false && j == 1) {
+	console.log("Test ist nicht wahr und j ist 1");
+} else {
+	console.log("Test ist nicht wahr und j ist nicht 1");
+}</pre></code></div>
+
+<p>Beliebig viele <span class="tag">if</span>-Abfragen können aneinander gehängt werden. Dafür wird <span class="tag">else if () {}</span> verwendet. Wichtig ist, dass sobald eine Bedingung zutrifft und er entsprechende Code ausgeführt wurde die gesamte Abfrage verlassen wird und die Ausführung des Codes darunter fortgesetzt wird.</p>
+
+<h2 id="for-schleife"><span class="tag">for</span>-Schleife</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>for (var i = 0; i &lt; 5; i++)	{
+	console.log(i);
+}</pre></code></div>
+
+<p>Eine <span class="tag">for</span>-Schleife erhält in ihrem Aufruf drei Informationen: zuerst eine Variablen-Initialisierung, dann eine Bedingung und zum Schluss ein Stück Code, dass immer am Ende der Schleife ausgeführt wird.</p>
+
+<p>Im Beispielcode bedeutet das folgendes: Eine Variable i wird mit dem Wert 0 initialisiert. Die for-Schleife wird so lange wiederholt, bis i nicht mehr kleiner 5 ist. Am Ende jedes Durchlaufs wird i um 1 erhöht (<span class="tag">i++</span> ist eine Kurzschreibweise für <span class="tag">i = i + 1</span>). Jeder Durchlauf der Schleife bewirkt, dass der Wert von i in die Konsole ausgegeben wird. Die Ausgabe sähe also folgendermaßen aus: </p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>0
+1
+2
+3
+4</pre></code></div>
+
+<p>Nach dem 4 ausgeben wird wird i um 1 erhöht, ist also 5. Die Bedingung <span class="tag">i &lt; 5</span> trifft nicht mehr zu, die Schleife wird also nicht mehr ausgeführt.</p>

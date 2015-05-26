@@ -1,0 +1,19 @@
+<header>
+	jQuery › <h1>Elemente verschieben</h1>
+</header>
+
+<h2 id="appendprepend"><span class="tag">.append()</span> &	 <span class="tag">.prepend()</span></h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var box1 = $("#box1");
+$(".box-container").prepend(box1);</pre></code></div>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var box2 = $("#box2");
+$(".box-container").append(box2);</pre></code></div>
+
+<p>In <a href="../einheit-08/#variablen">Variablen</a> können nicht nur einzelne Werte, sondern auch ganze HTML-Elemente zwischengespeichert werden. Dafür wird das Element per Selektor ausgewählt und einer Variable zugewiesen (es befindet sich in diesem Moment im HTML-Dokument noch an seiner ursprünglichen Position, ist aber mit der Variable verknüpft). Das Element kann dann in ein anderes HTML-Element eingefügt werden, entweder an erster Stelle mit der Funktion <span class="tag">.prepend()</span>, oder an letzter Stelle mit der Funktion <span class="tag">.append()</span>. In diesem Moment wird das Element aus seiner ursprünglichen Position entfernt und an der neuen Position eingefügt.</p>	

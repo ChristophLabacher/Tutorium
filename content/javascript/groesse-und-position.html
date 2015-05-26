@@ -1,0 +1,49 @@
+<header>
+	jQuery › <h1>Größe & Position</h1>
+</header>
+
+<h2 id="groesse">Größe</h2>
+
+<p>Funktionen in jQuery können (teilweise) sowohl zum auslesen von Werten, als auch zum schreiben verwendet werden.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var width = $("main #box“).width();
+var height = $("main #box“).height();</pre></code></div>
+
+<p>In diesem Codebeispiel wird die Höhe und die Breite das selektierten Elements in Variablen geschrieben.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var width = 200;
+$("main #box“).width(width) </pre></code></div>
+
+<p>In diesem Codebeispiel wird die Größe des Elements auf 200 gesetzt.
+
+<p>jQuery ignoriert dabei das in CSS eingestellte Box-Modell: <span class="tag">.width()</span> und <span class="tag">.height()</span> beziehen sich immer auf die Größe des Inhalts. Zum Auslesen der Größe der gesamten Box (Inhalt, <span class="tag">padding</span>, <span class="tag">border-width</span>) können die Funktionen <span class="tag">.outerWidth()</span>, bzw. <span class="tag">.outerHeight()</span> verwendet werden. Diese Funktionen können aber keine Größe setzen.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var height = $("main #box").outerHeight();</pre></code></div>
+
+<h2 id="position">Position</h2>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>var offsetTop = $("main #box“).offset().top;
+var offsetLeft = $("main #box“).offset().left;</pre></code></div>
+
+<p>jQuery kann mithilfe der Funktion <span class="tag">.offset()</span> die Position eines Elements auslesen und setzen. Anders als bei den Größenfunktionen gibt es hier allerdings nicht für jede Dimension eine eigene Funktion, sondern die Funktion gibt mehrere Werte in Form eines JavaScript-Objekts aus. Der gewünschte Wert kann durch anhängen der Seite angegeben werden (<span class="tag">.top</span>, <span class="tag">.right</span>, <span class="tag">.bottom</span>, <span class="tag">.left</span>).</p>
+
+<p><strong>Achtung: Es handelt sich hier nicht um Funktionen, deshalb sind keine Klammern nötig.</strong></p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$("main #box").offset({top: 10, left: 20});</pre></code></div>
+
+<p>Damit Werte gesetzt werden können, muss der Funktion ein JavaScript-Objekt mit den Werten übergeben werden. Eine JavaScript-Objekt wird in geschweiften Klammern angegeben, dann folgen jeweils Eigenschaft und Wert, getrennt durch einen Doppelpunkt. Mehrere Eigenschaften sind mit Kommas getrennt.</p>

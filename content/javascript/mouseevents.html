@@ -1,0 +1,63 @@
+<header>
+	jQuery › <h1>MouseEvents</h1>
+</header>
+
+<h2 id="mouseevents">Mouseevents</h2>
+
+<p>Man kann Mouseevents an Elemente hängen, das bedeutet dass wenn über diesem Element das entsprechende Mouseevent aus geführt wird, wird der in der Funktion angegeben Code ausgeführt.</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$(this).toggleClass("active");
+});</pre></code></div>
+
+<p>Dieser Beispielcode bewirkt, dass bei einem Klick auf eine Element mit der Klasse box die Klasse <span class="tag">active</span> getoggelt wird. Innerhalb der Funktion wird der Selektor <span class="tag">this</span> verwendet, damit die Klasse nicht beim Klicken auf ein Element mit der Klasse <span class="tag">box</span> allen Elementen mit der Klasse <span class="tag">box</span> hinzugefügt oder entfernt wird, sondern nur bei dem, dass das Event ausgelöst hat, also das, auf welches geklickt wurde.</p>
+
+<p>Das muss nicht zwingend der Fall sein:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$("nav").toggleClass("active");
+});</pre></code></div>
+
+<p>Es können auch mehrere Anweisungen nacheinander ausgeführt werden:</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").click( function()	{
+	$("nav").toggleClass("active");
+	$("header h1“).removeClass("rote-ueberschrift");
+});</pre></code></div>
+
+<p>Mögliche Mouseevents sind <span class="tag">.click()</span>, <span class="tag">.dblclick()</span>, <span class="tag">.mouseenter()</span>, <span class="tag">.mouseleave()</span>, <span class="tag">.mousdown()</span> und <span class="tag">.mouseup()</span>.</p>
+
+<p><strong>Achtung: Der auszuführende Code wird nicht direkt in die Klammern geschrieben, sondern als Funktion übergeben, deshalb steht in den Klammern <span class="tag">function() { //code }</span>.</strong></p>
+
+<h2 id="scroll"><span class="tag">.scroll()</span></h2>
+
+<p>Das Event <span class="tag">.scroll()</span> wird ausgelöst, wenn der Nutzer im selektierten Element scrollt.
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$(document).scroll( function()	{
+	var scrollTop = $(this).scrollTop();
+	$("main .box").offset({top: scrollTop);	
+});</pre></code></div>
+
+<p>In diesem Fall wird document, also die gesamte Seite selektiert. Wenn auf der gesamte Seite gescrollt wird, wird mithilfe der Funktion <span class="tag">.scrollTop()</span> ausgelesen, wie weit im Dokument bereits gescrollt wurde. Dieser Wert wird den Elementen mit Klasse als Abstand von oben gegeben, das Element bleibt also immer auf gleicher Höhe im Fenster (es ist fixed).</p>
+
+<div class="code-snippet">
+<div class="lines"></div>
+<code>
+<pre>$("main .box").scroll( function()	{
+	var scrollTop = $(this).scrollTop();
+	$(this).offset({left: scrollTop/2});
+});</pre></code></div>
+
+<p><span class="tag">.scroll()</span> kann auch auf einzelne Elemente angewendet werden. Das macht nur Sinn, wenn diese Elemente die CSS-Eigenschaft <span class="tag">overflow: scroll</span> oder <span class="tag">overflow: auto</span> besitzen.</p>
